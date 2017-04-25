@@ -12,8 +12,6 @@
             ScriptSrc="~SiteCollection/SiteAssets/handlingsplan/js/REST_Joakim.js"
             Sequence="2000"
         />
-        </pnp:WebCustomActions>
-        <pnp:WebCustomActions>
         <pnp:CustomAction 
             Title="Get Handlingsplan Aleksander" 
             Name="Get Handlingsplan Aleksander" 
