@@ -3,5 +3,5 @@ $(document).ready(function () {
 });
 
 function getJQuery() {
-
+  console.log('getJquery Temp');
 }
