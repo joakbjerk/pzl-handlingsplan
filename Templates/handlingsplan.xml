@@ -6,8 +6,8 @@
       <pnp:CustomActions>
         <pnp:WebCustomActions>
         <pnp:CustomAction 
-            Title="Get Handlingsplan List Items" 
-            Name="Get Handlingsplan List Items" 
+            Title="Get Handlingsplan Joakim" 
+            Name="Get Handlingsplan Joakim" 
             Location="ScriptLink" 
             ScriptSrc="~SiteCollection/SiteAssets/handlingsplan/js/REST_Joakim.js"
             Sequence="2000"
