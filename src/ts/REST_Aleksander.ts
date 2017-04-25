@@ -1,15 +1,15 @@
-export function logListItems() {
+function logListItems() {
     console.log('tempLog');
 }
 
-export function getSubsites() {
+function getSubsites() {
     let restUrl: string = `/_api/web/webs`;
-
+    console.log('tempLog');
 
 
 }
 
-export function getListItems() {
+function getListItems() {
     let restUrl: string;
-
+    console.log('tempLog');
 }
