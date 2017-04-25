@@ -13,6 +13,15 @@
             Sequence="2000"
         />
         </pnp:WebCustomActions>
+        <pnp:WebCustomActions>
+        <pnp:CustomAction 
+            Title="Get Handlingsplan Aleksander" 
+            Name="Get Handlingsplan Aleksander" 
+            Location="ScriptLink" 
+            ScriptSrc="~SiteCollection/SiteAssets/handlingsplan/js/REST_Aleksander.js"
+            Sequence="2050"
+        />
+        </pnp:WebCustomActions>
       </pnp:CustomActions>
       <pnp:Files>
         <pnp:File Src="..\node_modules\jquery\dist\jquery.min.js" Folder="SiteAssets/handlingsplan/lib" Overwrite="false" />
