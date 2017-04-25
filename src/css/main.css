@@ -1,0 +1,55 @@
+.buttonSelected {
+    background-color: #eff6fc;
+    border: 1px solid #b3d6f2;
+}
+/*Copy to clipboard-button is NOT part of this*/
+.customButton {
+    height: 47px;
+    width: 100px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+
+.chamberTitle {
+    display:block;
+    
+    
+}
+
+.legalTitle {
+    display:inline;        
+}
+
+.chamberContent:not(.chamberHeaders) {
+    display:block;
+    background-color: lightgreen;
+    
+}
+
+.legalHeaders {
+    font-size: 24px;
+    display:block;
+   /* position: relative;
+    left: 200px;*/
+    
+}
+
+.chamberHeaders {
+    font-size: 32px;
+    text-align: center;
+}
+
+.legalContent {
+    display:inline;
+    /*padding-bottom: 10px;
+    border: 1px red dotted;*/
+}
+
+.legalLineShift {
+    height: 5px;
+}
+
+.legalNewCaseLineShift {
+    height: 50px;
+}

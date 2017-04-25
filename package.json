@@ -1,0 +1,46 @@
+{
+  "name": "wr-trackrecords",
+  "version": "1.0.0",
+  "description": "Track records functionality for WRINTRA-108",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://tarjeieo@bitbucket.org/puzzlepart/wr-track-records.git"
+  },
+  "author": "Tarjei Ormestøyl",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/puzzlepart/wr-track-records",
+  "dependencies": {
+    "@types/jquery": "2.0.39",
+    "@types/microsoft-ajax": "0.0.31",
+    "@types/react": "^15.0.20",
+    "@types/react-dom": "^0.14.23",
+    "@types/sharepoint": "0.0.0",
+    "clipboard": "^1.6.1",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-file": "^0.3.0",
+    "gulp-foreach": "^0.1.0",
+    "gulp-less": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-tslint": "^7.0.1",
+    "gulp-typescript": "^3.1.4",
+    "jquery": "^3.1.1",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "office-ui-fabric-core": "^6.0.1",
+    "office-ui-fabric-js": "^1.4.0",
+    "path": "^0.12.7",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "run-sequence": "^1.2.2",
+    "sp-pnp-js": "^2.0.2",
+    "string-format": "^0.5.0",
+    "tslint": "^4.3.1",
+    "typescript": "2.1.5"
+  }
+}
