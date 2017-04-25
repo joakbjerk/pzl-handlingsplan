@@ -3,14 +3,20 @@
   <pnp:Preferences />
   <pnp:Templates ID="CONTAINER-HANDLINGSPLAN">
     <pnp:ProvisioningTemplate ID="TEMPLATE-HANDLINGSPLAN" Version="0">
+      <pnp:CustomActions>
+        <pnp:WebCustomActions>
+        <pnp:CustomAction 
+            Title="Get Handlingsplan List Items" 
+            Name="Get Handlingsplan List Items" 
+            Location="ScriptLink" 
+            ScriptSrc="~SiteCollection/SiteAssets/handlingsplan/js/REST_Joakim.js"
+            Sequence="2000"
+        />
+        </pnp:WebCustomActions>
+      </pnp:CustomActions>
       <pnp:Files>
-        <pnp:File Src="SitePages\GenerateRecords.aspx" Folder="SitePages" Overwrite="true">
-          <pnp:Properties>
-            <pnp:Property Key="Title" Value="Get Handlingsplan" />
-          </pnp:Properties>
-        </pnp:File>
-        <pnp:File Src="..\..\node_modules\jquery\dist\jquery.min.js" Folder="SiteAssets/handlingsplan/lib" Overwrite="false" />
-        <pnp:Directory Src="..\..\dist\" Folder="SiteAssets/handlingsplan" Overwrite="true" Recursive="true" IncludedExtensions="*.js,*.css" />
+        <pnp:File Src="..\node_modules\jquery\dist\jquery.min.js" Folder="SiteAssets/handlingsplan/lib" Overwrite="false" />
+        <pnp:Directory Src="..\dist\" Folder="SiteAssets/handlingsplan" Overwrite="true" Recursive="true" IncludedExtensions="*.js,*.css" />
       </pnp:Files>
     </pnp:ProvisioningTemplate>
   </pnp:Templates>
