@@ -9,8 +9,15 @@
             Title="Get Handlingsplan Joakim" 
             Name="Get Handlingsplan Joakim" 
             Location="ScriptLink" 
-            ScriptSrc="~SiteCollection/SiteAssets/handlingsplan/js/REST_Joakim.js"
+            ScriptSrc="~SiteCollection/SiteAssets/handlingsplan/lib/jquery.min.js"
             Sequence="2000"
+        />
+        <pnp:CustomAction 
+            Title="Get Handlingsplan Joakim" 
+            Name="Get Handlingsplan Joakim" 
+            Location="ScriptLink" 
+            ScriptSrc="~SiteCollection/SiteAssets/handlingsplan/js/REST_Joakim.js"
+            Sequence="2020"
         />
         <pnp:CustomAction 
             Title="Get Handlingsplan Aleksander" 
@@ -22,6 +29,16 @@
         </pnp:WebCustomActions>
       </pnp:CustomActions>
       <pnp:Files>
+        <pnp:File Src="SitePages\HandlingsplanerJoakim.aspx" Folder="SitePages" Overwrite="true">
+          <pnp:Properties>
+            <pnp:Property Key="Title" Value="Handlingsplaner Joakim" />
+            </pnp:Properties>
+          </pnp:File>
+          <pnp:File Src="SitePages\HandlingsplanerAleksander.aspx" Folder="SitePages" Overwrite="true">
+            <pnp:Properties>
+              <pnp:Property Key="Title" Value="handlingsplaner Aleksander" />
+            </pnp:Properties>
+          </pnp:File>
         <pnp:File Src="..\node_modules\jquery\dist\jquery.min.js" Folder="SiteAssets/handlingsplan/lib" Overwrite="false" />
         <pnp:Directory Src="..\dist\" Folder="SiteAssets/handlingsplan" Overwrite="true" Recursive="true" IncludedExtensions="*.js,*.css" />
       </pnp:Files>
