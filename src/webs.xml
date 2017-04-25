@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices" xmlns:georss="http://www.georss.org/georss" xmlns:gml="http://www.opengis.net/gml" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xml:base="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/_api/">
+    <id>df3705d2-7e7e-40ba-9afd-28b5955b77a0</id>
+    <title />
+    <updated>2017-04-25T14:52:36Z</updated>
+    <entry>
+        <id>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web</id>
+        <category term="SP.Web" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+        <link rel="edit" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/FirstUniqueAncestorSecurableObject" type="application/atom+xml;type=entry" title="FirstUniqueAncestorSecurableObject" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/FirstUniqueAncestorSecurableObject" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RoleAssignments" type="application/atom+xml;type=feed" title="RoleAssignments" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/RoleAssignments" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Activities" type="application/atom+xml;type=feed" title="Activities" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/Activities" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Alerts" type="application/atom+xml;type=feed" title="Alerts" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/Alerts" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AllProperties" type="application/atom+xml;type=entry" title="AllProperties" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/AllProperties" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AppTiles" type="application/atom+xml;type=feed" title="AppTiles" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/AppTiles" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedMemberGroup" type="application/atom+xml;type=entry" title="AssociatedMemberGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/AssociatedMemberGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedOwnerGroup" type="application/atom+xml;type=entry" title="AssociatedOwnerGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/AssociatedOwnerGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedVisitorGroup" type="application/atom+xml;type=entry" title="AssociatedVisitorGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/AssociatedVisitorGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Author" type="application/atom+xml;type=entry" title="Author" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/Author" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AvailableContentTypes" type="application/atom+xml;type=feed" title="AvailableContentTypes" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/AvailableContentTypes" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AvailableFields" type="application/atom+xml;type=feed" title="AvailableFields" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/AvailableFields" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ClientWebParts" type="application/atom+xml;type=feed" title="ClientWebParts" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/ClientWebParts" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ContentTypes" type="application/atom+xml;type=feed" title="ContentTypes" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/ContentTypes" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/CurrentUser" type="application/atom+xml;type=entry" title="CurrentUser" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/CurrentUser" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/DataLeakagePreventionStatusInfo" type="application/atom+xml;type=entry" title="DataLeakagePreventionStatusInfo" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/DataLeakagePreventionStatusInfo" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/DescriptionResource" type="application/atom+xml;type=entry" title="DescriptionResource" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/DescriptionResource" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/EventReceivers" type="application/atom+xml;type=feed" title="EventReceivers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/EventReceivers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Features" type="application/atom+xml;type=feed" title="Features" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/Features" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Fields" type="application/atom+xml;type=feed" title="Fields" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/Fields" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Folders" type="application/atom+xml;type=feed" title="Folders" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/Folders" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Lists" type="application/atom+xml;type=feed" title="Lists" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/Lists" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ListTemplates" type="application/atom+xml;type=feed" title="ListTemplates" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/ListTemplates" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Navigation" type="application/atom+xml;type=entry" title="Navigation" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/Navigation" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ParentWeb" type="application/atom+xml;type=entry" title="ParentWeb" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/ParentWeb" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/PushNotificationSubscribers" type="application/atom+xml;type=feed" title="PushNotificationSubscribers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/PushNotificationSubscribers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RecycleBin" type="application/atom+xml;type=feed" title="RecycleBin" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/RecycleBin" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RegionalSettings" type="application/atom+xml;type=entry" title="RegionalSettings" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/RegionalSettings" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RoleDefinitions" type="application/atom+xml;type=feed" title="RoleDefinitions" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/RoleDefinitions" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RootFolder" type="application/atom+xml;type=entry" title="RootFolder" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/RootFolder" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteGroups" type="application/atom+xml;type=feed" title="SiteGroups" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/SiteGroups" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteUserInfoList" type="application/atom+xml;type=entry" title="SiteUserInfoList" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/SiteUserInfoList" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteUsers" type="application/atom+xml;type=feed" title="SiteUsers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/SiteUsers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ThemeInfo" type="application/atom+xml;type=entry" title="ThemeInfo" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/ThemeInfo" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/TitleResource" type="application/atom+xml;type=entry" title="TitleResource" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/TitleResource" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/UserCustomActions" type="application/atom+xml;type=feed" title="UserCustomActions" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/UserCustomActions" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Webs" type="application/atom+xml;type=feed" title="Webs" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/Webs" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WebInfos" type="application/atom+xml;type=feed" title="WebInfos" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/WebInfos" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WorkflowAssociations" type="application/atom+xml;type=feed" title="WorkflowAssociations" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/WorkflowAssociations" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WorkflowTemplates" type="application/atom+xml;type=feed" title="WorkflowTemplates" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1/_api/Web/WorkflowTemplates" />
+        <title />
+        <updated>2017-04-25T14:52:36Z</updated>
+        <author>
+            <name />
+        </author>
+        <content type="application/xml">
+            <m:properties>
+                <d:AllowRssFeeds m:type="Edm.Boolean">true</d:AllowRssFeeds>
+                <d:AlternateCssUrl />
+                <d:AppInstanceId m:type="Edm.Guid">00000000-0000-0000-0000-000000000000</d:AppInstanceId>
+                <d:Configuration m:type="Edm.Int16">0</d:Configuration>
+                <d:Created m:type="Edm.DateTime">2017-04-25T07:02:47</d:Created>
+                <d:CurrentChangeToken m:type="SP.ChangeToken">
+                    <d:StringValue>1;2;55e749da-a8a7-4924-8385-a065124c68ce;636287287555100000;46322125</d:StringValue>
+                </d:CurrentChangeToken>
+                <d:CustomMasterUrl>/sites/handlingsplanhovedside/subsite1/_catalogs/masterpage/seattle.master</d:CustomMasterUrl>
+                <d:Description />
+                <d:DesignPackageId m:type="Edm.Guid">00000000-0000-0000-0000-000000000000</d:DesignPackageId>
+                <d:DocumentLibraryCalloutOfficeWebAppPreviewersDisabled m:type="Edm.Boolean">false</d:DocumentLibraryCalloutOfficeWebAppPreviewersDisabled>
+                <d:EnableMinimalDownload m:type="Edm.Boolean">true</d:EnableMinimalDownload>
+                <d:Id m:type="Edm.Guid">55e749da-a8a7-4924-8385-a065124c68ce</d:Id>
+                <d:IsMultilingual m:type="Edm.Boolean">false</d:IsMultilingual>
+                <d:Language m:type="Edm.Int32">1044</d:Language>
+                <d:LastItemModifiedDate m:type="Edm.DateTime">2017-04-25T07:10:28Z</d:LastItemModifiedDate>
+                <d:LastItemUserModifiedDate m:type="Edm.DateTime">2017-04-25T07:10:28Z</d:LastItemUserModifiedDate>
+                <d:MasterUrl>/sites/handlingsplanhovedside/subsite1/_catalogs/masterpage/seattle.master</d:MasterUrl>
+                <d:NoCrawl m:type="Edm.Boolean">false</d:NoCrawl>
+                <d:OverwriteTranslationsOnChange m:type="Edm.Boolean">false</d:OverwriteTranslationsOnChange>
+                <d:ResourcePath m:type="SP.ResourcePath">
+                    <d:DecodedUrl>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1</d:DecodedUrl>
+                </d:ResourcePath>
+                <d:QuickLaunchEnabled m:type="Edm.Boolean">true</d:QuickLaunchEnabled>
+                <d:RecycleBinEnabled m:type="Edm.Boolean">true</d:RecycleBinEnabled>
+                <d:ServerRelativeUrl>/sites/handlingsplanhovedside/subsite1</d:ServerRelativeUrl>
+                <d:SiteLogoUrl m:null="true" />
+                <d:SyndicationEnabled m:type="Edm.Boolean">true</d:SyndicationEnabled>
+                <d:Title>Subsite1</d:Title>
+                <d:TreeViewEnabled m:type="Edm.Boolean">false</d:TreeViewEnabled>
+                <d:UIVersion m:type="Edm.Int32">15</d:UIVersion>
+                <d:UIVersionConfigurationEnabled m:type="Edm.Boolean">false</d:UIVersionConfigurationEnabled>
+                <d:Url>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite1</d:Url>
+                <d:WebTemplate>STS</d:WebTemplate>
+            </m:properties>
+        </content>
+    </entry>
+    <entry>
+        <id>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web</id>
+        <category term="SP.Web" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+        <link rel="edit" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/FirstUniqueAncestorSecurableObject" type="application/atom+xml;type=entry" title="FirstUniqueAncestorSecurableObject" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/FirstUniqueAncestorSecurableObject" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RoleAssignments" type="application/atom+xml;type=feed" title="RoleAssignments" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/RoleAssignments" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Activities" type="application/atom+xml;type=feed" title="Activities" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/Activities" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Alerts" type="application/atom+xml;type=feed" title="Alerts" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/Alerts" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AllProperties" type="application/atom+xml;type=entry" title="AllProperties" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/AllProperties" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AppTiles" type="application/atom+xml;type=feed" title="AppTiles" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/AppTiles" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedMemberGroup" type="application/atom+xml;type=entry" title="AssociatedMemberGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/AssociatedMemberGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedOwnerGroup" type="application/atom+xml;type=entry" title="AssociatedOwnerGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/AssociatedOwnerGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedVisitorGroup" type="application/atom+xml;type=entry" title="AssociatedVisitorGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/AssociatedVisitorGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Author" type="application/atom+xml;type=entry" title="Author" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/Author" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AvailableContentTypes" type="application/atom+xml;type=feed" title="AvailableContentTypes" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/AvailableContentTypes" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AvailableFields" type="application/atom+xml;type=feed" title="AvailableFields" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/AvailableFields" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ClientWebParts" type="application/atom+xml;type=feed" title="ClientWebParts" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/ClientWebParts" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ContentTypes" type="application/atom+xml;type=feed" title="ContentTypes" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/ContentTypes" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/CurrentUser" type="application/atom+xml;type=entry" title="CurrentUser" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/CurrentUser" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/DataLeakagePreventionStatusInfo" type="application/atom+xml;type=entry" title="DataLeakagePreventionStatusInfo" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/DataLeakagePreventionStatusInfo" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/DescriptionResource" type="application/atom+xml;type=entry" title="DescriptionResource" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/DescriptionResource" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/EventReceivers" type="application/atom+xml;type=feed" title="EventReceivers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/EventReceivers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Features" type="application/atom+xml;type=feed" title="Features" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/Features" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Fields" type="application/atom+xml;type=feed" title="Fields" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/Fields" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Folders" type="application/atom+xml;type=feed" title="Folders" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/Folders" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Lists" type="application/atom+xml;type=feed" title="Lists" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/Lists" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ListTemplates" type="application/atom+xml;type=feed" title="ListTemplates" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/ListTemplates" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Navigation" type="application/atom+xml;type=entry" title="Navigation" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/Navigation" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ParentWeb" type="application/atom+xml;type=entry" title="ParentWeb" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/ParentWeb" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/PushNotificationSubscribers" type="application/atom+xml;type=feed" title="PushNotificationSubscribers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/PushNotificationSubscribers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RecycleBin" type="application/atom+xml;type=feed" title="RecycleBin" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/RecycleBin" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RegionalSettings" type="application/atom+xml;type=entry" title="RegionalSettings" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/RegionalSettings" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RoleDefinitions" type="application/atom+xml;type=feed" title="RoleDefinitions" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/RoleDefinitions" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RootFolder" type="application/atom+xml;type=entry" title="RootFolder" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/RootFolder" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteGroups" type="application/atom+xml;type=feed" title="SiteGroups" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/SiteGroups" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteUserInfoList" type="application/atom+xml;type=entry" title="SiteUserInfoList" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/SiteUserInfoList" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteUsers" type="application/atom+xml;type=feed" title="SiteUsers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/SiteUsers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ThemeInfo" type="application/atom+xml;type=entry" title="ThemeInfo" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/ThemeInfo" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/TitleResource" type="application/atom+xml;type=entry" title="TitleResource" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/TitleResource" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/UserCustomActions" type="application/atom+xml;type=feed" title="UserCustomActions" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/UserCustomActions" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Webs" type="application/atom+xml;type=feed" title="Webs" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/Webs" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WebInfos" type="application/atom+xml;type=feed" title="WebInfos" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/WebInfos" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WorkflowAssociations" type="application/atom+xml;type=feed" title="WorkflowAssociations" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/WorkflowAssociations" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WorkflowTemplates" type="application/atom+xml;type=feed" title="WorkflowTemplates" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10/_api/Web/WorkflowTemplates" />
+        <title />
+        <updated>2017-04-25T14:52:36Z</updated>
+        <author>
+            <name />
+        </author>
+        <content type="application/xml">
+            <m:properties>
+                <d:AllowRssFeeds m:type="Edm.Boolean">true</d:AllowRssFeeds>
+                <d:AlternateCssUrl />
+                <d:AppInstanceId m:type="Edm.Guid">00000000-0000-0000-0000-000000000000</d:AppInstanceId>
+                <d:Configuration m:type="Edm.Int16">0</d:Configuration>
+                <d:Created m:type="Edm.DateTime">2017-04-25T07:06:02</d:Created>
+                <d:CurrentChangeToken m:type="SP.ChangeToken">
+                    <d:StringValue>1;2;bd9dd8f4-d2dd-45ef-a0cc-9336ae839ab6;636287287555100000;46322125</d:StringValue>
+                </d:CurrentChangeToken>
+                <d:CustomMasterUrl>/sites/handlingsplanhovedside/subsite10/_catalogs/masterpage/seattle.master</d:CustomMasterUrl>
+                <d:Description />
+                <d:DesignPackageId m:type="Edm.Guid">00000000-0000-0000-0000-000000000000</d:DesignPackageId>
+                <d:DocumentLibraryCalloutOfficeWebAppPreviewersDisabled m:type="Edm.Boolean">false</d:DocumentLibraryCalloutOfficeWebAppPreviewersDisabled>
+                <d:EnableMinimalDownload m:type="Edm.Boolean">true</d:EnableMinimalDownload>
+                <d:Id m:type="Edm.Guid">bd9dd8f4-d2dd-45ef-a0cc-9336ae839ab6</d:Id>
+                <d:IsMultilingual m:type="Edm.Boolean">false</d:IsMultilingual>
+                <d:Language m:type="Edm.Int32">1044</d:Language>
+                <d:LastItemModifiedDate m:type="Edm.DateTime">2017-04-25T07:11:46Z</d:LastItemModifiedDate>
+                <d:LastItemUserModifiedDate m:type="Edm.DateTime">2017-04-25T07:11:46Z</d:LastItemUserModifiedDate>
+                <d:MasterUrl>/sites/handlingsplanhovedside/subsite10/_catalogs/masterpage/seattle.master</d:MasterUrl>
+                <d:NoCrawl m:type="Edm.Boolean">false</d:NoCrawl>
+                <d:OverwriteTranslationsOnChange m:type="Edm.Boolean">false</d:OverwriteTranslationsOnChange>
+                <d:ResourcePath m:type="SP.ResourcePath">
+                    <d:DecodedUrl>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10</d:DecodedUrl>
+                </d:ResourcePath>
+                <d:QuickLaunchEnabled m:type="Edm.Boolean">true</d:QuickLaunchEnabled>
+                <d:RecycleBinEnabled m:type="Edm.Boolean">true</d:RecycleBinEnabled>
+                <d:ServerRelativeUrl>/sites/handlingsplanhovedside/subsite10</d:ServerRelativeUrl>
+                <d:SiteLogoUrl m:null="true" />
+                <d:SyndicationEnabled m:type="Edm.Boolean">true</d:SyndicationEnabled>
+                <d:Title>Subsite10</d:Title>
+                <d:TreeViewEnabled m:type="Edm.Boolean">false</d:TreeViewEnabled>
+                <d:UIVersion m:type="Edm.Int32">15</d:UIVersion>
+                <d:UIVersionConfigurationEnabled m:type="Edm.Boolean">false</d:UIVersionConfigurationEnabled>
+                <d:Url>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite10</d:Url>
+                <d:WebTemplate>STS</d:WebTemplate>
+            </m:properties>
+        </content>
+    </entry>
+    <entry>
+        <id>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web</id>
+        <category term="SP.Web" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+        <link rel="edit" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/FirstUniqueAncestorSecurableObject" type="application/atom+xml;type=entry" title="FirstUniqueAncestorSecurableObject" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/FirstUniqueAncestorSecurableObject" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RoleAssignments" type="application/atom+xml;type=feed" title="RoleAssignments" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/RoleAssignments" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Activities" type="application/atom+xml;type=feed" title="Activities" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/Activities" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Alerts" type="application/atom+xml;type=feed" title="Alerts" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/Alerts" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AllProperties" type="application/atom+xml;type=entry" title="AllProperties" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/AllProperties" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AppTiles" type="application/atom+xml;type=feed" title="AppTiles" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/AppTiles" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedMemberGroup" type="application/atom+xml;type=entry" title="AssociatedMemberGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/AssociatedMemberGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedOwnerGroup" type="application/atom+xml;type=entry" title="AssociatedOwnerGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/AssociatedOwnerGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedVisitorGroup" type="application/atom+xml;type=entry" title="AssociatedVisitorGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/AssociatedVisitorGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Author" type="application/atom+xml;type=entry" title="Author" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/Author" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AvailableContentTypes" type="application/atom+xml;type=feed" title="AvailableContentTypes" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/AvailableContentTypes" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AvailableFields" type="application/atom+xml;type=feed" title="AvailableFields" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/AvailableFields" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ClientWebParts" type="application/atom+xml;type=feed" title="ClientWebParts" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/ClientWebParts" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ContentTypes" type="application/atom+xml;type=feed" title="ContentTypes" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/ContentTypes" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/CurrentUser" type="application/atom+xml;type=entry" title="CurrentUser" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/CurrentUser" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/DataLeakagePreventionStatusInfo" type="application/atom+xml;type=entry" title="DataLeakagePreventionStatusInfo" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/DataLeakagePreventionStatusInfo" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/DescriptionResource" type="application/atom+xml;type=entry" title="DescriptionResource" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/DescriptionResource" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/EventReceivers" type="application/atom+xml;type=feed" title="EventReceivers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/EventReceivers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Features" type="application/atom+xml;type=feed" title="Features" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/Features" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Fields" type="application/atom+xml;type=feed" title="Fields" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/Fields" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Folders" type="application/atom+xml;type=feed" title="Folders" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/Folders" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Lists" type="application/atom+xml;type=feed" title="Lists" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/Lists" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ListTemplates" type="application/atom+xml;type=feed" title="ListTemplates" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/ListTemplates" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Navigation" type="application/atom+xml;type=entry" title="Navigation" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/Navigation" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ParentWeb" type="application/atom+xml;type=entry" title="ParentWeb" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/ParentWeb" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/PushNotificationSubscribers" type="application/atom+xml;type=feed" title="PushNotificationSubscribers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/PushNotificationSubscribers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RecycleBin" type="application/atom+xml;type=feed" title="RecycleBin" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/RecycleBin" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RegionalSettings" type="application/atom+xml;type=entry" title="RegionalSettings" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/RegionalSettings" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RoleDefinitions" type="application/atom+xml;type=feed" title="RoleDefinitions" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/RoleDefinitions" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RootFolder" type="application/atom+xml;type=entry" title="RootFolder" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/RootFolder" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteGroups" type="application/atom+xml;type=feed" title="SiteGroups" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/SiteGroups" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteUserInfoList" type="application/atom+xml;type=entry" title="SiteUserInfoList" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/SiteUserInfoList" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteUsers" type="application/atom+xml;type=feed" title="SiteUsers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/SiteUsers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ThemeInfo" type="application/atom+xml;type=entry" title="ThemeInfo" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/ThemeInfo" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/TitleResource" type="application/atom+xml;type=entry" title="TitleResource" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/TitleResource" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/UserCustomActions" type="application/atom+xml;type=feed" title="UserCustomActions" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/UserCustomActions" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Webs" type="application/atom+xml;type=feed" title="Webs" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/Webs" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WebInfos" type="application/atom+xml;type=feed" title="WebInfos" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/WebInfos" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WorkflowAssociations" type="application/atom+xml;type=feed" title="WorkflowAssociations" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/WorkflowAssociations" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WorkflowTemplates" type="application/atom+xml;type=feed" title="WorkflowTemplates" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2/_api/Web/WorkflowTemplates" />
+        <title />
+        <updated>2017-04-25T14:52:36Z</updated>
+        <author>
+            <name />
+        </author>
+        <content type="application/xml">
+            <m:properties>
+                <d:AllowRssFeeds m:type="Edm.Boolean">true</d:AllowRssFeeds>
+                <d:AlternateCssUrl />
+                <d:AppInstanceId m:type="Edm.Guid">00000000-0000-0000-0000-000000000000</d:AppInstanceId>
+                <d:Configuration m:type="Edm.Int16">0</d:Configuration>
+                <d:Created m:type="Edm.DateTime">2017-04-25T07:04:18</d:Created>
+                <d:CurrentChangeToken m:type="SP.ChangeToken">
+                    <d:StringValue>1;2;74aa82a5-1098-4023-ba2e-59387cae2f78;636287287555100000;46322125</d:StringValue>
+                </d:CurrentChangeToken>
+                <d:CustomMasterUrl>/sites/handlingsplanhovedside/subsite2/_catalogs/masterpage/seattle.master</d:CustomMasterUrl>
+                <d:Description />
+                <d:DesignPackageId m:type="Edm.Guid">00000000-0000-0000-0000-000000000000</d:DesignPackageId>
+                <d:DocumentLibraryCalloutOfficeWebAppPreviewersDisabled m:type="Edm.Boolean">false</d:DocumentLibraryCalloutOfficeWebAppPreviewersDisabled>
+                <d:EnableMinimalDownload m:type="Edm.Boolean">true</d:EnableMinimalDownload>
+                <d:Id m:type="Edm.Guid">74aa82a5-1098-4023-ba2e-59387cae2f78</d:Id>
+                <d:IsMultilingual m:type="Edm.Boolean">false</d:IsMultilingual>
+                <d:Language m:type="Edm.Int32">1044</d:Language>
+                <d:LastItemModifiedDate m:type="Edm.DateTime">2017-04-25T07:10:58Z</d:LastItemModifiedDate>
+                <d:LastItemUserModifiedDate m:type="Edm.DateTime">2017-04-25T07:10:58Z</d:LastItemUserModifiedDate>
+                <d:MasterUrl>/sites/handlingsplanhovedside/subsite2/_catalogs/masterpage/seattle.master</d:MasterUrl>
+                <d:NoCrawl m:type="Edm.Boolean">false</d:NoCrawl>
+                <d:OverwriteTranslationsOnChange m:type="Edm.Boolean">false</d:OverwriteTranslationsOnChange>
+                <d:ResourcePath m:type="SP.ResourcePath">
+                    <d:DecodedUrl>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2</d:DecodedUrl>
+                </d:ResourcePath>
+                <d:QuickLaunchEnabled m:type="Edm.Boolean">true</d:QuickLaunchEnabled>
+                <d:RecycleBinEnabled m:type="Edm.Boolean">true</d:RecycleBinEnabled>
+                <d:ServerRelativeUrl>/sites/handlingsplanhovedside/subsite2</d:ServerRelativeUrl>
+                <d:SiteLogoUrl m:null="true" />
+                <d:SyndicationEnabled m:type="Edm.Boolean">true</d:SyndicationEnabled>
+                <d:Title>Subsite2</d:Title>
+                <d:TreeViewEnabled m:type="Edm.Boolean">false</d:TreeViewEnabled>
+                <d:UIVersion m:type="Edm.Int32">15</d:UIVersion>
+                <d:UIVersionConfigurationEnabled m:type="Edm.Boolean">false</d:UIVersionConfigurationEnabled>
+                <d:Url>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite2</d:Url>
+                <d:WebTemplate>STS</d:WebTemplate>
+            </m:properties>
+        </content>
+    </entry>
+    <entry>
+        <id>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web</id>
+        <category term="SP.Web" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+        <link rel="edit" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/FirstUniqueAncestorSecurableObject" type="application/atom+xml;type=entry" title="FirstUniqueAncestorSecurableObject" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/FirstUniqueAncestorSecurableObject" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RoleAssignments" type="application/atom+xml;type=feed" title="RoleAssignments" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/RoleAssignments" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Activities" type="application/atom+xml;type=feed" title="Activities" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/Activities" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Alerts" type="application/atom+xml;type=feed" title="Alerts" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/Alerts" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AllProperties" type="application/atom+xml;type=entry" title="AllProperties" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/AllProperties" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AppTiles" type="application/atom+xml;type=feed" title="AppTiles" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/AppTiles" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedMemberGroup" type="application/atom+xml;type=entry" title="AssociatedMemberGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/AssociatedMemberGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedOwnerGroup" type="application/atom+xml;type=entry" title="AssociatedOwnerGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/AssociatedOwnerGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedVisitorGroup" type="application/atom+xml;type=entry" title="AssociatedVisitorGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/AssociatedVisitorGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Author" type="application/atom+xml;type=entry" title="Author" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/Author" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AvailableContentTypes" type="application/atom+xml;type=feed" title="AvailableContentTypes" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/AvailableContentTypes" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AvailableFields" type="application/atom+xml;type=feed" title="AvailableFields" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/AvailableFields" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ClientWebParts" type="application/atom+xml;type=feed" title="ClientWebParts" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/ClientWebParts" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ContentTypes" type="application/atom+xml;type=feed" title="ContentTypes" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/ContentTypes" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/CurrentUser" type="application/atom+xml;type=entry" title="CurrentUser" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/CurrentUser" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/DataLeakagePreventionStatusInfo" type="application/atom+xml;type=entry" title="DataLeakagePreventionStatusInfo" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/DataLeakagePreventionStatusInfo" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/DescriptionResource" type="application/atom+xml;type=entry" title="DescriptionResource" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/DescriptionResource" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/EventReceivers" type="application/atom+xml;type=feed" title="EventReceivers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/EventReceivers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Features" type="application/atom+xml;type=feed" title="Features" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/Features" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Fields" type="application/atom+xml;type=feed" title="Fields" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/Fields" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Folders" type="application/atom+xml;type=feed" title="Folders" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/Folders" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Lists" type="application/atom+xml;type=feed" title="Lists" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/Lists" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ListTemplates" type="application/atom+xml;type=feed" title="ListTemplates" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/ListTemplates" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Navigation" type="application/atom+xml;type=entry" title="Navigation" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/Navigation" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ParentWeb" type="application/atom+xml;type=entry" title="ParentWeb" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/ParentWeb" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/PushNotificationSubscribers" type="application/atom+xml;type=feed" title="PushNotificationSubscribers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/PushNotificationSubscribers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RecycleBin" type="application/atom+xml;type=feed" title="RecycleBin" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/RecycleBin" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RegionalSettings" type="application/atom+xml;type=entry" title="RegionalSettings" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/RegionalSettings" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RoleDefinitions" type="application/atom+xml;type=feed" title="RoleDefinitions" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/RoleDefinitions" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RootFolder" type="application/atom+xml;type=entry" title="RootFolder" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/RootFolder" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteGroups" type="application/atom+xml;type=feed" title="SiteGroups" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/SiteGroups" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteUserInfoList" type="application/atom+xml;type=entry" title="SiteUserInfoList" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/SiteUserInfoList" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteUsers" type="application/atom+xml;type=feed" title="SiteUsers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/SiteUsers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ThemeInfo" type="application/atom+xml;type=entry" title="ThemeInfo" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/ThemeInfo" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/TitleResource" type="application/atom+xml;type=entry" title="TitleResource" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/TitleResource" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/UserCustomActions" type="application/atom+xml;type=feed" title="UserCustomActions" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/UserCustomActions" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Webs" type="application/atom+xml;type=feed" title="Webs" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/Webs" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WebInfos" type="application/atom+xml;type=feed" title="WebInfos" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/WebInfos" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WorkflowAssociations" type="application/atom+xml;type=feed" title="WorkflowAssociations" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/WorkflowAssociations" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WorkflowTemplates" type="application/atom+xml;type=feed" title="WorkflowTemplates" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3/_api/Web/WorkflowTemplates" />
+        <title />
+        <updated>2017-04-25T14:52:36Z</updated>
+        <author>
+            <name />
+        </author>
+        <content type="application/xml">
+            <m:properties>
+                <d:AllowRssFeeds m:type="Edm.Boolean">true</d:AllowRssFeeds>
+                <d:AlternateCssUrl />
+                <d:AppInstanceId m:type="Edm.Guid">00000000-0000-0000-0000-000000000000</d:AppInstanceId>
+                <d:Configuration m:type="Edm.Int16">0</d:Configuration>
+                <d:Created m:type="Edm.DateTime">2017-04-25T07:04:59</d:Created>
+                <d:CurrentChangeToken m:type="SP.ChangeToken">
+                    <d:StringValue>1;2;0707893a-0a8c-4384-8838-eb3c3010ac35;636287287555100000;46322125</d:StringValue>
+                </d:CurrentChangeToken>
+                <d:CustomMasterUrl>/sites/handlingsplanhovedside/subsite3/_catalogs/masterpage/seattle.master</d:CustomMasterUrl>
+                <d:Description />
+                <d:DesignPackageId m:type="Edm.Guid">00000000-0000-0000-0000-000000000000</d:DesignPackageId>
+                <d:DocumentLibraryCalloutOfficeWebAppPreviewersDisabled m:type="Edm.Boolean">false</d:DocumentLibraryCalloutOfficeWebAppPreviewersDisabled>
+                <d:EnableMinimalDownload m:type="Edm.Boolean">true</d:EnableMinimalDownload>
+                <d:Id m:type="Edm.Guid">0707893a-0a8c-4384-8838-eb3c3010ac35</d:Id>
+                <d:IsMultilingual m:type="Edm.Boolean">false</d:IsMultilingual>
+                <d:Language m:type="Edm.Int32">1044</d:Language>
+                <d:LastItemModifiedDate m:type="Edm.DateTime">2017-04-25T07:11:25Z</d:LastItemModifiedDate>
+                <d:LastItemUserModifiedDate m:type="Edm.DateTime">2017-04-25T07:11:25Z</d:LastItemUserModifiedDate>
+                <d:MasterUrl>/sites/handlingsplanhovedside/subsite3/_catalogs/masterpage/seattle.master</d:MasterUrl>
+                <d:NoCrawl m:type="Edm.Boolean">false</d:NoCrawl>
+                <d:OverwriteTranslationsOnChange m:type="Edm.Boolean">false</d:OverwriteTranslationsOnChange>
+                <d:ResourcePath m:type="SP.ResourcePath">
+                    <d:DecodedUrl>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3</d:DecodedUrl>
+                </d:ResourcePath>
+                <d:QuickLaunchEnabled m:type="Edm.Boolean">true</d:QuickLaunchEnabled>
+                <d:RecycleBinEnabled m:type="Edm.Boolean">true</d:RecycleBinEnabled>
+                <d:ServerRelativeUrl>/sites/handlingsplanhovedside/subsite3</d:ServerRelativeUrl>
+                <d:SiteLogoUrl m:null="true" />
+                <d:SyndicationEnabled m:type="Edm.Boolean">true</d:SyndicationEnabled>
+                <d:Title>Subsite3</d:Title>
+                <d:TreeViewEnabled m:type="Edm.Boolean">false</d:TreeViewEnabled>
+                <d:UIVersion m:type="Edm.Int32">15</d:UIVersion>
+                <d:UIVersionConfigurationEnabled m:type="Edm.Boolean">false</d:UIVersionConfigurationEnabled>
+                <d:Url>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite3</d:Url>
+                <d:WebTemplate>STS</d:WebTemplate>
+            </m:properties>
+        </content>
+    </entry>
+    <entry>
+        <id>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web</id>
+        <category term="SP.Web" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+        <link rel="edit" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/FirstUniqueAncestorSecurableObject" type="application/atom+xml;type=entry" title="FirstUniqueAncestorSecurableObject" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/FirstUniqueAncestorSecurableObject" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RoleAssignments" type="application/atom+xml;type=feed" title="RoleAssignments" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/RoleAssignments" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Activities" type="application/atom+xml;type=feed" title="Activities" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/Activities" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Alerts" type="application/atom+xml;type=feed" title="Alerts" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/Alerts" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AllProperties" type="application/atom+xml;type=entry" title="AllProperties" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/AllProperties" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AppTiles" type="application/atom+xml;type=feed" title="AppTiles" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/AppTiles" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedMemberGroup" type="application/atom+xml;type=entry" title="AssociatedMemberGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/AssociatedMemberGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedOwnerGroup" type="application/atom+xml;type=entry" title="AssociatedOwnerGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/AssociatedOwnerGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedVisitorGroup" type="application/atom+xml;type=entry" title="AssociatedVisitorGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/AssociatedVisitorGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Author" type="application/atom+xml;type=entry" title="Author" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/Author" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AvailableContentTypes" type="application/atom+xml;type=feed" title="AvailableContentTypes" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/AvailableContentTypes" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AvailableFields" type="application/atom+xml;type=feed" title="AvailableFields" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/AvailableFields" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ClientWebParts" type="application/atom+xml;type=feed" title="ClientWebParts" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/ClientWebParts" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ContentTypes" type="application/atom+xml;type=feed" title="ContentTypes" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/ContentTypes" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/CurrentUser" type="application/atom+xml;type=entry" title="CurrentUser" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/CurrentUser" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/DataLeakagePreventionStatusInfo" type="application/atom+xml;type=entry" title="DataLeakagePreventionStatusInfo" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/DataLeakagePreventionStatusInfo" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/DescriptionResource" type="application/atom+xml;type=entry" title="DescriptionResource" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/DescriptionResource" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/EventReceivers" type="application/atom+xml;type=feed" title="EventReceivers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/EventReceivers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Features" type="application/atom+xml;type=feed" title="Features" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/Features" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Fields" type="application/atom+xml;type=feed" title="Fields" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/Fields" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Folders" type="application/atom+xml;type=feed" title="Folders" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/Folders" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Lists" type="application/atom+xml;type=feed" title="Lists" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/Lists" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ListTemplates" type="application/atom+xml;type=feed" title="ListTemplates" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/ListTemplates" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Navigation" type="application/atom+xml;type=entry" title="Navigation" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/Navigation" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ParentWeb" type="application/atom+xml;type=entry" title="ParentWeb" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/ParentWeb" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/PushNotificationSubscribers" type="application/atom+xml;type=feed" title="PushNotificationSubscribers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/PushNotificationSubscribers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RecycleBin" type="application/atom+xml;type=feed" title="RecycleBin" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/RecycleBin" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RegionalSettings" type="application/atom+xml;type=entry" title="RegionalSettings" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/RegionalSettings" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RoleDefinitions" type="application/atom+xml;type=feed" title="RoleDefinitions" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/RoleDefinitions" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RootFolder" type="application/atom+xml;type=entry" title="RootFolder" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/RootFolder" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteGroups" type="application/atom+xml;type=feed" title="SiteGroups" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/SiteGroups" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteUserInfoList" type="application/atom+xml;type=entry" title="SiteUserInfoList" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/SiteUserInfoList" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteUsers" type="application/atom+xml;type=feed" title="SiteUsers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/SiteUsers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ThemeInfo" type="application/atom+xml;type=entry" title="ThemeInfo" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/ThemeInfo" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/TitleResource" type="application/atom+xml;type=entry" title="TitleResource" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/TitleResource" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/UserCustomActions" type="application/atom+xml;type=feed" title="UserCustomActions" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/UserCustomActions" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Webs" type="application/atom+xml;type=feed" title="Webs" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/Webs" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WebInfos" type="application/atom+xml;type=feed" title="WebInfos" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/WebInfos" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WorkflowAssociations" type="application/atom+xml;type=feed" title="WorkflowAssociations" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/WorkflowAssociations" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WorkflowTemplates" type="application/atom+xml;type=feed" title="WorkflowTemplates" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4/_api/Web/WorkflowTemplates" />
+        <title />
+        <updated>2017-04-25T14:52:36Z</updated>
+        <author>
+            <name />
+        </author>
+        <content type="application/xml">
+            <m:properties>
+                <d:AllowRssFeeds m:type="Edm.Boolean">true</d:AllowRssFeeds>
+                <d:AlternateCssUrl />
+                <d:AppInstanceId m:type="Edm.Guid">00000000-0000-0000-0000-000000000000</d:AppInstanceId>
+                <d:Configuration m:type="Edm.Int16">0</d:Configuration>
+                <d:Created m:type="Edm.DateTime">2017-04-25T07:05:58</d:Created>
+                <d:CurrentChangeToken m:type="SP.ChangeToken">
+                    <d:StringValue>1;2;154ace9f-cf9a-4d1c-928e-d357143aa42a;636287287555100000;46322125</d:StringValue>
+                </d:CurrentChangeToken>
+                <d:CustomMasterUrl>/sites/handlingsplanhovedside/subsite4/_catalogs/masterpage/seattle.master</d:CustomMasterUrl>
+                <d:Description />
+                <d:DesignPackageId m:type="Edm.Guid">00000000-0000-0000-0000-000000000000</d:DesignPackageId>
+                <d:DocumentLibraryCalloutOfficeWebAppPreviewersDisabled m:type="Edm.Boolean">false</d:DocumentLibraryCalloutOfficeWebAppPreviewersDisabled>
+                <d:EnableMinimalDownload m:type="Edm.Boolean">true</d:EnableMinimalDownload>
+                <d:Id m:type="Edm.Guid">154ace9f-cf9a-4d1c-928e-d357143aa42a</d:Id>
+                <d:IsMultilingual m:type="Edm.Boolean">false</d:IsMultilingual>
+                <d:Language m:type="Edm.Int32">1044</d:Language>
+                <d:LastItemModifiedDate m:type="Edm.DateTime">2017-04-25T07:11:48Z</d:LastItemModifiedDate>
+                <d:LastItemUserModifiedDate m:type="Edm.DateTime">2017-04-25T07:11:48Z</d:LastItemUserModifiedDate>
+                <d:MasterUrl>/sites/handlingsplanhovedside/subsite4/_catalogs/masterpage/seattle.master</d:MasterUrl>
+                <d:NoCrawl m:type="Edm.Boolean">false</d:NoCrawl>
+                <d:OverwriteTranslationsOnChange m:type="Edm.Boolean">false</d:OverwriteTranslationsOnChange>
+                <d:ResourcePath m:type="SP.ResourcePath">
+                    <d:DecodedUrl>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4</d:DecodedUrl>
+                </d:ResourcePath>
+                <d:QuickLaunchEnabled m:type="Edm.Boolean">true</d:QuickLaunchEnabled>
+                <d:RecycleBinEnabled m:type="Edm.Boolean">true</d:RecycleBinEnabled>
+                <d:ServerRelativeUrl>/sites/handlingsplanhovedside/subsite4</d:ServerRelativeUrl>
+                <d:SiteLogoUrl m:null="true" />
+                <d:SyndicationEnabled m:type="Edm.Boolean">true</d:SyndicationEnabled>
+                <d:Title>Subsite4</d:Title>
+                <d:TreeViewEnabled m:type="Edm.Boolean">false</d:TreeViewEnabled>
+                <d:UIVersion m:type="Edm.Int32">15</d:UIVersion>
+                <d:UIVersionConfigurationEnabled m:type="Edm.Boolean">false</d:UIVersionConfigurationEnabled>
+                <d:Url>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite4</d:Url>
+                <d:WebTemplate>STS</d:WebTemplate>
+            </m:properties>
+        </content>
+    </entry>
+    <entry>
+        <id>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web</id>
+        <category term="SP.Web" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+        <link rel="edit" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/FirstUniqueAncestorSecurableObject" type="application/atom+xml;type=entry" title="FirstUniqueAncestorSecurableObject" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/FirstUniqueAncestorSecurableObject" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RoleAssignments" type="application/atom+xml;type=feed" title="RoleAssignments" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/RoleAssignments" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Activities" type="application/atom+xml;type=feed" title="Activities" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/Activities" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Alerts" type="application/atom+xml;type=feed" title="Alerts" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/Alerts" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AllProperties" type="application/atom+xml;type=entry" title="AllProperties" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/AllProperties" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AppTiles" type="application/atom+xml;type=feed" title="AppTiles" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/AppTiles" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedMemberGroup" type="application/atom+xml;type=entry" title="AssociatedMemberGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/AssociatedMemberGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedOwnerGroup" type="application/atom+xml;type=entry" title="AssociatedOwnerGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/AssociatedOwnerGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedVisitorGroup" type="application/atom+xml;type=entry" title="AssociatedVisitorGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/AssociatedVisitorGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Author" type="application/atom+xml;type=entry" title="Author" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/Author" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AvailableContentTypes" type="application/atom+xml;type=feed" title="AvailableContentTypes" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/AvailableContentTypes" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AvailableFields" type="application/atom+xml;type=feed" title="AvailableFields" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/AvailableFields" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ClientWebParts" type="application/atom+xml;type=feed" title="ClientWebParts" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/ClientWebParts" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ContentTypes" type="application/atom+xml;type=feed" title="ContentTypes" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/ContentTypes" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/CurrentUser" type="application/atom+xml;type=entry" title="CurrentUser" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/CurrentUser" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/DataLeakagePreventionStatusInfo" type="application/atom+xml;type=entry" title="DataLeakagePreventionStatusInfo" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/DataLeakagePreventionStatusInfo" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/DescriptionResource" type="application/atom+xml;type=entry" title="DescriptionResource" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/DescriptionResource" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/EventReceivers" type="application/atom+xml;type=feed" title="EventReceivers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/EventReceivers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Features" type="application/atom+xml;type=feed" title="Features" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/Features" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Fields" type="application/atom+xml;type=feed" title="Fields" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/Fields" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Folders" type="application/atom+xml;type=feed" title="Folders" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/Folders" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Lists" type="application/atom+xml;type=feed" title="Lists" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/Lists" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ListTemplates" type="application/atom+xml;type=feed" title="ListTemplates" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/ListTemplates" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Navigation" type="application/atom+xml;type=entry" title="Navigation" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/Navigation" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ParentWeb" type="application/atom+xml;type=entry" title="ParentWeb" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/ParentWeb" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/PushNotificationSubscribers" type="application/atom+xml;type=feed" title="PushNotificationSubscribers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/PushNotificationSubscribers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RecycleBin" type="application/atom+xml;type=feed" title="RecycleBin" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/RecycleBin" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RegionalSettings" type="application/atom+xml;type=entry" title="RegionalSettings" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/RegionalSettings" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RoleDefinitions" type="application/atom+xml;type=feed" title="RoleDefinitions" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/RoleDefinitions" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RootFolder" type="application/atom+xml;type=entry" title="RootFolder" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/RootFolder" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteGroups" type="application/atom+xml;type=feed" title="SiteGroups" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/SiteGroups" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteUserInfoList" type="application/atom+xml;type=entry" title="SiteUserInfoList" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/SiteUserInfoList" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteUsers" type="application/atom+xml;type=feed" title="SiteUsers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/SiteUsers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ThemeInfo" type="application/atom+xml;type=entry" title="ThemeInfo" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/ThemeInfo" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/TitleResource" type="application/atom+xml;type=entry" title="TitleResource" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/TitleResource" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/UserCustomActions" type="application/atom+xml;type=feed" title="UserCustomActions" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/UserCustomActions" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Webs" type="application/atom+xml;type=feed" title="Webs" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/Webs" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WebInfos" type="application/atom+xml;type=feed" title="WebInfos" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/WebInfos" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WorkflowAssociations" type="application/atom+xml;type=feed" title="WorkflowAssociations" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/WorkflowAssociations" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WorkflowTemplates" type="application/atom+xml;type=feed" title="WorkflowTemplates" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5/_api/Web/WorkflowTemplates" />
+        <title />
+        <updated>2017-04-25T14:52:36Z</updated>
+        <author>
+            <name />
+        </author>
+        <content type="application/xml">
+            <m:properties>
+                <d:AllowRssFeeds m:type="Edm.Boolean">true</d:AllowRssFeeds>
+                <d:AlternateCssUrl />
+                <d:AppInstanceId m:type="Edm.Guid">00000000-0000-0000-0000-000000000000</d:AppInstanceId>
+                <d:Configuration m:type="Edm.Int16">0</d:Configuration>
+                <d:Created m:type="Edm.DateTime">2017-04-25T07:06:41</d:Created>
+                <d:CurrentChangeToken m:type="SP.ChangeToken">
+                    <d:StringValue>1;2;fafe3ce6-55a4-4ad2-a785-abc06856f25a;636287287555100000;46322125</d:StringValue>
+                </d:CurrentChangeToken>
+                <d:CustomMasterUrl>/sites/handlingsplanhovedside/subsite5/_catalogs/masterpage/seattle.master</d:CustomMasterUrl>
+                <d:Description />
+                <d:DesignPackageId m:type="Edm.Guid">00000000-0000-0000-0000-000000000000</d:DesignPackageId>
+                <d:DocumentLibraryCalloutOfficeWebAppPreviewersDisabled m:type="Edm.Boolean">false</d:DocumentLibraryCalloutOfficeWebAppPreviewersDisabled>
+                <d:EnableMinimalDownload m:type="Edm.Boolean">true</d:EnableMinimalDownload>
+                <d:Id m:type="Edm.Guid">fafe3ce6-55a4-4ad2-a785-abc06856f25a</d:Id>
+                <d:IsMultilingual m:type="Edm.Boolean">false</d:IsMultilingual>
+                <d:Language m:type="Edm.Int32">1044</d:Language>
+                <d:LastItemModifiedDate m:type="Edm.DateTime">2017-04-25T07:12:13Z</d:LastItemModifiedDate>
+                <d:LastItemUserModifiedDate m:type="Edm.DateTime">2017-04-25T07:12:13Z</d:LastItemUserModifiedDate>
+                <d:MasterUrl>/sites/handlingsplanhovedside/subsite5/_catalogs/masterpage/seattle.master</d:MasterUrl>
+                <d:NoCrawl m:type="Edm.Boolean">false</d:NoCrawl>
+                <d:OverwriteTranslationsOnChange m:type="Edm.Boolean">false</d:OverwriteTranslationsOnChange>
+                <d:ResourcePath m:type="SP.ResourcePath">
+                    <d:DecodedUrl>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5</d:DecodedUrl>
+                </d:ResourcePath>
+                <d:QuickLaunchEnabled m:type="Edm.Boolean">true</d:QuickLaunchEnabled>
+                <d:RecycleBinEnabled m:type="Edm.Boolean">true</d:RecycleBinEnabled>
+                <d:ServerRelativeUrl>/sites/handlingsplanhovedside/subsite5</d:ServerRelativeUrl>
+                <d:SiteLogoUrl m:null="true" />
+                <d:SyndicationEnabled m:type="Edm.Boolean">true</d:SyndicationEnabled>
+                <d:Title>Subsite5</d:Title>
+                <d:TreeViewEnabled m:type="Edm.Boolean">false</d:TreeViewEnabled>
+                <d:UIVersion m:type="Edm.Int32">15</d:UIVersion>
+                <d:UIVersionConfigurationEnabled m:type="Edm.Boolean">false</d:UIVersionConfigurationEnabled>
+                <d:Url>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite5</d:Url>
+                <d:WebTemplate>STS</d:WebTemplate>
+            </m:properties>
+        </content>
+    </entry>
+    <entry>
+        <id>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web</id>
+        <category term="SP.Web" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+        <link rel="edit" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/FirstUniqueAncestorSecurableObject" type="application/atom+xml;type=entry" title="FirstUniqueAncestorSecurableObject" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/FirstUniqueAncestorSecurableObject" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RoleAssignments" type="application/atom+xml;type=feed" title="RoleAssignments" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/RoleAssignments" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Activities" type="application/atom+xml;type=feed" title="Activities" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/Activities" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Alerts" type="application/atom+xml;type=feed" title="Alerts" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/Alerts" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AllProperties" type="application/atom+xml;type=entry" title="AllProperties" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/AllProperties" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AppTiles" type="application/atom+xml;type=feed" title="AppTiles" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/AppTiles" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedMemberGroup" type="application/atom+xml;type=entry" title="AssociatedMemberGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/AssociatedMemberGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedOwnerGroup" type="application/atom+xml;type=entry" title="AssociatedOwnerGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/AssociatedOwnerGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedVisitorGroup" type="application/atom+xml;type=entry" title="AssociatedVisitorGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/AssociatedVisitorGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Author" type="application/atom+xml;type=entry" title="Author" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/Author" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AvailableContentTypes" type="application/atom+xml;type=feed" title="AvailableContentTypes" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/AvailableContentTypes" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AvailableFields" type="application/atom+xml;type=feed" title="AvailableFields" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/AvailableFields" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ClientWebParts" type="application/atom+xml;type=feed" title="ClientWebParts" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/ClientWebParts" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ContentTypes" type="application/atom+xml;type=feed" title="ContentTypes" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/ContentTypes" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/CurrentUser" type="application/atom+xml;type=entry" title="CurrentUser" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/CurrentUser" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/DataLeakagePreventionStatusInfo" type="application/atom+xml;type=entry" title="DataLeakagePreventionStatusInfo" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/DataLeakagePreventionStatusInfo" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/DescriptionResource" type="application/atom+xml;type=entry" title="DescriptionResource" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/DescriptionResource" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/EventReceivers" type="application/atom+xml;type=feed" title="EventReceivers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/EventReceivers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Features" type="application/atom+xml;type=feed" title="Features" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/Features" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Fields" type="application/atom+xml;type=feed" title="Fields" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/Fields" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Folders" type="application/atom+xml;type=feed" title="Folders" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/Folders" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Lists" type="application/atom+xml;type=feed" title="Lists" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/Lists" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ListTemplates" type="application/atom+xml;type=feed" title="ListTemplates" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/ListTemplates" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Navigation" type="application/atom+xml;type=entry" title="Navigation" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/Navigation" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ParentWeb" type="application/atom+xml;type=entry" title="ParentWeb" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/ParentWeb" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/PushNotificationSubscribers" type="application/atom+xml;type=feed" title="PushNotificationSubscribers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/PushNotificationSubscribers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RecycleBin" type="application/atom+xml;type=feed" title="RecycleBin" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/RecycleBin" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RegionalSettings" type="application/atom+xml;type=entry" title="RegionalSettings" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/RegionalSettings" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RoleDefinitions" type="application/atom+xml;type=feed" title="RoleDefinitions" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/RoleDefinitions" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RootFolder" type="application/atom+xml;type=entry" title="RootFolder" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/RootFolder" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteGroups" type="application/atom+xml;type=feed" title="SiteGroups" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/SiteGroups" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteUserInfoList" type="application/atom+xml;type=entry" title="SiteUserInfoList" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/SiteUserInfoList" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteUsers" type="application/atom+xml;type=feed" title="SiteUsers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/SiteUsers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ThemeInfo" type="application/atom+xml;type=entry" title="ThemeInfo" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/ThemeInfo" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/TitleResource" type="application/atom+xml;type=entry" title="TitleResource" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/TitleResource" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/UserCustomActions" type="application/atom+xml;type=feed" title="UserCustomActions" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/UserCustomActions" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Webs" type="application/atom+xml;type=feed" title="Webs" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/Webs" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WebInfos" type="application/atom+xml;type=feed" title="WebInfos" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/WebInfos" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WorkflowAssociations" type="application/atom+xml;type=feed" title="WorkflowAssociations" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/WorkflowAssociations" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WorkflowTemplates" type="application/atom+xml;type=feed" title="WorkflowTemplates" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6/_api/Web/WorkflowTemplates" />
+        <title />
+        <updated>2017-04-25T14:52:36Z</updated>
+        <author>
+            <name />
+        </author>
+        <content type="application/xml">
+            <m:properties>
+                <d:AllowRssFeeds m:type="Edm.Boolean">true</d:AllowRssFeeds>
+                <d:AlternateCssUrl />
+                <d:AppInstanceId m:type="Edm.Guid">00000000-0000-0000-0000-000000000000</d:AppInstanceId>
+                <d:Configuration m:type="Edm.Int16">0</d:Configuration>
+                <d:Created m:type="Edm.DateTime">2017-04-25T07:02:48</d:Created>
+                <d:CurrentChangeToken m:type="SP.ChangeToken">
+                    <d:StringValue>1;2;80ccdafc-a2d5-4f53-a61b-a45b6016fd10;636287287555100000;46322125</d:StringValue>
+                </d:CurrentChangeToken>
+                <d:CustomMasterUrl>/sites/handlingsplanhovedside/subsite6/_catalogs/masterpage/seattle.master</d:CustomMasterUrl>
+                <d:Description />
+                <d:DesignPackageId m:type="Edm.Guid">00000000-0000-0000-0000-000000000000</d:DesignPackageId>
+                <d:DocumentLibraryCalloutOfficeWebAppPreviewersDisabled m:type="Edm.Boolean">false</d:DocumentLibraryCalloutOfficeWebAppPreviewersDisabled>
+                <d:EnableMinimalDownload m:type="Edm.Boolean">true</d:EnableMinimalDownload>
+                <d:Id m:type="Edm.Guid">80ccdafc-a2d5-4f53-a61b-a45b6016fd10</d:Id>
+                <d:IsMultilingual m:type="Edm.Boolean">false</d:IsMultilingual>
+                <d:Language m:type="Edm.Int32">1044</d:Language>
+                <d:LastItemModifiedDate m:type="Edm.DateTime">2017-04-25T07:10:18Z</d:LastItemModifiedDate>
+                <d:LastItemUserModifiedDate m:type="Edm.DateTime">2017-04-25T07:10:18Z</d:LastItemUserModifiedDate>
+                <d:MasterUrl>/sites/handlingsplanhovedside/subsite6/_catalogs/masterpage/seattle.master</d:MasterUrl>
+                <d:NoCrawl m:type="Edm.Boolean">false</d:NoCrawl>
+                <d:OverwriteTranslationsOnChange m:type="Edm.Boolean">false</d:OverwriteTranslationsOnChange>
+                <d:ResourcePath m:type="SP.ResourcePath">
+                    <d:DecodedUrl>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6</d:DecodedUrl>
+                </d:ResourcePath>
+                <d:QuickLaunchEnabled m:type="Edm.Boolean">true</d:QuickLaunchEnabled>
+                <d:RecycleBinEnabled m:type="Edm.Boolean">true</d:RecycleBinEnabled>
+                <d:ServerRelativeUrl>/sites/handlingsplanhovedside/subsite6</d:ServerRelativeUrl>
+                <d:SiteLogoUrl m:null="true" />
+                <d:SyndicationEnabled m:type="Edm.Boolean">true</d:SyndicationEnabled>
+                <d:Title>Subsite6</d:Title>
+                <d:TreeViewEnabled m:type="Edm.Boolean">false</d:TreeViewEnabled>
+                <d:UIVersion m:type="Edm.Int32">15</d:UIVersion>
+                <d:UIVersionConfigurationEnabled m:type="Edm.Boolean">false</d:UIVersionConfigurationEnabled>
+                <d:Url>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite6</d:Url>
+                <d:WebTemplate>STS</d:WebTemplate>
+            </m:properties>
+        </content>
+    </entry>
+    <entry>
+        <id>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web</id>
+        <category term="SP.Web" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+        <link rel="edit" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/FirstUniqueAncestorSecurableObject" type="application/atom+xml;type=entry" title="FirstUniqueAncestorSecurableObject" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/FirstUniqueAncestorSecurableObject" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RoleAssignments" type="application/atom+xml;type=feed" title="RoleAssignments" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/RoleAssignments" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Activities" type="application/atom+xml;type=feed" title="Activities" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/Activities" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Alerts" type="application/atom+xml;type=feed" title="Alerts" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/Alerts" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AllProperties" type="application/atom+xml;type=entry" title="AllProperties" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/AllProperties" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AppTiles" type="application/atom+xml;type=feed" title="AppTiles" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/AppTiles" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedMemberGroup" type="application/atom+xml;type=entry" title="AssociatedMemberGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/AssociatedMemberGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedOwnerGroup" type="application/atom+xml;type=entry" title="AssociatedOwnerGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/AssociatedOwnerGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedVisitorGroup" type="application/atom+xml;type=entry" title="AssociatedVisitorGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/AssociatedVisitorGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Author" type="application/atom+xml;type=entry" title="Author" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/Author" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AvailableContentTypes" type="application/atom+xml;type=feed" title="AvailableContentTypes" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/AvailableContentTypes" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AvailableFields" type="application/atom+xml;type=feed" title="AvailableFields" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/AvailableFields" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ClientWebParts" type="application/atom+xml;type=feed" title="ClientWebParts" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/ClientWebParts" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ContentTypes" type="application/atom+xml;type=feed" title="ContentTypes" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/ContentTypes" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/CurrentUser" type="application/atom+xml;type=entry" title="CurrentUser" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/CurrentUser" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/DataLeakagePreventionStatusInfo" type="application/atom+xml;type=entry" title="DataLeakagePreventionStatusInfo" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/DataLeakagePreventionStatusInfo" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/DescriptionResource" type="application/atom+xml;type=entry" title="DescriptionResource" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/DescriptionResource" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/EventReceivers" type="application/atom+xml;type=feed" title="EventReceivers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/EventReceivers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Features" type="application/atom+xml;type=feed" title="Features" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/Features" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Fields" type="application/atom+xml;type=feed" title="Fields" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/Fields" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Folders" type="application/atom+xml;type=feed" title="Folders" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/Folders" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Lists" type="application/atom+xml;type=feed" title="Lists" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/Lists" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ListTemplates" type="application/atom+xml;type=feed" title="ListTemplates" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/ListTemplates" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Navigation" type="application/atom+xml;type=entry" title="Navigation" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/Navigation" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ParentWeb" type="application/atom+xml;type=entry" title="ParentWeb" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/ParentWeb" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/PushNotificationSubscribers" type="application/atom+xml;type=feed" title="PushNotificationSubscribers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/PushNotificationSubscribers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RecycleBin" type="application/atom+xml;type=feed" title="RecycleBin" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/RecycleBin" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RegionalSettings" type="application/atom+xml;type=entry" title="RegionalSettings" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/RegionalSettings" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RoleDefinitions" type="application/atom+xml;type=feed" title="RoleDefinitions" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/RoleDefinitions" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RootFolder" type="application/atom+xml;type=entry" title="RootFolder" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/RootFolder" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteGroups" type="application/atom+xml;type=feed" title="SiteGroups" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/SiteGroups" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteUserInfoList" type="application/atom+xml;type=entry" title="SiteUserInfoList" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/SiteUserInfoList" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteUsers" type="application/atom+xml;type=feed" title="SiteUsers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/SiteUsers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ThemeInfo" type="application/atom+xml;type=entry" title="ThemeInfo" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/ThemeInfo" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/TitleResource" type="application/atom+xml;type=entry" title="TitleResource" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/TitleResource" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/UserCustomActions" type="application/atom+xml;type=feed" title="UserCustomActions" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/UserCustomActions" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Webs" type="application/atom+xml;type=feed" title="Webs" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/Webs" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WebInfos" type="application/atom+xml;type=feed" title="WebInfos" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/WebInfos" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WorkflowAssociations" type="application/atom+xml;type=feed" title="WorkflowAssociations" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/WorkflowAssociations" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WorkflowTemplates" type="application/atom+xml;type=feed" title="WorkflowTemplates" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7/_api/Web/WorkflowTemplates" />
+        <title />
+        <updated>2017-04-25T14:52:36Z</updated>
+        <author>
+            <name />
+        </author>
+        <content type="application/xml">
+            <m:properties>
+                <d:AllowRssFeeds m:type="Edm.Boolean">true</d:AllowRssFeeds>
+                <d:AlternateCssUrl />
+                <d:AppInstanceId m:type="Edm.Guid">00000000-0000-0000-0000-000000000000</d:AppInstanceId>
+                <d:Configuration m:type="Edm.Int16">0</d:Configuration>
+                <d:Created m:type="Edm.DateTime">2017-04-25T07:03:42</d:Created>
+                <d:CurrentChangeToken m:type="SP.ChangeToken">
+                    <d:StringValue>1;2;6e1e180f-ada8-4d49-a8d5-98a060d3a232;636287287555100000;46322125</d:StringValue>
+                </d:CurrentChangeToken>
+                <d:CustomMasterUrl>/sites/handlingsplanhovedside/subsite7/_catalogs/masterpage/seattle.master</d:CustomMasterUrl>
+                <d:Description />
+                <d:DesignPackageId m:type="Edm.Guid">00000000-0000-0000-0000-000000000000</d:DesignPackageId>
+                <d:DocumentLibraryCalloutOfficeWebAppPreviewersDisabled m:type="Edm.Boolean">false</d:DocumentLibraryCalloutOfficeWebAppPreviewersDisabled>
+                <d:EnableMinimalDownload m:type="Edm.Boolean">true</d:EnableMinimalDownload>
+                <d:Id m:type="Edm.Guid">6e1e180f-ada8-4d49-a8d5-98a060d3a232</d:Id>
+                <d:IsMultilingual m:type="Edm.Boolean">false</d:IsMultilingual>
+                <d:Language m:type="Edm.Int32">1044</d:Language>
+                <d:LastItemModifiedDate m:type="Edm.DateTime">2017-04-25T07:10:44Z</d:LastItemModifiedDate>
+                <d:LastItemUserModifiedDate m:type="Edm.DateTime">2017-04-25T07:10:44Z</d:LastItemUserModifiedDate>
+                <d:MasterUrl>/sites/handlingsplanhovedside/subsite7/_catalogs/masterpage/seattle.master</d:MasterUrl>
+                <d:NoCrawl m:type="Edm.Boolean">false</d:NoCrawl>
+                <d:OverwriteTranslationsOnChange m:type="Edm.Boolean">false</d:OverwriteTranslationsOnChange>
+                <d:ResourcePath m:type="SP.ResourcePath">
+                    <d:DecodedUrl>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7</d:DecodedUrl>
+                </d:ResourcePath>
+                <d:QuickLaunchEnabled m:type="Edm.Boolean">true</d:QuickLaunchEnabled>
+                <d:RecycleBinEnabled m:type="Edm.Boolean">true</d:RecycleBinEnabled>
+                <d:ServerRelativeUrl>/sites/handlingsplanhovedside/subsite7</d:ServerRelativeUrl>
+                <d:SiteLogoUrl m:null="true" />
+                <d:SyndicationEnabled m:type="Edm.Boolean">true</d:SyndicationEnabled>
+                <d:Title>Subsite7</d:Title>
+                <d:TreeViewEnabled m:type="Edm.Boolean">false</d:TreeViewEnabled>
+                <d:UIVersion m:type="Edm.Int32">15</d:UIVersion>
+                <d:UIVersionConfigurationEnabled m:type="Edm.Boolean">false</d:UIVersionConfigurationEnabled>
+                <d:Url>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite7</d:Url>
+                <d:WebTemplate>STS</d:WebTemplate>
+            </m:properties>
+        </content>
+    </entry>
+    <entry>
+        <id>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web</id>
+        <category term="SP.Web" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+        <link rel="edit" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/FirstUniqueAncestorSecurableObject" type="application/atom+xml;type=entry" title="FirstUniqueAncestorSecurableObject" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/FirstUniqueAncestorSecurableObject" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RoleAssignments" type="application/atom+xml;type=feed" title="RoleAssignments" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/RoleAssignments" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Activities" type="application/atom+xml;type=feed" title="Activities" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/Activities" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Alerts" type="application/atom+xml;type=feed" title="Alerts" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/Alerts" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AllProperties" type="application/atom+xml;type=entry" title="AllProperties" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/AllProperties" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AppTiles" type="application/atom+xml;type=feed" title="AppTiles" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/AppTiles" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedMemberGroup" type="application/atom+xml;type=entry" title="AssociatedMemberGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/AssociatedMemberGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedOwnerGroup" type="application/atom+xml;type=entry" title="AssociatedOwnerGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/AssociatedOwnerGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedVisitorGroup" type="application/atom+xml;type=entry" title="AssociatedVisitorGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/AssociatedVisitorGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Author" type="application/atom+xml;type=entry" title="Author" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/Author" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AvailableContentTypes" type="application/atom+xml;type=feed" title="AvailableContentTypes" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/AvailableContentTypes" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AvailableFields" type="application/atom+xml;type=feed" title="AvailableFields" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/AvailableFields" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ClientWebParts" type="application/atom+xml;type=feed" title="ClientWebParts" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/ClientWebParts" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ContentTypes" type="application/atom+xml;type=feed" title="ContentTypes" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/ContentTypes" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/CurrentUser" type="application/atom+xml;type=entry" title="CurrentUser" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/CurrentUser" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/DataLeakagePreventionStatusInfo" type="application/atom+xml;type=entry" title="DataLeakagePreventionStatusInfo" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/DataLeakagePreventionStatusInfo" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/DescriptionResource" type="application/atom+xml;type=entry" title="DescriptionResource" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/DescriptionResource" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/EventReceivers" type="application/atom+xml;type=feed" title="EventReceivers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/EventReceivers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Features" type="application/atom+xml;type=feed" title="Features" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/Features" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Fields" type="application/atom+xml;type=feed" title="Fields" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/Fields" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Folders" type="application/atom+xml;type=feed" title="Folders" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/Folders" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Lists" type="application/atom+xml;type=feed" title="Lists" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/Lists" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ListTemplates" type="application/atom+xml;type=feed" title="ListTemplates" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/ListTemplates" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Navigation" type="application/atom+xml;type=entry" title="Navigation" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/Navigation" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ParentWeb" type="application/atom+xml;type=entry" title="ParentWeb" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/ParentWeb" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/PushNotificationSubscribers" type="application/atom+xml;type=feed" title="PushNotificationSubscribers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/PushNotificationSubscribers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RecycleBin" type="application/atom+xml;type=feed" title="RecycleBin" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/RecycleBin" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RegionalSettings" type="application/atom+xml;type=entry" title="RegionalSettings" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/RegionalSettings" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RoleDefinitions" type="application/atom+xml;type=feed" title="RoleDefinitions" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/RoleDefinitions" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RootFolder" type="application/atom+xml;type=entry" title="RootFolder" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/RootFolder" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteGroups" type="application/atom+xml;type=feed" title="SiteGroups" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/SiteGroups" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteUserInfoList" type="application/atom+xml;type=entry" title="SiteUserInfoList" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/SiteUserInfoList" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteUsers" type="application/atom+xml;type=feed" title="SiteUsers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/SiteUsers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ThemeInfo" type="application/atom+xml;type=entry" title="ThemeInfo" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/ThemeInfo" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/TitleResource" type="application/atom+xml;type=entry" title="TitleResource" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/TitleResource" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/UserCustomActions" type="application/atom+xml;type=feed" title="UserCustomActions" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/UserCustomActions" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Webs" type="application/atom+xml;type=feed" title="Webs" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/Webs" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WebInfos" type="application/atom+xml;type=feed" title="WebInfos" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/WebInfos" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WorkflowAssociations" type="application/atom+xml;type=feed" title="WorkflowAssociations" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/WorkflowAssociations" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WorkflowTemplates" type="application/atom+xml;type=feed" title="WorkflowTemplates" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8/_api/Web/WorkflowTemplates" />
+        <title />
+        <updated>2017-04-25T14:52:36Z</updated>
+        <author>
+            <name />
+        </author>
+        <content type="application/xml">
+            <m:properties>
+                <d:AllowRssFeeds m:type="Edm.Boolean">true</d:AllowRssFeeds>
+                <d:AlternateCssUrl />
+                <d:AppInstanceId m:type="Edm.Guid">00000000-0000-0000-0000-000000000000</d:AppInstanceId>
+                <d:Configuration m:type="Edm.Int16">0</d:Configuration>
+                <d:Created m:type="Edm.DateTime">2017-04-25T07:04:34</d:Created>
+                <d:CurrentChangeToken m:type="SP.ChangeToken">
+                    <d:StringValue>1;2;692f5445-47b2-4c5c-952d-a37e7a12462a;636287287555100000;46322125</d:StringValue>
+                </d:CurrentChangeToken>
+                <d:CustomMasterUrl>/sites/handlingsplanhovedside/subsite8/_catalogs/masterpage/seattle.master</d:CustomMasterUrl>
+                <d:Description />
+                <d:DesignPackageId m:type="Edm.Guid">00000000-0000-0000-0000-000000000000</d:DesignPackageId>
+                <d:DocumentLibraryCalloutOfficeWebAppPreviewersDisabled m:type="Edm.Boolean">false</d:DocumentLibraryCalloutOfficeWebAppPreviewersDisabled>
+                <d:EnableMinimalDownload m:type="Edm.Boolean">true</d:EnableMinimalDownload>
+                <d:Id m:type="Edm.Guid">692f5445-47b2-4c5c-952d-a37e7a12462a</d:Id>
+                <d:IsMultilingual m:type="Edm.Boolean">false</d:IsMultilingual>
+                <d:Language m:type="Edm.Int32">1044</d:Language>
+                <d:LastItemModifiedDate m:type="Edm.DateTime">2017-04-25T07:11:04Z</d:LastItemModifiedDate>
+                <d:LastItemUserModifiedDate m:type="Edm.DateTime">2017-04-25T07:11:04Z</d:LastItemUserModifiedDate>
+                <d:MasterUrl>/sites/handlingsplanhovedside/subsite8/_catalogs/masterpage/seattle.master</d:MasterUrl>
+                <d:NoCrawl m:type="Edm.Boolean">false</d:NoCrawl>
+                <d:OverwriteTranslationsOnChange m:type="Edm.Boolean">false</d:OverwriteTranslationsOnChange>
+                <d:ResourcePath m:type="SP.ResourcePath">
+                    <d:DecodedUrl>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8</d:DecodedUrl>
+                </d:ResourcePath>
+                <d:QuickLaunchEnabled m:type="Edm.Boolean">true</d:QuickLaunchEnabled>
+                <d:RecycleBinEnabled m:type="Edm.Boolean">true</d:RecycleBinEnabled>
+                <d:ServerRelativeUrl>/sites/handlingsplanhovedside/subsite8</d:ServerRelativeUrl>
+                <d:SiteLogoUrl m:null="true" />
+                <d:SyndicationEnabled m:type="Edm.Boolean">true</d:SyndicationEnabled>
+                <d:Title>Subsite8</d:Title>
+                <d:TreeViewEnabled m:type="Edm.Boolean">false</d:TreeViewEnabled>
+                <d:UIVersion m:type="Edm.Int32">15</d:UIVersion>
+                <d:UIVersionConfigurationEnabled m:type="Edm.Boolean">false</d:UIVersionConfigurationEnabled>
+                <d:Url>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite8</d:Url>
+                <d:WebTemplate>STS</d:WebTemplate>
+            </m:properties>
+        </content>
+    </entry>
+    <entry>
+        <id>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web</id>
+        <category term="SP.Web" scheme="http://schemas.microsoft.com/ado/2007/08/dataservices/scheme" />
+        <link rel="edit" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/FirstUniqueAncestorSecurableObject" type="application/atom+xml;type=entry" title="FirstUniqueAncestorSecurableObject" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/FirstUniqueAncestorSecurableObject" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RoleAssignments" type="application/atom+xml;type=feed" title="RoleAssignments" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/RoleAssignments" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Activities" type="application/atom+xml;type=feed" title="Activities" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/Activities" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Alerts" type="application/atom+xml;type=feed" title="Alerts" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/Alerts" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AllProperties" type="application/atom+xml;type=entry" title="AllProperties" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/AllProperties" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AppTiles" type="application/atom+xml;type=feed" title="AppTiles" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/AppTiles" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedMemberGroup" type="application/atom+xml;type=entry" title="AssociatedMemberGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/AssociatedMemberGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedOwnerGroup" type="application/atom+xml;type=entry" title="AssociatedOwnerGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/AssociatedOwnerGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AssociatedVisitorGroup" type="application/atom+xml;type=entry" title="AssociatedVisitorGroup" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/AssociatedVisitorGroup" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Author" type="application/atom+xml;type=entry" title="Author" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/Author" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AvailableContentTypes" type="application/atom+xml;type=feed" title="AvailableContentTypes" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/AvailableContentTypes" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/AvailableFields" type="application/atom+xml;type=feed" title="AvailableFields" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/AvailableFields" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ClientWebParts" type="application/atom+xml;type=feed" title="ClientWebParts" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/ClientWebParts" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ContentTypes" type="application/atom+xml;type=feed" title="ContentTypes" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/ContentTypes" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/CurrentUser" type="application/atom+xml;type=entry" title="CurrentUser" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/CurrentUser" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/DataLeakagePreventionStatusInfo" type="application/atom+xml;type=entry" title="DataLeakagePreventionStatusInfo" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/DataLeakagePreventionStatusInfo" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/DescriptionResource" type="application/atom+xml;type=entry" title="DescriptionResource" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/DescriptionResource" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/EventReceivers" type="application/atom+xml;type=feed" title="EventReceivers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/EventReceivers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Features" type="application/atom+xml;type=feed" title="Features" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/Features" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Fields" type="application/atom+xml;type=feed" title="Fields" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/Fields" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Folders" type="application/atom+xml;type=feed" title="Folders" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/Folders" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Lists" type="application/atom+xml;type=feed" title="Lists" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/Lists" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ListTemplates" type="application/atom+xml;type=feed" title="ListTemplates" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/ListTemplates" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Navigation" type="application/atom+xml;type=entry" title="Navigation" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/Navigation" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ParentWeb" type="application/atom+xml;type=entry" title="ParentWeb" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/ParentWeb" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/PushNotificationSubscribers" type="application/atom+xml;type=feed" title="PushNotificationSubscribers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/PushNotificationSubscribers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RecycleBin" type="application/atom+xml;type=feed" title="RecycleBin" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/RecycleBin" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RegionalSettings" type="application/atom+xml;type=entry" title="RegionalSettings" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/RegionalSettings" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RoleDefinitions" type="application/atom+xml;type=feed" title="RoleDefinitions" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/RoleDefinitions" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/RootFolder" type="application/atom+xml;type=entry" title="RootFolder" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/RootFolder" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteGroups" type="application/atom+xml;type=feed" title="SiteGroups" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/SiteGroups" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteUserInfoList" type="application/atom+xml;type=entry" title="SiteUserInfoList" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/SiteUserInfoList" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/SiteUsers" type="application/atom+xml;type=feed" title="SiteUsers" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/SiteUsers" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/ThemeInfo" type="application/atom+xml;type=entry" title="ThemeInfo" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/ThemeInfo" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/TitleResource" type="application/atom+xml;type=entry" title="TitleResource" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/TitleResource" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/UserCustomActions" type="application/atom+xml;type=feed" title="UserCustomActions" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/UserCustomActions" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/Webs" type="application/atom+xml;type=feed" title="Webs" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/Webs" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WebInfos" type="application/atom+xml;type=feed" title="WebInfos" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/WebInfos" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WorkflowAssociations" type="application/atom+xml;type=feed" title="WorkflowAssociations" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/WorkflowAssociations" />
+        <link rel="http://schemas.microsoft.com/ado/2007/08/dataservices/related/WorkflowTemplates" type="application/atom+xml;type=feed" title="WorkflowTemplates" href="https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9/_api/Web/WorkflowTemplates" />
+        <title />
+        <updated>2017-04-25T14:52:36Z</updated>
+        <author>
+            <name />
+        </author>
+        <content type="application/xml">
+            <m:properties>
+                <d:AllowRssFeeds m:type="Edm.Boolean">true</d:AllowRssFeeds>
+                <d:AlternateCssUrl />
+                <d:AppInstanceId m:type="Edm.Guid">00000000-0000-0000-0000-000000000000</d:AppInstanceId>
+                <d:Configuration m:type="Edm.Int16">0</d:Configuration>
+                <d:Created m:type="Edm.DateTime">2017-04-25T07:05:22</d:Created>
+                <d:CurrentChangeToken m:type="SP.ChangeToken">
+                    <d:StringValue>1;2;4292f9af-897b-4bcd-83f9-759237b19496;636287287555100000;46322125</d:StringValue>
+                </d:CurrentChangeToken>
+                <d:CustomMasterUrl>/sites/handlingsplanhovedside/subsite9/_catalogs/masterpage/seattle.master</d:CustomMasterUrl>
+                <d:Description />
+                <d:DesignPackageId m:type="Edm.Guid">00000000-0000-0000-0000-000000000000</d:DesignPackageId>
+                <d:DocumentLibraryCalloutOfficeWebAppPreviewersDisabled m:type="Edm.Boolean">false</d:DocumentLibraryCalloutOfficeWebAppPreviewersDisabled>
+                <d:EnableMinimalDownload m:type="Edm.Boolean">true</d:EnableMinimalDownload>
+                <d:Id m:type="Edm.Guid">4292f9af-897b-4bcd-83f9-759237b19496</d:Id>
+                <d:IsMultilingual m:type="Edm.Boolean">false</d:IsMultilingual>
+                <d:Language m:type="Edm.Int32">1044</d:Language>
+                <d:LastItemModifiedDate m:type="Edm.DateTime">2017-04-25T07:11:30Z</d:LastItemModifiedDate>
+                <d:LastItemUserModifiedDate m:type="Edm.DateTime">2017-04-25T07:11:30Z</d:LastItemUserModifiedDate>
+                <d:MasterUrl>/sites/handlingsplanhovedside/subsite9/_catalogs/masterpage/seattle.master</d:MasterUrl>
+                <d:NoCrawl m:type="Edm.Boolean">false</d:NoCrawl>
+                <d:OverwriteTranslationsOnChange m:type="Edm.Boolean">false</d:OverwriteTranslationsOnChange>
+                <d:ResourcePath m:type="SP.ResourcePath">
+                    <d:DecodedUrl>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9</d:DecodedUrl>
+                </d:ResourcePath>
+                <d:QuickLaunchEnabled m:type="Edm.Boolean">true</d:QuickLaunchEnabled>
+                <d:RecycleBinEnabled m:type="Edm.Boolean">true</d:RecycleBinEnabled>
+                <d:ServerRelativeUrl>/sites/handlingsplanhovedside/subsite9</d:ServerRelativeUrl>
+                <d:SiteLogoUrl m:null="true" />
+                <d:SyndicationEnabled m:type="Edm.Boolean">true</d:SyndicationEnabled>
+                <d:Title>Subsite9</d:Title>
+                <d:TreeViewEnabled m:type="Edm.Boolean">false</d:TreeViewEnabled>
+                <d:UIVersion m:type="Edm.Int32">15</d:UIVersion>
+                <d:UIVersionConfigurationEnabled m:type="Edm.Boolean">false</d:UIVersionConfigurationEnabled>
+                <d:Url>https://pzldev.sharepoint.com/sites/handlingsplanhovedside/subsite9</d:Url>
+                <d:WebTemplate>STS</d:WebTemplate>
+            </m:properties>
+        </content>
+    </entry>
+</feed>
