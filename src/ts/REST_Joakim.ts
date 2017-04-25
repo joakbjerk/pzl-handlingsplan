@@ -1,5 +1,6 @@
 $(document).ready(function () {
-  alert('New ready test!');
+  let url = _spPageContextInfo.siteAbsoluteUrl;
+  console.log(url);
 });
 
 function getJQuery() {
