@@ -29,9 +29,11 @@
     Handlingsplaner Joakim
 </asp:Content>
 <asp:Content ContentPlaceHolderID="PlaceHolderMain" runat="server">
+   <button type="button" id="REST-Call-Button">REST</button>
+   <div id="target"></div>
    <script>
     $(document).ready(function () {
-        let initScript = Handlingsplan.REST_Joakim.init()
+        let initScript = Handlingsplan.Joakim.init()
         ExecuteOrDelayUntilScriptLoaded(initScript, 'sp.js');
     });
    </script
