@@ -29,5 +29,10 @@
     Handlingsplaner Aleksander
 </asp:Content>
 <asp:Content ContentPlaceHolderID="PlaceHolderMain" runat="server">
-   
+   <script type="text/javascript">
+    jQuery(document).ready(function() {
+        console.log("hello, aleksander");
+        restAleksander.startScript();
+    });
+   </script>
 </asp:Content>
