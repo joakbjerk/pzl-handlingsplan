@@ -18,7 +18,7 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="PlaceHolderAdditionalPageHead" runat="server">
     <Sharepoint:CssRegistration ID="MainCssJoakim" Name="<% $SPUrl:~SiteCollection/SiteAssets/handlingsplan/css/main.css %>" runat="server" />
     <SharePoint:ScriptLink ID="jQuery" Name="~sitecollection/SiteAssets/handlingsplan/lib/jquery.min.js" Language="javascript" runat="server" />
-    <SharePoint:ScriptLink ID="PZLHPScriptJoakim" Name="~sitecollection/SiteAssets/handlingsplan/js/REST_Joakim.js" Language="javascript" runat="server" />
+    <SharePoint:ScriptLink ID="PZLHPScriptJoakim" Name="~sitecollection/SiteAssets/Joakim/handlingsplan/js/REST_Joakim.js" Language="javascript" runat="server" />
 </asp:Content>    
 <asp:Content ContentPlaceHolderID="PlaceHolderSearchArea" runat="server">
 	<SharePoint:DelegateControl runat="server" ControlId="SmallSearchInputBox" />

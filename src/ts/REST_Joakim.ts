@@ -73,7 +73,7 @@ namespace Handlingsplan.REST_Joakim {
     console.log(listItems);
     for (let index = 0; index < listItems.length; index++) {
       let listItem = listItems[index];
-      console.log
+      console.log(listItem.Title);
     }
   }
 
