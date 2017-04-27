@@ -12,15 +12,11 @@ function ConnectToRootSite() {
 }
 
 function ConnectToSubsites($index) {
-   
-        [string]$SubwebConnectionUrl = $SubwebUrls[$index].Url
+   [string]$SubwebConnectionUrl = $SubwebUrls[$index].Url
         
-        Write-Host  "Connecting to subsite" $SubwebConnectionUrl -ForegroundColor Yellow
-        Connect-PnPOnline -Url $SubwebConnectionUrl -Credentials 'bjerkpzl'
-        Write-Host  "Connected to" $SubwebConnectionUrl -ForegroundColor Green
-        Write-Host ""
-    
-    }
+   Write-Host  "Connecting to subsite" $SubwebConnectionUrl -ForegroundColor Yellow
+   Connect-PnPOnline -Url $SubwebConnectionUrl -Credentials 'bjerkpzl'
+}
 
 
 #----------------------------------------------------------------------------------------------------------------------------------
@@ -30,55 +26,44 @@ function ApplyListTemplateToSubsites() {
     for($index = 0; $index -lt $SubwebUrls.Length; $index++) {
         
         ConnectToSubsites($index) 
-        Write-Host "Apllying list template to" $SubwebConnectionUrl -ForegroundColor Yellow
         Apply-PnPProvisioningTemplate -Path .\Handlingsplan.xml
         Write-Host "List template successfully applied" -ForegroundColor Green
         Write-Host ""
    
-   }
+   
+    }
 }
 #----------------------------------------------------------------------------------------------------------------------------------
 
 #Function that adds dummy data to the Handlingsplan lists
 function AddListItemsToHandlingsplan($NumbersOfListItems) {
-
-$Money = 
-    10000, 25000, 50000, 75000, 
-    100000, 125000, 150000, 175000,
-    200000, 225000, 250000, 275000, 
-    300000, 325000, 350000, 375000, 
-    400000, 425000, 450000, 475000, 
-    500000, 525000, 550000, 575000, 
-    600000, 625000, 650000, 675000, 
-    700000, 725000, 750000, 775000, 
-    800000, 825000, 850000, 875000, 
-    900000, 925000, 950000, 975000, 
-    1000000;
-
-for($index = 0; $index -le $SubwebUrls.Length -1; $index++) {
+     $MoneyGenerated = GenerateMoney
+     Write-Host $MoneyGenerated 
+     for($index = 0; $index -lt $SubwebUrls.Length; $index++) {
     
-    ConnectToSubsites($index) 
+        ConnectToSubsites($index) 
     
-    for($subIndex = 0; $subIndex -le $NumbersOfListItems -1; $subIndex++) {
+        for($subIndex = 0; $subIndex -lt $NumbersOfListItems; $subIndex++) {
         
-            $RandomMoneyValue = Get-Random -InputObject $Money;
+            $RandomMoneyValue = Get-Random -InputObject $MoneyGenerated;
             [string]$ItemIndex = SubsiteIndexFormatter($index);
            
-            Write-Host "Adding list item to Handlingsplan at" $SubwebConnectionUrl -ForegroundColor Yellow
+            Write-Host "Adding list item to Handlingsplan" -ForegroundColor Yellow
             Add-PnPListItem -List "Handlingsplan" -ContentType "Pzl Handlingsplan"  -Values @{"Title" = ($ItemIndex) + " Test Title"; "PZLHP_Ordre" = ($ItemIndex) + " Test Ordre"; "PZLHP_Ordrenummer" = ($ItemIndex) + " Test Ordrenummer"; "PZLHP_Kunde" = ($ItemIndex) + " Test Kunde"; "PZLHP_Kundenummer" = ($ItemIndex) + " Test Kundenummer"; "PZLHP_Ansvarlig" = "Bjerk Pzl"; "PZLHP_Verdi" = ($RandomMoneyValue); "PZLHP_Fremgangsplan" = ($ItemIndex) + " Test Fremgangsplan"}
-            Write-Host "List items successfully added" -ForegroundColor Green
-            Write-Host 
-         
-         }
+            Write-Host "List item successfully added" -ForegroundColor Green
+            Write-Host ""
+          }
     }
 }
+
 #Generating random money value for the currency field
 function GenerateMoney() {
-    $Money = 10000;
-    for($increment = 25000; $increment -le 1000000; $increment ++) {
-        $Money += $increment;
+    [array]$MoneyArray + 10000;
+    for($increment = 25000; $increment -le 1000000; $increment = ($increment + 25000)) {
+        [array]$MoneyArray += $increment;
     }
-    return $Money
+   
+   return [array]$MoneyArray
 }
 
 #Formats the index, to make sure the dummy data gets added to the correct subsite
@@ -113,12 +98,21 @@ function CreatSubsites($NumberOfSubsites) {
 
 #Functions that remove list items from Handlingsplan
 function RemoveHandlingsplanListItems() {
-    ConnectToSubsites($index)
+    for($index = 0; $index -lt $SubwebUrls.Length; $index++) {
+        ConnectToSubsites($index)
+        $HandlingsplanListItems = Get-PnPListItem -List "Handlingsplan"
         
-        $ListItemsToRemove = Get-PnPListItem -List "Handlingsplan"
-        $ListItem = $ListItemsToRemove[$inedx].ID
-        
-        Remove-PnPListItem -List "Handlingsplan" -Identity $ListItem
+        for($listItemsIndex = 0; $listItemsIndex -lt $HandlingsplanListItems.Length; $listItemsIndex++) {
+            if($HandlingsplanListItems.Length -eq 0) {
+                Write-Host "List is empty"
+                Write-Host ""
+                return;
+            } else {
+                Write-Host "Removing" $HandlingsplanListItems[$listItemsIndex].Item('Title') -ForegroundColor Yellow
+                Remove-PnPListItem -List "Handlingsplan" -Identity $HandlingsplanListItems[$listItemsIndex].Id -Force
+            }
+             Write-Host "List items removed" -ForegroundColor Green
+        }
     }
  }
 
@@ -130,15 +124,15 @@ function init() {
     ConnectToRootSite
     
     $SubwebUrls = Get-PnPSubWebs;
-    RemoveHandlingsplanListItems
-    #GetListItemsToRemove
-    #Connect-PnPOnline -Url (($SiteCollectionUrl) + "/subsite1") -Credentials 'bjerkpzl'
-    #CreatSubsites
+    
+    #CreatSubsites()
+    
     #ApplyListTemplateToSubsites
-    #AddListItemsToHandlingsplan
+    
+    AddListItemsToHandlingsplan(10)
+    
     #RemoveHandlingsplanListItems
-    #GetListItemsToRemove
-    Write-Host ""
+    
     Write-Host "Done!" -ForegroundColor Green
 }
 
