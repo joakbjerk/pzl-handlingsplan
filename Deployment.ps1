@@ -125,7 +125,7 @@ function init() {
     
     $SubwebUrls = Get-PnPSubWebs;
     
-    #CreatSubsites()
+    #CreatSubsites(number)
     
     #ApplyListTemplateToSubsites
     

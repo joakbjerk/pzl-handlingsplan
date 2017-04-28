@@ -9,8 +9,10 @@
             <pnp:Property Key="Title" Value="Handlingsplaner Joakim" />
             </pnp:Properties>
           </pnp:File>
-         <pnp:File Src="..\node_modules\jquery\dist\jquery.min.js" Folder="SiteAssets/handlingsplan/lib" Overwrite="false" />
-        <pnp:Directory Src="..\dist\" Folder="SiteAssets/Joakim/handlingsplan" Overwrite="true" Recursive="true" IncludedExtensions="*.js,*.css" />
+          <pnp:File Src="..\node_modules\react\dist\react.min.js" Folder="SiteAssets/handlingsplan/lib" Overwrite="false" />
+          <pnp:File Src="..\node_modules\react-dom\dist\react-dom.js" Folder="SiteAssets/handlingsplan/lib" Overwrite="false" />
+          <pnp:File Src="..\node_modules\jquery\dist\jquery.min.js" Folder="SiteAssets/handlingsplan/lib" Overwrite="false" />
+        <pnp:Directory Src="..\dist\" Folder="SiteAssets/Joakim/handlingsplan" Overwrite="true" Recursive="true" IncludedExtensions="*.js,*.css,*.js.map" />
       </pnp:Files>
     </pnp:ProvisioningTemplate>
   </pnp:Templates>

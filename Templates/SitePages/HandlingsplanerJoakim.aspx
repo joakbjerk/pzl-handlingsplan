@@ -18,7 +18,10 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="PlaceHolderAdditionalPageHead" runat="server">
     <Sharepoint:CssRegistration ID="MainCssJoakim" Name="<% $SPUrl:~SiteCollection/SiteAssets/handlingsplan/css/main.css %>" runat="server" />
     <SharePoint:ScriptLink ID="jQuery" Name="~sitecollection/SiteAssets/handlingsplan/lib/jquery.min.js" Language="javascript" runat="server" />
+    <SharePoint:ScriptLink ID="React" Name="~sitecollection/SiteAssets/handlingsplan/lib/react.min.js" Language="javascript" runat="server" />
+    <SharePoint:ScriptLink ID="ReactDom" Name="~sitecollection/SiteAssets/handlingsplan/lib/react-dom.js" Language="javascript" runat="server" />
     <SharePoint:ScriptLink ID="PZLHPScriptJoakim" Name="~sitecollection/SiteAssets/Joakim/handlingsplan/js/REST_Joakim.js" Language="javascript" runat="server" />
+    
 </asp:Content>    
 <asp:Content ContentPlaceHolderID="PlaceHolderSearchArea" runat="server">
 	<SharePoint:DelegateControl runat="server" ControlId="SmallSearchInputBox" />
@@ -31,10 +34,12 @@
 <asp:Content ContentPlaceHolderID="PlaceHolderMain" runat="server">
    <button type="button" id="REST-Call-Button">REST</button>
    <div id="target"></div>
+   <div id="example"><h1>REACT COMES HERE<H1></div>
    <script>
     $(document).ready(function () {
-        let initScript = Handlingsplan.Joakim.init()
+        let initScript = Handlingsplan.SubsiteListItems.init()
         ExecuteOrDelayUntilScriptLoaded(initScript, 'sp.js');
     });
-   </script
+   </script>
+   <script src="~sitecollection/SiteAssets/Joakim/handlingsplan/js/index.js"
 </asp:Content>
