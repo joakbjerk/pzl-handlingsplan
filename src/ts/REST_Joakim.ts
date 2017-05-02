@@ -1,14 +1,28 @@
-namespace Handlingsplan.SubsiteListItems {
+namespace Handlingsplan {
 
     export function init() {
-        $('#REST-Call-Button').on('click', function() {
+        $('#REST-Call-Button').on('click', function () {
             console.log('Click');
             $('#target').html('');
             GetSubsiteListItems();
         });
     }
 
-    function GetSubsiteListItems() {
+
+    interface QueryData {
+        Title?: string;
+        Ordre?: string;
+        Ordrenummer?: string;
+        Kunde?: string;
+        Kundenummer?: string;
+        Ansvarlig?: string;
+        Verdi?: string;
+        Fremgangsplan?: string;
+        Path?: string;
+
+    }
+
+    export function GetSubsiteListItems() {
         let contentType = `'ContentType:"Pzl Handlingsplan"'`;
         let selectProperties = `&selectproperties='Title,PZLHPOrdre,PZLHPOrdrenummer,PZLHPKunde,PZLHPKundenummer,PZLHPAnsvarlig,PZLHPVerdi,PZLHPFremgangsplan,Path'`;
         let clientType = `&clienttype='ContentSearchRegular'`;
@@ -28,12 +42,19 @@ namespace Handlingsplan.SubsiteListItems {
 
             for (let index = 0; index < relevantResults.length; index++) {
                 let result = relevantResults[index].Cells.results;
-                $('#target').append(`
-            <div>
-             ${result[2].Value} ${result[3].Value} ${result[4].Value} ${result[5].Value} ${result[6].Value} ${result[7].Value} ${result[8].Value} ${result[9].Value} <a href="${result[10].Value}">Link to Item</a>
-            </div>
-            <br>
-          `);
+                let queryResult: QueryData = {
+                    Title: result[2].Value,
+                    Ordre: result[3].Value,
+                    Ordrenummer: result[4].Value,
+                    Kunde: result[5].Value,
+                    Kundenummer: result[6].Value,
+                    Ansvarlig: result[7].Value,
+                    Verdi: result[8].Value,
+                    Fremgangsplan: result[9].Value,
+                    Path: result[10].Value
+                };
+                console.log(queryResult);
+                return queryResult;
             }
         }
 
@@ -42,5 +63,5 @@ namespace Handlingsplan.SubsiteListItems {
         }
 
     }
-}
 
+}
