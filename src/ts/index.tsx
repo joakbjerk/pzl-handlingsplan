@@ -19,21 +19,28 @@ interface QueryData {
 
 }
 
-export interface HelloProps { compiler: string; framework: string; }
+interface HelloProps { compiler: string; framework: string; }
 
-export class Hello extends React.Component<HelloProps, undefined> {
+class Hello extends React.Component<HelloProps, undefined> {
 
     render() {
         return <h1>Hello from {this.props.compiler} and {this.props.framework}!</h1>;
     }
 }
 
+default class SearchResultsColumns extends React.Component<QueryData, undefined> {
+
+    render() {
+        return <h1>{this.props.Title}</h1>
+    }
+}
+
 ReactDOM.render(
-    <Hello compiler="TypeScript" framework="React" />,
+    <SearchResultsColumns Title='' />,
     document.getElementById("example")
 );
 
-export function GetSubsiteListItems() {
+const GetSubsiteListItems = () => {
     const searchSettings: SearchQuery = {
         Querytext: 'ContentType:"Pzl Handlingsplan"',
         SelectProperties: ['Title', 'PZLHPOrdre', 'PZLHPOrdrenummer', 'PZLHPKunde', 'PZLHPKundenummer', 'PZLHPAnsvarlig', 'PZLHPVerdi', 'PZLHPFremgangsplan', 'Path'],
@@ -41,6 +48,6 @@ export function GetSubsiteListItems() {
     };
 
     pnp.sp.search(searchSettings).then((r: SearchResults) => {
-        console.log(r.PrimarySearchResults);
+        console.log(r.PrimarySearchResults[0].Title);
     })
 }
