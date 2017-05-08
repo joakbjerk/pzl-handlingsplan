@@ -29,11 +29,13 @@ class CustomComponent extends React.Component<CustomComponentProps, undefined> {
     }
 }
 
-const GreetingApp = () => {
+function GreetingApp() {
     render() {
         return (
             <CustomComponent greeting="Hello" name="Index.tsx" />
-        )
+
+
+        );
     }
 }
 
