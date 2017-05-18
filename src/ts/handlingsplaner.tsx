@@ -21,11 +21,9 @@ interface IQueryData {
 }
 
 const Results = (props: any) => {
-    console.log('Results Const');
-    console.log('Props', props);
     return (
         <div>
-            <h1>{props.Result.Title}</h1>
+            <p>{props.Result.Title} - {props.Result.PZLHPOrdre} - {props.Result.PZLHPOrdrenummer} - {props.Result.PZLHPKunde} - {props.Result.PZLHPKundenummer} - {props.Result.PZLHPAnsvarlig} - {props.Result.PZLHPVerdi} - {props.Result.PZLHPFremgangsplan} - <a href={props.Result.Path}>Location</a></p>
         </div>
     )
 }
@@ -40,20 +38,13 @@ class Handlingsplaner extends React.Component<any, any> {
         const searchSettings: SearchQuery = {
             Querytext: 'ContentType:"Pzl Handlingsplan"',
             SelectProperties: ['Title', 'PZLHPOrdre', 'PZLHPOrdrenummer', 'PZLHPKunde', 'PZLHPKundenummer', 'PZLHPAnsvarlig', 'PZLHPVerdi', 'PZLHPFremgangsplan', 'Path'],
-            RowLimit: 100
+            RowLimit: 10
         };
         pnp.sp.search(searchSettings).then((r: SearchResults) => {
             let searchResults = r.PrimarySearchResults;
             console.log('searchResults', searchResults);
             this.setState({ Results: searchResults });
         })
-    }
-
-    IterateSearchResults(results: any) {
-        console.log('IterateSearchResults', results);
-        for (let index = 0; index < results.length; index++) {
-            console.log(results[index]);
-        }
     }
 
     componentDidMount() {
@@ -63,12 +54,10 @@ class Handlingsplaner extends React.Component<any, any> {
 
     render() {
         let resultsState = this.state.Results;
-        console.log('resultsState', resultsState);
         let resultsMarkup = resultsState.map((props: any) => <Results Result={props} />);
-        console.log('resultsMarkup', resultsMarkup);
         return (
             <div>
-                <h1>{resultsMarkup}</h1>
+                {resultsMarkup}
             </div>
         )
     }
