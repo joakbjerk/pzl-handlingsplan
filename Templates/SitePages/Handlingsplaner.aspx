@@ -16,6 +16,7 @@
     <SharePoint:ProjectProperty Property="Title" runat="server"/>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="PlaceHolderAdditionalPageHead" runat="server">
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/4.1.0/css/fabric.min.css">
     <Sharepoint:CssRegistration ID="MainCss" Name="<% $SPUrl:~SiteCollection/SiteAssets/handlingsplaner/css/main.css %>" runat="server" />
     <SharePoint:ScriptLink ID="React" Name="~sitecollection/SiteAssets/handlingsplaner/lib/react.js" Language="javascript" runat="server" />
     <SharePoint:ScriptLink ID="ReactDom" Name="~sitecollection/SiteAssets/handlingsplaner/lib/react-dom.js" Language="javascript" runat="server" />

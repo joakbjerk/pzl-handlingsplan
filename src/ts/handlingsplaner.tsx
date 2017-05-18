@@ -22,8 +22,16 @@ interface IQueryData {
 
 const Results = (props: any) => {
     return (
-        <div>
-            <p>{props.Result.Title} - {props.Result.PZLHPOrdre} - {props.Result.PZLHPOrdrenummer} - {props.Result.PZLHPKunde} - {props.Result.PZLHPKundenummer} - {props.Result.PZLHPAnsvarlig} - {props.Result.PZLHPVerdi} - {props.Result.PZLHPFremgangsplan} - <a href={props.Result.Path}>Location</a></p>
+        <div className='ms-Grid-row'>
+            <div className='ms-Grid-col ms-u-sm1'><p>{props.Result.Title}</p></div>
+            <div className='ms-Grid-col ms-u-sm1'><p>{props.Result.PZLHPOrdre}</p></div>
+            <div className='ms-Grid-col ms-u-sm1'><p>{props.Result.PZLHPOrdrenummer}</p></div>
+            <div className='ms-Grid-col ms-u-sm1'><p>{props.Result.PZLHPKunde}</p></div>
+            <div className='ms-Grid-col ms-u-sm1'><p>{props.Result.PZLHPKundenummer}</p></div>
+            <div className='ms-Grid-col ms-u-sm1'><p>{props.Result.PZLHPAnsvarlig}</p></div>
+            <div className='ms-Grid-col ms-u-sm1'><p>{props.Result.PZLHPVerdi}</p></div>
+            <div className='ms-Grid-col ms-u-sm1'><p>{props.Result.PZLHPFremgangsplan}</p></div>
+            <div className='ms-Grid-col ms-u-sm1'><a href={props.Result.Path}>Item Location</a></div>
         </div>
     )
 }
@@ -56,9 +64,20 @@ class Handlingsplaner extends React.Component<any, any> {
         let resultsState = this.state.Results;
         let resultsMarkup = resultsState.map((props: any) => <Results Result={props} />);
         return (
-            <div>
+            <div className="ms-Grid">
+                <div className='ms-Grid-row'>
+                    <div className='ms-Grid-col ms-u-sm1'><p>Title</p></div>
+                    <div className='ms-Grid-col ms-u-sm1'><p>Ordre</p></div>
+                    <div className='ms-Grid-col ms-u-sm1'><p>Ordrenummer</p></div>
+                    <div className='ms-Grid-col ms-u-sm1'><p>kunde</p></div>
+                    <div className='ms-Grid-col ms-u-sm1'><p>Kundenummer</p></div>
+                    <div className='ms-Grid-col ms-u-sm1'><p>Ansvarlig</p></div>
+                    <div className='ms-Grid-col ms-u-sm1'><p>Verdi</p></div>
+                    <div className='ms-Grid-col ms-u-sm1'><p>Fremgangsplan</p></div>
+                    <div className='ms-Grid-col ms-u-sm1'><p>Item Location</p></div>
+                </div>
                 {resultsMarkup}
-            </div>
+            </div >
         )
     }
 }
