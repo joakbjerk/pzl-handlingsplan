@@ -1,0 +1,12 @@
+ 
+<pnp:Files 
+  xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
+  <pnp:File Src="SitePages\Handlingsplaner.aspx" Folder="SitePages" Overwrite="true">
+    <pnp:Properties>
+      <pnp:Property Key="Title" Value="Handlingsplaner" />
+    </pnp:Properties>
+  </pnp:File>
+  <pnp:File Src="..\node_modules\react\dist\react.js" Folder="SiteAssets/handlingsplaner/lib" Overwrite="false" />
+  <pnp:File Src="..\node_modules\react-dom\dist\react-dom.js" Folder="SiteAssets/handlingsplaner/lib" Overwrite="false" />
+  <pnp:Directory Src="..\dist\" Folder="SiteAssets/handlingsplaner" Overwrite="true" Recursive="true" IncludedExtensions="*.js,*.css,"/>
+</pnp:Files>

@@ -5,7 +5,6 @@
 //******************************************************************************
 
 var gulp = require("gulp"),
-    tslint = require("gulp-tslint"),
     clean = require('gulp-clean'),
     tsc = require("gulp-typescript"),
     path = require('path'),
@@ -17,7 +16,10 @@ var gulp = require("gulp"),
     rename = require('gulp-rename'),
     format = require('string-format'),
     config = require("./gulpfile.config.json"),
-    vpkg = require("./package.json");
+    vpkg = require("./package.json"),
+    webpack = require('webpack'),
+    webpackConfig = require('./webpack.config.js'),
+    webpackStream = require('webpack-stream');
 
 //******************************************************************************
 //* TASKS
@@ -79,6 +81,12 @@ gulp.task('clean-less', function () {
         .pipe(clean());
 });
 
+gulp.task('webpack', function () {
+    return gulp.src('src/ts/handlingsplaner.tsx')
+        .pipe(webpackStream(webpackConfig, webpack))
+        .pipe(gulp.dest('dist/js'));
+});
+
 gulp.task("default", function () {
-    runSequence("clean", "copy", "ts-lint", "compile-less", "compile-typescript", "clean-typescript", "clean-less");
+    runSequence("clean", "copy", "ts-lint", "compile-less", "compile-typescript", "clean-typescript", "clean-less", "webpack");
 });

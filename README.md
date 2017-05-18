@@ -1,2 +1,3 @@
-# pzl-handlingsplan
-Get handlingsplan list items test
+# Handlingsplaner #
+
+* Retrieves all the list items from subsites with Handlingsplan, and merges them into one list
