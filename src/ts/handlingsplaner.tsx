@@ -1,37 +1,98 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as Fabric from 'office-ui-fabric-react';
-import pnp, { SearchQuery, SearchResults } from 'sp-pnp-js'
+import { DetailsList, DetailsListLayoutMode, Selection } from 'office-ui-fabric-react/lib/DetailsList'
+import { SearchQuery, SearchResults, sp } from 'sp-pnp-js'
 
-console.log('Hello from handlingsplaner.tsx');
+let _items: any[] = [];
 
-interface IQueryData {
-    Results: [{
-        Title?: string;
-        Ordre?: string;
-        Ordrenummer?: string;
-        Kunde?: string;
-        Kundenummer?: string;
-        Ansvarlig?: string;
-        Verdi?: string;
-        Fremgangsplan?: string;
-        Path?: string;
-    }]
+const _columns = [
+    {
+        key: 'columnTitle',
+        name: 'Title',
+        fieldName: 'title',
+        minWidth: 100,
+        maxWidth: 200,
+        multiline: true
+    },
+    {
+        key: 'columnOrdre',
+        name: 'Ordre',
+        fieldName: 'ordre',
+        minWidth: 100,
+        maxWidth: 200,
+        multiline: true
+    },
+    {
+        key: 'columnOrdrenummer',
+        name: 'Ordrenummer',
+        fieldName: 'ordrenummer',
+        minWidth: 100,
+        maxWidth: 200,
+        multiline: true
+    },
+    {
+        key: 'columnKunde',
+        name: 'Kunde',
+        fieldName: 'kunde',
+        minWidth: 100,
+        maxWidth: 200,
+        multiline: true
+    },
+    {
+        key: 'columnKundenummer',
+        name: 'Kundenummer',
+        fieldName: 'kundenummer',
+        minWidth: 100,
+        maxWidth: 200,
+        multiline: true
+    },
+    {
+        key: 'columnAnsvarlig',
+        name: 'ansvarlig',
+        fieldName: 'ansvarlig',
+        minWidth: 100,
+        maxWidth: 200,
+        multiline: true
+    },
+    {
+        key: 'columnVerdi',
+        name: 'Verdi',
+        fieldName: 'verdi',
+        minWidth: 100,
+        maxWidth: 200,
+        multiline: true
+    },
+    {
+        key: 'columnFremgangsplan',
+        name: 'Fremgangsplan',
+        fieldName: 'fremgangsplan',
+        minWidth: 100,
+        maxWidth: 200,
+        multiline: true
+    },
+    {
+        key: 'columnItemLocation',
+        name: 'Item Location',
+        fieldName: 'itemLocation',
+        minWidth: 100,
+        maxWidth: 200,
+        multiline: true
+    }
+]
 
-}
-
-const Results = (props: any) => {
+const SearchResultsItems = (props: any) => {
     return (
-        <div className='ms-Grid-row'>
-            <div className='ms-Grid-col ms-u-sm1'><p>{props.Result.Title}</p></div>
-            <div className='ms-Grid-col ms-u-sm1'><p>{props.Result.PZLHPOrdre}</p></div>
-            <div className='ms-Grid-col ms-u-sm1'><p>{props.Result.PZLHPOrdrenummer}</p></div>
-            <div className='ms-Grid-col ms-u-sm1'><p>{props.Result.PZLHPKunde}</p></div>
-            <div className='ms-Grid-col ms-u-sm1'><p>{props.Result.PZLHPKundenummer}</p></div>
-            <div className='ms-Grid-col ms-u-sm1'><p>{props.Result.PZLHPAnsvarlig}</p></div>
-            <div className='ms-Grid-col ms-u-sm1'><p>{props.Result.PZLHPVerdi}</p></div>
-            <div className='ms-Grid-col ms-u-sm1'><p>{props.Result.PZLHPFremgangsplan}</p></div>
-            <div className='ms-Grid-col ms-u-sm1'><a href={props.Result.Path}>Item Location</a></div>
+        <div>
+            <p>{props.Result.Title}</p>
+            <p>{props.Result.PZLHPOrdre}</p>
+            <p>{props.Result.PZLHPOrdrenummer}</p>
+            <p>{props.Result.PZLHPKunde}</p>
+            <p>{props.Result.PZLHPKundenummer}</p>
+            <p>{props.Result.PZLHPAnsvarlig}</p>
+            <p>{props.Result.PZLHPVerdi}</p>
+            <p>{props.Result.PZLHPFremgangsplan}</p>
+            <a href={props.Result.Path}>Item Location</a>
         </div>
     )
 }
@@ -39,20 +100,48 @@ const Results = (props: any) => {
 class Handlingsplaner extends React.Component<any, any> {
     constructor() {
         super();
-        this.state = { Results: [{}] };
+        this.state = { Items: _items };
     }
 
     GetSubsiteListItems() {
         const searchSettings: SearchQuery = {
             Querytext: 'ContentType:"Pzl Handlingsplan"',
-            SelectProperties: ['Title', 'PZLHPOrdre', 'PZLHPOrdrenummer', 'PZLHPKunde', 'PZLHPKundenummer', 'PZLHPAnsvarlig', 'PZLHPVerdi', 'PZLHPFremgangsplan', 'Path'],
+            SelectProperties: [
+                'Title',
+                'PZLHPOrdre',
+                'PZLHPOrdrenummer',
+                'PZLHPKunde',
+                'PZLHPKundenummer',
+                'PZLHPAnsvarlig',
+                'PZLHPVerdi',
+                'PZLHPFremgangsplan',
+                'Path'],
             RowLimit: 10
         };
-        pnp.sp.search(searchSettings).then((r: SearchResults) => {
+        sp.search(searchSettings).then((r: SearchResults) => {
             let searchResults = r.PrimarySearchResults;
             console.log('searchResults', searchResults);
-            this.setState({ Results: searchResults });
+            this.PushItems(searchResults);
+
         })
+    }
+
+    PushItems(items: any) {
+        for (let i = 0; i < items.length; i++) {
+            let item = items[i];
+            _items.push({
+                title: item.Title,
+                ordre: item.PZLHPOrdre,
+                ordrenummer: item.PZLHPOrdrenummer,
+                kunde: item.PZLHPKunde,
+                kundenummer: item.PZLHPKundenummer,
+                ansvarlig: item.PZLHPAnsvarlig,
+                verdi: item.PZLHPVerdi,
+                fremgangsplan: item.PZLHPFremgangsplan,
+                itemLocation: item.Path
+            })
+
+        }
     }
 
     componentDidMount() {
@@ -61,23 +150,16 @@ class Handlingsplaner extends React.Component<any, any> {
     }
 
     render() {
-        let resultsState = this.state.Results;
-        let resultsMarkup = resultsState.map((props: any) => <Results Result={props} />);
+        let itemsState = this.state.Item;
+        console.log('itemsState', itemsState);
+
         return (
-            <div className="ms-Grid">
-                <div className='ms-Grid-row'>
-                    <div className='ms-Grid-col ms-u-sm1'><p>Title</p></div>
-                    <div className='ms-Grid-col ms-u-sm1'><p>Ordre</p></div>
-                    <div className='ms-Grid-col ms-u-sm1'><p>Ordrenummer</p></div>
-                    <div className='ms-Grid-col ms-u-sm1'><p>kunde</p></div>
-                    <div className='ms-Grid-col ms-u-sm1'><p>Kundenummer</p></div>
-                    <div className='ms-Grid-col ms-u-sm1'><p>Ansvarlig</p></div>
-                    <div className='ms-Grid-col ms-u-sm1'><p>Verdi</p></div>
-                    <div className='ms-Grid-col ms-u-sm1'><p>Fremgangsplan</p></div>
-                    <div className='ms-Grid-col ms-u-sm1'><p>Item Location</p></div>
-                </div>
-                {resultsMarkup}
-            </div >
+            <div>
+                <DetailsList
+                    items={_items}
+                    columns={_columns}
+                />
+            </div>
         )
     }
 }

@@ -1,0 +1,8 @@
+#Render-Target {
+  margin: 0px auto;
+  padding: 0px;
+  box-sizing: border-box;
+  width: 1280px;
+  height: 720px;
+  position: relative;
+}
