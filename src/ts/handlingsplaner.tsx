@@ -4,7 +4,7 @@ import * as Fabric from 'office-ui-fabric-react';
 import { DetailsList, DetailsListLayoutMode, Selection } from 'office-ui-fabric-react/lib/DetailsList'
 import { SearchQuery, SearchResults, sp } from 'sp-pnp-js'
 
-let _items: any[] = [];
+let _items: object[] = [];
 
 const _columns = [
     {
@@ -81,29 +81,7 @@ const _columns = [
     }
 ]
 
-const ResultItems = (item: any) => {
-    return (
-        {
-            title: item.Title,
-            ordre: item.PZLHPOrdre,
-            ordrenummer: item.PZLHPOrdrenummer,
-            kunde: item.PZLHPKunde,
-            kundenummer: item.PZLHPKundenummer,
-            ansvarlig: item.PZLHPAnsvarlig,
-            verdi: item.PZLHPVerdi,
-            fremgangsplan: item.PZLHPFremgangsplan,
-            itemLocation: item.Path
-        }
-    )
-}
-
 class Handlingsplaner extends React.Component<any, any> {
-    constructor() {
-        super();
-        this.state = {
-            Items: []
-        };
-    }
 
     GetSubsiteListItems() {
         const searchSettings: SearchQuery = {
@@ -122,27 +100,24 @@ class Handlingsplaner extends React.Component<any, any> {
         };
         sp.search(searchSettings).then((r: SearchResults) => {
             let searchResults = r.PrimarySearchResults;
-            console.log('searchResults', searchResults);
-            this.setState({ Items: searchResults });
-
+            this.PushItems(searchResults);
         })
     }
 
     PushItems(items: any) {
-        for (let i = 0; i < items.length; i++) {
-            let item = items[i];
+        items.forEach((element: any) => {
             _items.push({
-                title: item.Title,
-                ordre: item.PZLHPOrdre,
-                ordrenummer: item.PZLHPOrdrenummer,
-                kunde: item.PZLHPKunde,
-                kundenummer: item.PZLHPKundenummer,
-                ansvarlig: item.PZLHPAnsvarlig,
-                verdi: item.PZLHPVerdi,
-                fremgangsplan: item.PZLHPFremgangsplan,
-                itemLocation: item.Path
+                title: element.Title,
+                ordre: element.PZLHPOrdre,
+                ordrenummer: element.PZLHPOrdrenummer,
+                kunde: element.PZLHPKunde,
+                kundenummer: element.PZLHPKundenummer,
+                ansvarlig: element.PZLHPAnsvarlig,
+                verdi: element.PZLHPVerdi,
+                fremgangsplan: element.PZLHPFremgangsplan,
+                itemLocation: element.Path
             })
-        }
+        });
     }
 
     componentDidMount() {
