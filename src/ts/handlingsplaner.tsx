@@ -81,26 +81,28 @@ const _columns = [
     }
 ]
 
-const SearchResultsItems = (props: any) => {
+const ResultItems = (item: any) => {
     return (
-        <div>
-            <p>{props.Result.Title}</p>
-            <p>{props.Result.PZLHPOrdre}</p>
-            <p>{props.Result.PZLHPOrdrenummer}</p>
-            <p>{props.Result.PZLHPKunde}</p>
-            <p>{props.Result.PZLHPKundenummer}</p>
-            <p>{props.Result.PZLHPAnsvarlig}</p>
-            <p>{props.Result.PZLHPVerdi}</p>
-            <p>{props.Result.PZLHPFremgangsplan}</p>
-            <a href={props.Result.Path}>Item Location</a>
-        </div>
+        {
+            title: item.Title,
+            ordre: item.PZLHPOrdre,
+            ordrenummer: item.PZLHPOrdrenummer,
+            kunde: item.PZLHPKunde,
+            kundenummer: item.PZLHPKundenummer,
+            ansvarlig: item.PZLHPAnsvarlig,
+            verdi: item.PZLHPVerdi,
+            fremgangsplan: item.PZLHPFremgangsplan,
+            itemLocation: item.Path
+        }
     )
 }
 
 class Handlingsplaner extends React.Component<any, any> {
     constructor() {
         super();
-        this.state = { Items: _items };
+        this.state = {
+            Items: []
+        };
     }
 
     GetSubsiteListItems() {
@@ -121,7 +123,7 @@ class Handlingsplaner extends React.Component<any, any> {
         sp.search(searchSettings).then((r: SearchResults) => {
             let searchResults = r.PrimarySearchResults;
             console.log('searchResults', searchResults);
-            this.PushItems(searchResults);
+            this.setState({ Items: searchResults });
 
         })
     }
@@ -140,7 +142,6 @@ class Handlingsplaner extends React.Component<any, any> {
                 fremgangsplan: item.PZLHPFremgangsplan,
                 itemLocation: item.Path
             })
-
         }
     }
 
@@ -150,9 +151,6 @@ class Handlingsplaner extends React.Component<any, any> {
     }
 
     render() {
-        let itemsState = this.state.Item;
-        console.log('itemsState', itemsState);
-
         return (
             <div>
                 <DetailsList
