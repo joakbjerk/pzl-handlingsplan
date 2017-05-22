@@ -1,12 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import * as Fabric from 'office-ui-fabric-react';
+import { Link } from 'office-ui-fabric-react/lib/Link';
 import { DetailsList, DetailsListLayoutMode, Selection } from 'office-ui-fabric-react/lib/DetailsList'
 import { SearchQuery, SearchResults, sp } from 'sp-pnp-js'
 
-let _items: object[] = [];
+const Items: object[] = [];
 
-const _columns = [
+const Columns = [
     {
         key: 'columnTitle',
         name: 'Title',
@@ -49,7 +49,7 @@ const _columns = [
     },
     {
         key: 'columnAnsvarlig',
-        name: 'ansvarlig',
+        name: 'Ansvarlig',
         fieldName: 'ansvarlig',
         minWidth: 100,
         maxWidth: 200,
@@ -83,7 +83,7 @@ const _columns = [
 
 class Handlingsplaner extends React.Component<any, any> {
 
-    GetSubsiteListItems() {
+    getSubsiteListItems() {
         const searchSettings: SearchQuery = {
             Querytext: 'ContentType:"Pzl Handlingsplan"',
             SelectProperties: [
@@ -96,17 +96,17 @@ class Handlingsplaner extends React.Component<any, any> {
                 'PZLHPVerdi',
                 'PZLHPFremgangsplan',
                 'Path'],
-            RowLimit: 10
+            RowLimit: 100
         };
         sp.search(searchSettings).then((r: SearchResults) => {
             let searchResults = r.PrimarySearchResults;
-            this.PushItems(searchResults);
+            this.pushItems(searchResults);
         })
     }
 
-    PushItems(items: any) {
-        items.forEach((element: any) => {
-            _items.push({
+    pushItems(searchResults: any) {
+        searchResults.forEach((element: any) => {
+            Items.push({
                 title: element.Title,
                 ordre: element.PZLHPOrdre,
                 ordrenummer: element.PZLHPOrdrenummer,
@@ -121,7 +121,7 @@ class Handlingsplaner extends React.Component<any, any> {
     }
 
     componentDidMount() {
-        this.GetSubsiteListItems();
+        this.getSubsiteListItems();
         console.log('Component Did Mount');
     }
 
@@ -129,8 +129,8 @@ class Handlingsplaner extends React.Component<any, any> {
         return (
             <div>
                 <DetailsList
-                    items={_items}
-                    columns={_columns}
+                    items={Items}
+                    columns={Columns}
                 />
             </div>
         )

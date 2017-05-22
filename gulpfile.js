@@ -21,6 +21,7 @@ var gulp = require("gulp"),
     webpackConfig = require('./webpack.config.js'),
     webpackStream = require('webpack-stream');
 
+
 //******************************************************************************
 //* TASKS
 //******************************************************************************
@@ -67,20 +68,6 @@ gulp.task('clean-typescript', function () {
         .pipe(clean());
 });
 
-gulp.task('compile-less', function () {
-    return gulp.src(config.buildOutput.lessFiles)
-        .pipe(less({
-            paths: [path.join(__dirname, 'less', 'includes')],
-            compress: false
-        }))
-        .pipe(gulp.dest(config.buildOutput.outputFolder + '/css/'));
-});
-
-gulp.task('clean-less', function () {
-    return gulp.src(config.buildOutput.lessFiles, { read: false })
-        .pipe(clean());
-});
-
 gulp.task('webpack', function () {
     return gulp.src('src/ts/handlingsplaner.tsx')
         .pipe(webpackStream(webpackConfig, webpack))
@@ -88,5 +75,5 @@ gulp.task('webpack', function () {
 });
 
 gulp.task("default", function () {
-    runSequence("clean", "copy", "ts-lint", "compile-less", "compile-typescript", "clean-typescript", "clean-less", "webpack");
+    runSequence("clean", "copy", "ts-lint", "compile-typescript", "clean-typescript", "webpack");
 });
