@@ -7,6 +7,7 @@
 var gulp = require("gulp"),
     clean = require('gulp-clean'),
     tsc = require("gulp-typescript"),
+    tscConfig = require("./tsconfig.json"),
     path = require('path'),
     concat = require('gulp-concat'),
     foreach = require("gulp-foreach"),
@@ -36,7 +37,7 @@ gulp.task('clean', function () {
 gulp.task('copy', function () {
     return gulp.src([config.buildOutput.sourceFolder + "**/*"])
         .pipe(rename(function (path) {
-            path.extname = path.extname.replace('.html', '.txt').replace('.json', '.txt');;
+            path.extname = path.extname.replace('.html', '.txt').replace('.json', '.txt');
             path.dirname = path.dirname.replace('less', 'css').replace('ts', 'js');
         }))
         .pipe(gulp.dest(config.buildOutput.outputFolder));
@@ -53,12 +54,7 @@ gulp.task('compile-typescript', function () {
         .pipe(foreach(function (stream, file) {
             var outFile = file.path.replace(".ts", ".js");
             return stream
-                .pipe(tsc({
-                    "target": "es5",
-                    "sourceMap": true,
-                    "removeComments": true,
-                    "out": outFile
-                }/*, tsc.reporter.nullReporter*/))
+                .pipe(tsc(tscConfig/*, tsc.reporter.nullReporter*/))
                 .pipe(gulp.dest('.'));
         }));
 });

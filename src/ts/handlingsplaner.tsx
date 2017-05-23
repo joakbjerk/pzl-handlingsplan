@@ -1,82 +1,145 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Link } from 'office-ui-fabric-react/lib/Link';
+import * as moment from 'moment';
 import { DetailsList, DetailsListLayoutMode, Selection } from 'office-ui-fabric-react/lib/DetailsList'
 import { SearchQuery, SearchResults, sp } from 'sp-pnp-js'
 
+console.log('Hello from Handlingsplaner.js');
+
 const Items: object[] = [];
+
+const colOpt = {
+    minWidth: 150,
+    maxWidth: 200
+}
 
 const Columns = [
     {
-        key: 'columnTitle',
-        name: 'Title',
-        fieldName: 'title',
-        minWidth: 100,
-        maxWidth: 200,
+        key: 'columnOpprettet',
+        name: 'Opprettet',
+        fieldName: 'opprettet',
+        minWidth: colOpt.minWidth,
+        maxWidth: colOpt.maxWidth,
         multiline: true
     },
     {
-        key: 'columnOrdre',
-        name: 'Ordre',
-        fieldName: 'ordre',
-        minWidth: 100,
-        maxWidth: 200,
+        key: 'columnOpprettetAv',
+        name: 'Opprettet Av',
+        fieldName: 'opprettetAv',
+        minWidth: colOpt.minWidth,
+        maxWidth: colOpt.maxWidth,
         multiline: true
     },
     {
-        key: 'columnOrdrenummer',
-        name: 'Ordrenummer',
-        fieldName: 'ordrenummer',
-        minWidth: 100,
-        maxWidth: 200,
+        key: 'columnOmråde',
+        name: 'Område',
+        fieldName: 'område',
+        minWidth: colOpt.minWidth,
+        maxWidth: colOpt.maxWidth,
         multiline: true
     },
     {
-        key: 'columnKunde',
-        name: 'Kunde',
-        fieldName: 'kunde',
-        minWidth: 100,
-        maxWidth: 200,
+        key: 'columnKontrakt',
+        name: 'Kontrakt',
+        fieldName: 'kontrakt',
+        minWidth: colOpt.minWidth,
+        maxWidth: colOpt.maxWidth,
         multiline: true
     },
     {
-        key: 'columnKundenummer',
-        name: 'Kundenummer',
-        fieldName: 'kundenummer',
-        minWidth: 100,
-        maxWidth: 200,
+        key: 'columnProsessavvik',
+        name: 'Sak/prosessavvik',
+        fieldName: 'prossesavvik',
+        minWidth: colOpt.minWidth,
+        maxWidth: colOpt.maxWidth,
+        multiline: true
+    },
+    {
+        key: 'columnÅrsak',
+        name: 'Årsak',
+        fieldName: 'årsak',
+        minWidth: colOpt.minWidth,
+        maxWidth: colOpt.maxWidth,
+        multiline: true
+    },
+    {
+        key: 'columnKorrigerende',
+        name: 'Korrigerende Eller Forebyggende Tiltak',
+        fieldName: 'korrigerende',
+        minWidth: colOpt.minWidth,
+        maxWidth: colOpt.maxWidth,
+        multiline: true
+    },
+    {
+        key: 'columnBehovForHjelp',
+        name: 'Behov for hjelp?',
+        fieldName: 'behovForHjelp',
+        minWidth: colOpt.minWidth,
+        maxWidth: colOpt.maxWidth,
+        multiline: true
+    },
+    {
+        key: 'columnMålForTiltaket',
+        name: 'Mål for tiltaket',
+        fieldName: 'målForTiltaket',
+        minWidth: colOpt.minWidth,
+        maxWidth: colOpt.maxWidth,
+        multiline: true
+    },
+    {
+        key: 'columnTidsfrist',
+        name: 'Tid/frist',
+        fieldName: 'tidsfrist',
+        minWidth: colOpt.minWidth,
+        maxWidth: colOpt.maxWidth,
         multiline: true
     },
     {
         key: 'columnAnsvarlig',
         name: 'Ansvarlig',
         fieldName: 'ansvarlig',
-        minWidth: 100,
-        maxWidth: 200,
+        minWidth: colOpt.minWidth,
+        maxWidth: colOpt.maxWidth,
         multiline: true
     },
     {
-        key: 'columnVerdi',
-        name: 'Verdi',
-        fieldName: 'verdi',
-        minWidth: 100,
-        maxWidth: 200,
+        key: 'columnMålOppnådd',
+        name: 'Mål oppnådd?',
+        fieldName: 'målOppnådd',
+        minWidth: colOpt.minWidth,
+        maxWidth: colOpt.maxWidth,
         multiline: true
     },
     {
-        key: 'columnFremgangsplan',
-        name: 'Fremgangsplan',
-        fieldName: 'fremgangsplan',
-        minWidth: 100,
-        maxWidth: 200,
+        key: 'columnForsinkelse',
+        name: 'Grunn til forsinkelse',
+        fieldName: 'forsinkelse',
+        minWidth: colOpt.minWidth,
+        maxWidth: colOpt.maxWidth,
         multiline: true
     },
     {
-        key: 'columnItemLocation',
-        name: 'Item Location',
-        fieldName: 'itemLocation',
-        minWidth: 100,
-        maxWidth: 200,
+        key: 'columnOppfølgingstiltak',
+        name: 'Oppfølgingstiltak',
+        fieldName: 'oppfølgingstiltak',
+        minWidth: colOpt.minWidth,
+        maxWidth: colOpt.maxWidth,
+        multiline: true
+    },
+    {
+        key: 'columnNyFrist',
+        name: 'Ny frist',
+        fieldName: 'nyFrist',
+        minWidth: colOpt.minWidth,
+        maxWidth: colOpt.maxWidth,
+        multiline: true
+    },
+    {
+        key: 'columnGjennomført',
+        name: 'Gjennomført',
+        fieldName: 'gjennomført',
+        minWidth: colOpt.minWidth,
+        maxWidth: colOpt.maxWidth,
         multiline: true
     }
 ]
@@ -85,37 +148,56 @@ class Handlingsplaner extends React.Component<any, any> {
 
     getSubsiteListItems() {
         const searchSettings: SearchQuery = {
-            Querytext: 'ContentType:"Pzl Handlingsplan"',
+            Querytext: 'ContentType:"Element Handlingsplan"',
             SelectProperties: [
-                'Title',
-                'PZLHPOrdre',
-                'PZLHPOrdrenummer',
-                'PZLHPKunde',
-                'PZLHPKundenummer',
-                'PZLHPAnsvarlig',
-                'PZLHPVerdi',
-                'PZLHPFremgangsplan',
-                'Path'],
-            RowLimit: 100
+                'HPOmråde',
+                'HPKontrakter',
+                'HPSakProsessavvik',
+                'HPÅrsak',
+                'HPKorrigerende',
+                'HPBehovForHjelp',
+                'HPMålForTiltak',
+                'HPTidsfrist',
+                'HPAnsvarlig',
+                'HPMålOppnådd',
+                'HPGrunnTilForsinkelse',
+                'HPOppfølgingstiltak',
+                'HPNyFrist',
+                'HPGjennomført',
+                'Created',
+                'Author'
+
+            ],
+            RowLimit: 10
         };
         sp.search(searchSettings).then((r: SearchResults) => {
             let searchResults = r.PrimarySearchResults;
+            console.log('getSubSiteListItems searchResults', searchResults);
             this.pushItems(searchResults);
         })
     }
 
     pushItems(searchResults: any) {
+        console.log('pushItems searchResults', searchResults)
         searchResults.forEach((element: any) => {
             Items.push({
-                title: element.Title,
-                ordre: element.PZLHPOrdre,
-                ordrenummer: element.PZLHPOrdrenummer,
-                kunde: element.PZLHPKunde,
-                kundenummer: element.PZLHPKundenummer,
-                ansvarlig: element.PZLHPAnsvarlig,
-                verdi: element.PZLHPVerdi,
-                fremgangsplan: element.PZLHPFremgangsplan,
-                itemLocation: element.Path
+                opprettet: moment(element.Created).format('DD/MM/YYYY'),
+                opprettetAv: element.Author,
+                område: element.HPOmråde,
+                kontrakt: element.HPKontrakter,
+                prossesavvik: element.HPSakProsessavvik,
+                årsak: element.HPÅrsak,
+                korrigerende: element.HPKorrigerende,
+                behovForHjelp: element.HPBehovForHjelp,
+                målForTiltaket: element.HPMålForTiltak,
+                tidsfrist: element.HPTidsfrist,
+                ansvarlig: element.HPAnsvarlig,
+                målOppnådd: element.HPMålOppnådd,
+                forsinkelse: element.HPGrunnTilForsinkelse,
+                oppfølgingstiltak: element.HPOppfølgingstiltak,
+                nyFrist: element.HPNyFrist,
+                gjennomført: element.HPGjennomført
+
             })
         });
     }
