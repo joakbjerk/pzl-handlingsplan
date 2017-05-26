@@ -1,4 +1,6 @@
 @import url('https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/4.1.0/css/fabric.min.css');
+@import url('https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.min.css');
+@import url('https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/css/fabric.components.min.css');
 
 #Render-Target {
   margin: 0px auto;

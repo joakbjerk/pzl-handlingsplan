@@ -20,6 +20,7 @@
     <SharePoint:ScriptLink ID="React" Name="~sitecollection/SiteAssets/Handlingsplaner Scripts/lib/react.js" Language="javascript" runat="server" />
     <SharePoint:ScriptLink ID="ReactDom" Name="~sitecollection/SiteAssets/Handlingsplaner Scripts/lib/react-dom.js" Language="javascript" runat="server" />
     <SharePoint:ScriptLink ID="Moment" Name="~sitecollection/SiteAssets/Handlingsplaner Scripts/lib/moment.min.js" Language="javascript" runat="server" />
+    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js"></script>
 </asp:Content>    
 <asp:Content ContentPlaceHolderID="PlaceHolderSearchArea" runat="server">
 	<SharePoint:DelegateControl runat="server" ControlId="SmallSearchInputBox" />
@@ -30,6 +31,7 @@
     Handlingsplaner for alle forhandlere
 </asp:Content>
 <asp:Content ContentPlaceHolderID="PlaceHolderMain" runat="server">
-   <div id="Render-Target"></div>
+<a id="Download-Link" disabled="true">Temp-Download</a>
+<div id="Render-Target"></div>
    <script src="../SiteAssets/Handlingsplaner Scripts/js/handlingsplaner.js"></script>
 </asp:Content>

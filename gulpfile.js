@@ -65,11 +65,11 @@ gulp.task('clean-typescript', function () {
 });
 
 gulp.task('webpack', function () {
-    return gulp.src('src/ts/handlingsplaner.tsx')
+    return gulp.src('src/ts/handlingsplaner')
         .pipe(webpackStream(webpackConfig, webpack))
         .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task("default", function () {
-    runSequence("clean", "copy", "ts-lint", "compile-typescript", "clean-typescript", "webpack");
+    runSequence("clean", "copy", "ts-lint", "clean-typescript", "webpack");
 });

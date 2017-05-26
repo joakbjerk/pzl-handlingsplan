@@ -1,186 +1,53 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as moment from 'moment';
-import { DetailsList, DetailsListLayoutMode, Selection } from 'office-ui-fabric-react/lib/DetailsList'
-import { SearchQuery, SearchResults, sp } from 'sp-pnp-js'
+import { _columns } from './columns';
+import { initCSV } from './csv';
+import { DetailsList, DetailsListLayoutMode, Selection } from 'office-ui-fabric-react/lib/DetailsList';
+import { SearchQuery, SearchResults, sp } from 'sp-pnp-js';
 
-console.log('Hello from Handlingsplaner.js');
-
-const Items: object[] = [];
-
-const colOpt = {
-    minWidth: 150,
-    maxWidth: 200
-}
-
-const Columns = [
-    {
-        key: 'columnOpprettet',
-        name: 'Opprettet',
-        fieldName: 'opprettet',
-        minWidth: colOpt.minWidth,
-        maxWidth: colOpt.maxWidth,
-        multiline: true
-    },
-    {
-        key: 'columnOpprettetAv',
-        name: 'Opprettet Av',
-        fieldName: 'opprettetAv',
-        minWidth: colOpt.minWidth,
-        maxWidth: colOpt.maxWidth,
-        multiline: true
-    },
-    {
-        key: 'columnOmråde',
-        name: 'Område',
-        fieldName: 'område',
-        minWidth: colOpt.minWidth,
-        maxWidth: colOpt.maxWidth,
-        multiline: true
-    },
-    {
-        key: 'columnKontrakt',
-        name: 'Kontrakt',
-        fieldName: 'kontrakt',
-        minWidth: colOpt.minWidth,
-        maxWidth: colOpt.maxWidth,
-        multiline: true
-    },
-    {
-        key: 'columnProsessavvik',
-        name: 'Sak/prosessavvik',
-        fieldName: 'prossesavvik',
-        minWidth: colOpt.minWidth,
-        maxWidth: colOpt.maxWidth,
-        multiline: true
-    },
-    {
-        key: 'columnÅrsak',
-        name: 'Årsak',
-        fieldName: 'årsak',
-        minWidth: colOpt.minWidth,
-        maxWidth: colOpt.maxWidth,
-        multiline: true
-    },
-    {
-        key: 'columnKorrigerende',
-        name: 'Korrigerende Eller Forebyggende Tiltak',
-        fieldName: 'korrigerende',
-        minWidth: colOpt.minWidth,
-        maxWidth: colOpt.maxWidth,
-        multiline: true
-    },
-    {
-        key: 'columnBehovForHjelp',
-        name: 'Behov for hjelp?',
-        fieldName: 'behovForHjelp',
-        minWidth: colOpt.minWidth,
-        maxWidth: colOpt.maxWidth,
-        multiline: true
-    },
-    {
-        key: 'columnMålForTiltaket',
-        name: 'Mål for tiltaket',
-        fieldName: 'målForTiltaket',
-        minWidth: colOpt.minWidth,
-        maxWidth: colOpt.maxWidth,
-        multiline: true
-    },
-    {
-        key: 'columnTidsfrist',
-        name: 'Tid/frist',
-        fieldName: 'tidsfrist',
-        minWidth: colOpt.minWidth,
-        maxWidth: colOpt.maxWidth,
-        multiline: true
-    },
-    {
-        key: 'columnAnsvarlig',
-        name: 'Ansvarlig',
-        fieldName: 'ansvarlig',
-        minWidth: colOpt.minWidth,
-        maxWidth: colOpt.maxWidth,
-        multiline: true
-    },
-    {
-        key: 'columnMålOppnådd',
-        name: 'Mål oppnådd?',
-        fieldName: 'målOppnådd',
-        minWidth: colOpt.minWidth,
-        maxWidth: colOpt.maxWidth,
-        multiline: true
-    },
-    {
-        key: 'columnForsinkelse',
-        name: 'Grunn til forsinkelse',
-        fieldName: 'forsinkelse',
-        minWidth: colOpt.minWidth,
-        maxWidth: colOpt.maxWidth,
-        multiline: true
-    },
-    {
-        key: 'columnOppfølgingstiltak',
-        name: 'Oppfølgingstiltak',
-        fieldName: 'oppfølgingstiltak',
-        minWidth: colOpt.minWidth,
-        maxWidth: colOpt.maxWidth,
-        multiline: true
-    },
-    {
-        key: 'columnNyFrist',
-        name: 'Ny frist',
-        fieldName: 'nyFrist',
-        minWidth: colOpt.minWidth,
-        maxWidth: colOpt.maxWidth,
-        multiline: true
-    },
-    {
-        key: 'columnGjennomført',
-        name: 'Gjennomført',
-        fieldName: 'gjennomført',
-        minWidth: colOpt.minWidth,
-        maxWidth: colOpt.maxWidth,
-        multiline: true
-    }
-]
+export const _items: object[] = [];
 
 class Handlingsplaner extends React.Component<any, any> {
+
+    constructor() {
+        super()
+        this.state = { sortedItems: _items }
+    }
 
     getSubsiteListItems() {
         const searchSettings: SearchQuery = {
             Querytext: 'ContentType:"Element Handlingsplan"',
             SelectProperties: [
-                'HPOmråde',
-                'HPKontrakter',
-                'HPSakProsessavvik',
-                'HPÅrsak',
-                'HPKorrigerende',
-                'HPBehovForHjelp',
-                'HPMålForTiltak',
-                'HPTidsfrist',
-                'HPAnsvarlig',
-                'HPMålOppnådd',
-                'HPGrunnTilForsinkelse',
-                'HPOppfølgingstiltak',
-                'HPNyFrist',
-                'HPGjennomført',
+                'OmrådeOWSCHCM',
+                'KontrakterOWSCHCM',
+                'Sak/prosessavvikOWSMTXT',
+                'Årsak-OWSMTXT',
+                'KorrigerendeellerfOWSMTXT',
+                'BehovforhjelpOWSCHCS',
+                'MålfortiltakOWSMTXT',
+                'Tid/fristOWSDATE',
+                'AnsvarligOWSUSER',
+                'MåloppnåddOWSCHCS',
+                'GrunntilforsinkelsOWSCHCS',
+                'OppfølgingstiltakOWSMTXT',
+                'KontrollertdatoOWSDATE',
+                'StatushandlingsplanOWSCHCS',
                 'Created',
                 'Author'
 
             ],
-            RowLimit: 10
+            RowLimit: 50
         };
         sp.search(searchSettings).then((r: SearchResults) => {
             let searchResults = r.PrimarySearchResults;
-            console.log('getSubSiteListItems searchResults', searchResults);
             this.pushItems(searchResults);
         })
     }
 
     pushItems(searchResults: any) {
-        console.log('pushItems searchResults', searchResults)
         searchResults.forEach((element: any) => {
-            Items.push({
+            _items.push({
                 opprettet: moment(element.Created).format('DD/MM/YYYY'),
                 opprettetAv: element.Author,
                 område: element.HPOmråde,
@@ -200,6 +67,7 @@ class Handlingsplaner extends React.Component<any, any> {
 
             })
         });
+        initCSV(_items);
     }
 
     componentDidMount() {
@@ -211,8 +79,8 @@ class Handlingsplaner extends React.Component<any, any> {
         return (
             <div>
                 <DetailsList
-                    items={Items}
-                    columns={Columns}
+                    items={_items}
+                    columns={_columns}
                 />
             </div>
         )
@@ -223,3 +91,4 @@ ReactDOM.render(
     <Handlingsplaner />,
     document.getElementById("Render-Target")
 );
+
