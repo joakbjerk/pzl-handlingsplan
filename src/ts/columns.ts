@@ -1,3 +1,5 @@
+export const _items: object[] = [];
+
 const colOpt = {
   minWidth: 150,
   maxWidth: 200

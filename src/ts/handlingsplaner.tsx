@@ -2,18 +2,18 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import * as moment from 'moment';
 import { _columns } from './columns';
-import { initCSV } from './csv';
+import { Excel } from './excel';
+import { Link } from 'office-ui-fabric-react/lib/Link';
 import { DetailsList, DetailsListLayoutMode, Selection } from 'office-ui-fabric-react/lib/DetailsList';
 import { SearchQuery, SearchResults, sp } from 'sp-pnp-js';
 
 export const _items: object[] = [];
 
-class Handlingsplaner extends React.Component<any, any> {
+function orderBy(items, fieldNames) {
 
-    constructor() {
-        super()
-        this.state = { sortedItems: _items }
-    }
+}
+
+class Handlingsplaner extends React.Component<any, any> {
 
     getSubsiteListItems() {
         const searchSettings: SearchQuery = {
@@ -37,7 +37,7 @@ class Handlingsplaner extends React.Component<any, any> {
                 'Author'
 
             ],
-            RowLimit: 50
+            RowLimit: 5000
         };
         sp.search(searchSettings).then((r: SearchResults) => {
             let searchResults = r.PrimarySearchResults;
@@ -67,7 +67,6 @@ class Handlingsplaner extends React.Component<any, any> {
 
             })
         });
-        initCSV(_items);
     }
 
     componentDidMount() {
@@ -78,6 +77,7 @@ class Handlingsplaner extends React.Component<any, any> {
     render() {
         return (
             <div>
+                <Excel />
                 <DetailsList
                     items={_items}
                     columns={_columns}

@@ -1,14 +1,14 @@
-Område: OmrådeOWSCHCM - Område (Waiting/Queryable)
-Kontrakt: KontrakterOWSCHCM - Kontrakter (Waiting/Queryable)
-Sak/Prosessavvik: Sak/prosessavvikOWSMTXT - Sak_x002F_prosessavvik (Waiting/Queryable)
-Årsak: Årsak-OWSMTXT - Årsak_x0020_-_x0020_Miljøkontroll (Waiting/Queryable)
+Område: OmrådeOWSCHCM - Område 
+Kontrakt: KontrakterOWSCHCM - Kontrakter 
+Sak/Prosessavvik: Sak/prosessavvikOWSMTXT - Sak_x002F_prosessavvik 
+Årsak: Årsak-OWSMTXT - Årsak_x0020_-_x0020_Miljøkontroll 
 Korrigerende eller forebyggende tiltak: KorrigerendeellerfOWSMTXT - Korrigerende_x0020_eller_x0020_forebyggende_x0020_tiltak (Waiting/Queryable)
-Behov for hjelp?: BehovforhjelpOWSCHCS - Behov_x0020_for_x0020_hjelp_x003F_ (Waiting/Queryable)
-Mål for tiltaket: MålfortiltakOWSMTXT - Mål_x0020_for_x0020_tiltaket (Waiting/Queryable)
-Tidsfrist: Tid/fristOWSDATE - Tid_x002F_frist (Waiting/Queryable)
+Behov for hjelp?: BehovforhjelpOWSCHCS - Behov_x0020_for_x0020_hjelp_x003F_ 
+Mål for tiltaket: MålfortiltakOWSMTXT - Mål_x0020_for_x0020_tiltaket
+Tidsfrist: Tid/fristOWSDATE - Tid_x002F_frist 
 Ansvarlig: AnsvarligOWSUSER - Ansvarlig (Waiting/Queryable)
-Mål oppnådd?: MåloppnåddOWSCHCS - Mål_x0020_oppnådd_x003F_ (Waiting/Queryable)
-Grunn til forsinkelse: GrunntilforsinkelsOWSCHCS - Grunn_x0020_til_x0020_forsinkelse (Waiting/Queryable)
+Mål oppnådd?: MåloppnåddOWSCHCS - Mål_x0020_oppnådd_x003F_ 
+Grunn til forsinkelse: GrunntilforsinkelsOWSCHCS - Grunn_x0020_til_x0020_forsinkelse
 Oppfølgingstiltak: OppfølgingstiltakOWSMTXT - Oppfølgingstiltak
-Ny frist: KontrollertdatoOWSDATE - Kontrollert_x0020_dato (Waiting/Queryable)
-Gjennomført: StatushandlingsplanOWSCHCS - Status_x0020_handlingsplan (Waiting/Queryable)
+Ny frist: KontrollertdatoOWSDATE - Kontrollert_x0020_dato 
+Gjennomført: StatushandlingsplanOWSCHCS - Status_x0020_handlingsplan

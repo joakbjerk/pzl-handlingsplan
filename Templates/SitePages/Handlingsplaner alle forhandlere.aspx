@@ -31,7 +31,6 @@
     Handlingsplaner for alle forhandlere
 </asp:Content>
 <asp:Content ContentPlaceHolderID="PlaceHolderMain" runat="server">
-<a id="Download-Link" disabled="true">Temp-Download</a>
 <div id="Render-Target"></div>
    <script src="../SiteAssets/Handlingsplaner Scripts/js/handlingsplaner.js"></script>
 </asp:Content>
