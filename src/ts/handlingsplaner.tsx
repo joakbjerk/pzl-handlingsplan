@@ -9,8 +9,35 @@ import { SearchQuery, SearchResults, sp } from 'sp-pnp-js';
 
 export const _items: object[] = [];
 
-function orderBy(items, fieldNames) {
+function groupBy(items, fieldName) {
+    let groups = items.reduce((currentGroups, currentItem, index) => {
+        let lastGroup = currentGroups[currentGroups.length - 1];
+        let fieldValue = currentItem[fieldName];
 
+        if (!lastGroup || lastGroup.value !== fieldValue) {
+            currentGroups.push({
+                key: 'group' + fieldValue + index,
+                name: `By "${fieldValue}"`,
+                value: fieldValue,
+                startIndex: index,
+                level: 0,
+                count: 0
+            });
+        }
+        if (lastGroup) {
+            lastGroup.count = index - lastGroup.startIndex;
+        }
+        return currentGroups;
+    }, []);
+
+    // Fix last group count
+    let lastGroup = groups[groups.length - 1];
+
+    if (lastGroup) {
+        lastGroup.count = items.length - lastGroup.startIndex;
+    }
+
+    return groups;
 }
 
 class Handlingsplaner extends React.Component<any, any> {
@@ -34,36 +61,41 @@ class Handlingsplaner extends React.Component<any, any> {
                 'KontrollertdatoOWSDATE',
                 'StatushandlingsplanOWSCHCS',
                 'Created',
-                'Author'
+                'Author',
+                'Path',
+                'SiteTitle'
 
             ],
             RowLimit: 5000
         };
         sp.search(searchSettings).then((r: SearchResults) => {
             let searchResults = r.PrimarySearchResults;
+            console.log('searchResults', searchResults);
             this.pushItems(searchResults);
         })
     }
 
     pushItems(searchResults: any) {
-        searchResults.forEach((element: any) => {
+        searchResults.forEach((item: any) => {
             _items.push({
-                opprettet: moment(element.Created).format('DD/MM/YYYY'),
-                opprettetAv: element.Author,
-                område: element.HPOmråde,
-                kontrakt: element.HPKontrakter,
-                prossesavvik: element.HPSakProsessavvik,
-                årsak: element.HPÅrsak,
-                korrigerende: element.HPKorrigerende,
-                behovForHjelp: element.HPBehovForHjelp,
-                målForTiltaket: element.HPMålForTiltak,
-                tidsfrist: element.HPTidsfrist,
-                ansvarlig: element.HPAnsvarlig,
-                målOppnådd: element.HPMålOppnådd,
-                forsinkelse: element.HPGrunnTilForsinkelse,
-                oppfølgingstiltak: element.HPOppfølgingstiltak,
-                nyFrist: element.HPNyFrist,
-                gjennomført: element.HPGjennomført
+                opprettet: moment(item.Created).format('DD/MM/YYYY'),
+                opprettetAv: item.Author,
+                område: item.OmrådeOWSCHCM,
+                kontrakt: item.KontrakterOWSCHCM,
+                prossesavvik: item['Sak/prosessavvikOWSMTXT'],
+                årsak: item['Årsak-OWSMTXT'],
+                korrigerende: item.KorrigerendeellerfOWSMTXT,
+                behovForHjelp: item.BehovforhjelpOWSCHCS,
+                målForTiltaket: item.MålfortiltakOWSMTXT,
+                tidsfrist: item['Tid/fristOWSDATE'],
+                ansvarlig: item.AnsvarligOWSUSER,
+                målOppnådd: item.MåloppnåddOWSCHCS,
+                forsinkelse: item.GrunntilforsinkelsOWSCHCS,
+                oppfølgingstiltak: item.OppfølgingstiltakOWSMTXT,
+                nyFrist: item.KontrollertdatoOWSDATE,
+                gjennomført: item.StatushandlingsplanOWSCHCS,
+                location: item.path,
+                site: item.SiteTitle
 
             })
         });
@@ -81,6 +113,7 @@ class Handlingsplaner extends React.Component<any, any> {
                 <DetailsList
                     items={_items}
                     columns={_columns}
+
                 />
             </div>
         )
