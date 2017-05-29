@@ -1,6 +1,6 @@
 const colOpt = {
-  minWidth: 100,
-  maxWidth: 150,
+  minWidth: 120,
+  maxWidth: 180,
   resizeAble: true,
   multiline: true
 };

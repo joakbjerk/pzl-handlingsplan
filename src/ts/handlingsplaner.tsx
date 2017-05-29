@@ -42,7 +42,7 @@ class Handlingsplaner extends React.Component<any, any> {
                 'SiteTitle'
 
             ],
-            RowsPerPage: 50
+            RowLimit: 100
         };
         sp.search(searchSettings).then((r: SearchResults) => {
             let searchResults = r.PrimarySearchResults;
@@ -51,7 +51,7 @@ class Handlingsplaner extends React.Component<any, any> {
                     title: item.SiteTitle,
                     url: item.ParentLink
                 },
-                opprettet: formatDate(item.Created),
+                opprettet: item.Created,
                 opprettetAv: item.Author,
                 område: item.OmrådeOWSCHCM,
                 kontrakt: item.KontrakterOWSCHCM,
@@ -60,12 +60,12 @@ class Handlingsplaner extends React.Component<any, any> {
                 korrigerende: item.KorrigerendeellerfOWSMTXT,
                 behovForHjelp: item.BehovforhjelpOWSCHCS,
                 målForTiltaket: item.MålfortiltakOWSMTXT,
-                tidsfrist: formatDate(item['Tid/fristOWSDATE']),
+                tidsfrist: item['Tid/fristOWSDATE'],
                 ansvarlig: item.AnsvarligOWSUSER,
                 målOppnådd: item.MåloppnåddOWSCHCS,
                 forsinkelse: item.GrunntilforsinkelsOWSCHCS,
                 oppfølgingstiltak: item.OppfølgingstiltakOWSMTXT,
-                nyFrist: formatDate(item.KontrollertdatoOWSDATE),
+                nyFrist: item.KontrollertdatoOWSDATE,
                 gjennomført: item.StatushandlingsplanOWSCHCS
 
             }));
@@ -99,21 +99,22 @@ class Handlingsplaner extends React.Component<any, any> {
 
     render() {
         if (this.state.isLoading) {
-            <Spinner size={SpinnerSize.large} label='Henter listedata...' />;
+            return <Spinner size={SpinnerSize.large} label='Henter listedata...' />;
+        } else {
+            return (
+                <div>
+                    <Excel
+                        items={this.state.items}
+                        columns={_columns}
+                    />
+                    <DetailsList
+                        items={this.state.items}
+                        columns={_columns}
+                        onRenderItemColumn={this._onRenderItemColumn}
+                    />
+                </div>
+            )
         }
-        return (
-            <div>
-                <Excel
-                    items={this.state.items}
-                    columns={_columns}
-                />
-                <DetailsList
-                    items={this.state.items}
-                    columns={_columns}
-                    onRenderItemColumn={this._onRenderItemColumn}
-                />
-            </div>
-        )
     }
 }
 

@@ -4,18 +4,22 @@ moment.locale('nb');
 
 export function formatDate(date) {
   let datePattern = /\d{4}-\d{2}-\d{2}/;
+  console.log('date', date);
   if (date) {
-    let dateRegExec = datePattern.exec(date).toString()
-    return moment(dateRegExec).format('L');
+    let dateString = datePattern.exec(date).toString();
+    console.log('dateString', dateString);
+    console.log('dateString typeof', typeof dateString);
+    //let formatedDate = moment(datePattern).format('L');
+    return date;
   } else {
     return null;
   }
 }
 
 export function formatData(items) {
-  let reformattedItems = [];
+  let formattedItems = [];
   items.forEach(item => {
-    reformattedItems.push({
+    formattedItems.push({
       hentetFra: item.hentetFra,
       opprettet: item.opprettet,
       opprettetAv: item.opprettetAv,
@@ -36,13 +40,13 @@ export function formatData(items) {
       location: item.location,
     });
   });
-  return reformattedItems;
+  return formattedItems;
 }
 
-function removeHtmlTags(item: any) {
+export function removeHtmlTags(item: any) {
   const htmlTag = /(<([^>]+)>)/ig;
   if (item) {
-    return item.replace(htmlTag, '').toString();
+    return item.replace(htmlTag, '');
   } else {
     return null;
   }
