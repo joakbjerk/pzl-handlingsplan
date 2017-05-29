@@ -1,7 +1,7 @@
 const colOpt = {
   minWidth: 120,
   maxWidth: 180,
-  resizeAble: true,
+  isResizable: true,
   multiline: true
 };
 
@@ -13,7 +13,8 @@ export const _columns = [
     minWidth: colOpt.minWidth,
     maxWidth: colOpt.maxWidth,
     multiline: colOpt.multiline,
-    isResizable: colOpt.resizeAble
+    isResizable: colOpt.isResizable
+
   },
   {
     key: 'columnOpprettet',
@@ -22,7 +23,7 @@ export const _columns = [
     minWidth: colOpt.minWidth,
     maxWidth: colOpt.maxWidth,
     multiline: colOpt.multiline,
-    isResizable: colOpt.resizeAble
+    isResizable: colOpt.isResizable
   },
   {
     key: 'columnOpprettetAv',
@@ -31,7 +32,7 @@ export const _columns = [
     minWidth: colOpt.minWidth,
     maxWidth: colOpt.maxWidth,
     multiline: colOpt.multiline,
-    isResizable: colOpt.resizeAble
+    isResizable: colOpt.isResizable
   },
   {
     key: 'columnOmråde',
@@ -40,7 +41,7 @@ export const _columns = [
     minWidth: colOpt.minWidth,
     maxWidth: colOpt.maxWidth,
     multiline: colOpt.multiline,
-    isResizable: colOpt.resizeAble
+    isResizable: colOpt.isResizable
   },
   {
     key: 'columnKontrakt',
@@ -49,7 +50,8 @@ export const _columns = [
     minWidth: colOpt.minWidth,
     maxWidth: colOpt.maxWidth,
     multiline: colOpt.multiline,
-    isResizable: colOpt.resizeAble
+    isResizable: colOpt.isResizable
+
   },
   {
     key: 'columnProsessavvik',
@@ -58,7 +60,8 @@ export const _columns = [
     minWidth: colOpt.minWidth,
     maxWidth: colOpt.maxWidth,
     multiline: colOpt.multiline,
-    isResizable: colOpt.resizeAble
+    isResizable: colOpt.isResizable
+
   },
   {
     key: 'columnÅrsak',
@@ -67,7 +70,7 @@ export const _columns = [
     minWidth: colOpt.minWidth,
     maxWidth: colOpt.maxWidth,
     multiline: colOpt.multiline,
-    isResizable: colOpt.resizeAble
+    isResizable: colOpt.isResizable
   },
   {
     key: 'columnKorrigerende',
@@ -76,7 +79,7 @@ export const _columns = [
     minWidth: colOpt.minWidth,
     maxWidth: colOpt.maxWidth,
     multiline: colOpt.multiline,
-    isResizable: colOpt.resizeAble
+    isResizable: colOpt.isResizable
   },
   {
     key: 'columnBehovForHjelp',
@@ -84,8 +87,8 @@ export const _columns = [
     fieldName: 'behovForHjelp',
     minWidth: colOpt.minWidth,
     maxWidth: colOpt.maxWidth,
-    multiline: colOpt.multiline,
-    isResizable: colOpt.resizeAble
+    multiline: true,
+    isResizable: true
   },
   {
     key: 'columnMålForTiltaket',
@@ -94,7 +97,7 @@ export const _columns = [
     minWidth: colOpt.minWidth,
     maxWidth: colOpt.maxWidth,
     multiline: colOpt.multiline,
-    isResizable: colOpt.resizeAble
+    isResizable: colOpt.isResizable
   },
   {
     key: 'columnTidsfrist',
@@ -103,7 +106,7 @@ export const _columns = [
     minWidth: colOpt.minWidth,
     maxWidth: colOpt.maxWidth,
     multiline: colOpt.multiline,
-    isResizable: colOpt.resizeAble
+    isResizable: colOpt.isResizable
   },
   {
     key: 'columnAnsvarlig',
@@ -112,7 +115,7 @@ export const _columns = [
     minWidth: colOpt.minWidth,
     maxWidth: colOpt.maxWidth,
     multiline: colOpt.multiline,
-    isResizable: colOpt.resizeAble
+    isResizable: colOpt.isResizable
   },
   {
     key: 'columnMålOppnådd',
@@ -121,7 +124,8 @@ export const _columns = [
     minWidth: colOpt.minWidth,
     maxWidth: colOpt.maxWidth,
     multiline: colOpt.multiline,
-    isResizable: colOpt.resizeAble
+    isResizable: colOpt.isResizable
+
   },
   {
     key: 'columnForsinkelse',
@@ -130,7 +134,7 @@ export const _columns = [
     minWidth: colOpt.minWidth,
     maxWidth: colOpt.maxWidth,
     multiline: colOpt.multiline,
-    isResizable: colOpt.resizeAble
+    isResizable: colOpt.isResizable
   },
   {
     key: 'columnOppfølgingstiltak',
@@ -139,7 +143,8 @@ export const _columns = [
     minWidth: colOpt.minWidth,
     maxWidth: colOpt.maxWidth,
     multiline: colOpt.multiline,
-    isResizable: colOpt.resizeAble
+    isResizable: colOpt.isResizable
+
   },
   {
     key: 'columnNyFrist',
@@ -148,7 +153,7 @@ export const _columns = [
     minWidth: colOpt.minWidth,
     maxWidth: colOpt.maxWidth,
     multiline: colOpt.multiline,
-    isResizable: colOpt.resizeAble
+    isResizable: colOpt.isResizable
   },
   {
     key: 'columnGjennomført',
@@ -157,7 +162,7 @@ export const _columns = [
     minWidth: colOpt.minWidth,
     maxWidth: colOpt.maxWidth,
     multiline: colOpt.multiline,
-    isResizable: colOpt.resizeAble
+    isResizable: colOpt.isResizable
   }
 ];
 
