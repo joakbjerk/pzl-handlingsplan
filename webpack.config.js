@@ -23,6 +23,6 @@ module.exports = {
   externals: {
     "react": "React",
     "react-dom": "ReactDOM",
-    "moment": "moment"
+    "moment-with-locales": "moment"
   },
 };

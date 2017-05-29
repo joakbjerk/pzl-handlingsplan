@@ -4,15 +4,17 @@ import * as moment from 'moment';
 import { _columns } from './columns';
 import { Excel } from './excel';
 import { SearchQuery, SearchResults, sp } from 'sp-pnp-js';
-import { DetailsList } from 'office-ui-fabric-react/lib/DetailsList';
+import { DetailsList, DetailsListLayoutMode } from 'office-ui-fabric-react/lib/DetailsList';
 import { Link } from 'office-ui-fabric-react/lib/Link';
 import { Spinner, SpinnerSize } from 'office-ui-fabric-react/lib/Spinner';
 require('es6-promise/auto');
+moment.locale('nb')
 
-function getDate(item) {
-    let regExPattern = /(\d{4})-(\d{2})-(\d{2})/g;
+function reformatDate(item) {
+    console.log(item);
+    let regExPattern = /\d{4}-\d{2}-\d{2}/;
     if (item) {
-        return regExPattern.exec(item).toString();
+        return moment(regExPattern.exec(item).toString()).format('L');
     } else {
         return null;
     }
@@ -60,7 +62,7 @@ class Handlingsplaner extends React.Component<any, any> {
                     title: item.SiteTitle,
                     url: item.ParentLink
                 },
-                opprettet: moment(item.Created).format('L'),
+                opprettet: reformatDate(item.Created),
                 opprettetAv: item.Author,
                 område: item.OmrådeOWSCHCM,
                 kontrakt: item.KontrakterOWSCHCM,
@@ -69,12 +71,12 @@ class Handlingsplaner extends React.Component<any, any> {
                 korrigerende: item.KorrigerendeellerfOWSMTXT,
                 behovForHjelp: item.BehovforhjelpOWSCHCS,
                 målForTiltaket: item.MålfortiltakOWSMTXT,
-                tidsfrist: moment(getDate(item['Tid/fristOWSDATE'])).format('L'),
+                tidsfrist: reformatDate(item['Tid/fristOWSDATE']),
                 ansvarlig: item.AnsvarligOWSUSER,
                 målOppnådd: item.MåloppnåddOWSCHCS,
                 forsinkelse: item.GrunntilforsinkelsOWSCHCS,
                 oppfølgingstiltak: item.OppfølgingstiltakOWSMTXT,
-                nyFrist: moment(getDate(item.KontrollertdatoOWSDATE)).format('L'),
+                nyFrist: reformatDate(item.KontrollertdatoOWSDATE),
                 gjennomført: item.StatushandlingsplanOWSCHCS
 
             }));
@@ -82,11 +84,8 @@ class Handlingsplaner extends React.Component<any, any> {
         })
     }
 
-
-
     _onRenderItemColumn(item, index, column) {
         let colValue = item[column.fieldName];
-        console.log('colValue', colValue);
         switch (column.key) {
             case 'columnProsessavvik':
             case 'columnÅrsak':
@@ -117,17 +116,18 @@ class Handlingsplaner extends React.Component<any, any> {
             <div>
                 <Excel
                     items={this.state.items}
-                    columns={_columns} />
+                    columns={_columns}
+                />
                 <DetailsList
                     items={this.state.items}
                     columns={_columns}
+                    layoutMode={DetailsListLayoutMode.fixedColumns}
                     onRenderItemColumn={this._onRenderItemColumn}
                 />
             </div>
         )
     }
 }
-
 
 ReactDOM.render(
     <Handlingsplaner />,

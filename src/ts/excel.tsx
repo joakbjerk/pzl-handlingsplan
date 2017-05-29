@@ -39,7 +39,7 @@ function reformatData(items) {
   return reformattedItems;
 }
 
-const Button = () => {
+const ExportButton = () => {
   return (
     <DefaultButton
       data-automation-id='Excel-Export-Button'
@@ -52,7 +52,7 @@ const Button = () => {
 
 export const Excel = ({ items, columns }) => {
   return (
-    <Workbook filename="Handlingsplaner.xlsx" element={<Button />}>
+    <Workbook filename="Handlingsplaner.xlsx" element={<ExportButton />}>
       <Workbook.Sheet data={reformatData(items)} name="Handlingsplaner">
         {columns.map(column => <Workbook.Column label={column.name} value={column.fieldName} key={column.key} />)}
       </Workbook.Sheet>
