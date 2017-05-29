@@ -5,6 +5,14 @@ const colOpt = {
 
 export const _columns = [
   {
+    key: 'columnSideHentetFra',
+    name: 'Side hentet fra',
+    fieldName: 'sideHentetFra',
+    minWidth: colOpt.minWidth,
+    maxWidth: colOpt.maxWidth,
+    multiline: true
+  },
+  {
     key: 'columnOpprettet',
     name: 'Opprettet',
     fieldName: 'opprettet',

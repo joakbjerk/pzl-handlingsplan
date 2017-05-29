@@ -20,6 +20,7 @@
     "@types/react-dom": "^0.14.23",
     "@types/sharepoint": "0.0.0",
     "@types/typescript": "^2.0.0",
+    "es6-promise": "^4.1.0",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
@@ -44,9 +45,11 @@
     "tslint": "^4.3.1",
     "typescript": "^2.3.2",
     "webpack": "^2.5.1",
-    "webpack-stream": "^3.2.0"
+    "webpack-stream": "^3.2.0",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
+    "@types/node": "^7.0.22",
     "awesome-typescript-loader": "^3.1.3",
     "json-loader": "^0.5.4",
     "source-map-loader": "^0.2.1"

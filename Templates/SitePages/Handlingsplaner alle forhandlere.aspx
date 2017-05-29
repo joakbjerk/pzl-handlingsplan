@@ -16,10 +16,10 @@
     <SharePoint:ProjectProperty Property="Title" runat="server"/>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="PlaceHolderAdditionalPageHead" runat="server">
-    <Sharepoint:CssRegistration ID="MainCss" Name="<% $SPUrl:~SiteCollection/SiteAssets/Handlingsplaner Scripts/css/handlingsplaner.css %>" runat="server" />
-    <SharePoint:ScriptLink ID="React" Name="~sitecollection/SiteAssets/Handlingsplaner Scripts/lib/react.js" Language="javascript" runat="server" />
-    <SharePoint:ScriptLink ID="ReactDom" Name="~sitecollection/SiteAssets/Handlingsplaner Scripts/lib/react-dom.js" Language="javascript" runat="server" />
-    <SharePoint:ScriptLink ID="Moment" Name="~sitecollection/SiteAssets/Handlingsplaner Scripts/lib/moment.min.js" Language="javascript" runat="server" />
+    <Sharepoint:CssRegistration ID="MainCss" Name="<% $SPUrl:~SiteCollection/SiteAssets/Handlingsplaner%20Scripts/css/handlingsplaner.css %>" runat="server" />
+    <SharePoint:ScriptLink ID="React" Name="~sitecollection/SiteAssets/Handlingsplaner%20Scripts/lib/react.js" Language="javascript" runat="server" />
+    <SharePoint:ScriptLink ID="ReactDom" Name="~sitecollection/SiteAssets/Handlingsplaner%20Scripts/lib/react-dom.js" Language="javascript" runat="server" />
+    <SharePoint:ScriptLink ID="Moment" Name="~sitecollection/SiteAssets/Handlingsplaner%20Scripts/lib/moment-with-locales.min.js" Language="javascript" runat="server" />
     <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js"></script>
 </asp:Content>    
 <asp:Content ContentPlaceHolderID="PlaceHolderSearchArea" runat="server">
@@ -32,5 +32,5 @@
 </asp:Content>
 <asp:Content ContentPlaceHolderID="PlaceHolderMain" runat="server">
 <div id="Render-Target"></div>
-   <script src="../SiteAssets/Handlingsplaner Scripts/js/handlingsplaner.js"></script>
+   <script src="../SiteAssets/Handlingsplaner%20Scripts/js/handlingsplaner.js"></script>
 </asp:Content>

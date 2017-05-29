@@ -1,5 +1,8 @@
 module.exports = {
-  entry: "./src/ts/handlingsplaner",
+  entry: [
+    "./node_modules/es6-promise/dist/es6-promise.auto.min",
+    "./node_modules/whatwg-fetch/fetch",
+    "./src/ts/handlingsplaner"],
   output: {
     filename: "handlingsplaner.js",
     path: __dirname + "/dist/js"
