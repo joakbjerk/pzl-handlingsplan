@@ -1,26 +1,35 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { formatDate } from './utils'
+import { mapAllItems, mapCurrentItems, formatDate } from './utils'
 import { _columns } from './columns';
 import { Excel } from './excel';
-import { SearchQuery, SearchResults, sp } from 'sp-pnp-js';
+import pnp, { SearchQuery, SearchResults, SearchQueryBuilder } from 'sp-pnp-js';
+import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
 import { DetailsList } from 'office-ui-fabric-react/lib/DetailsList';
 import { Link } from 'office-ui-fabric-react/lib/Link';
 import { Spinner, SpinnerSize } from 'office-ui-fabric-react/lib/Spinner';
 require('es6-promise/auto');
+
+let currentResults: SearchResults = null;
+let page: 0;
 
 class Handlingsplaner extends React.Component<any, any> {
     constructor(props) {
         super(props);
         this.state = {
             isLoading: true,
-            items: [],
+            allItems: []
+
         }
     }
 
     getSubsiteListItems() {
         const searchSettings: SearchQuery = {
-            Querytext: 'ContentType:"Element Handlingsplan"',
+            /* Querytext: 'ContentType:"Element Handlingsplan"',
+             RowLimit: 100,
+             RowsPerPage: 50,
+             StartRow: 0,
+             EnableQueryRules: true,*/
             SelectProperties: [
                 'OmrådeOWSCHCM',
                 'KontrakterOWSCHCM',
@@ -40,18 +49,22 @@ class Handlingsplaner extends React.Component<any, any> {
                 'Author',
                 'ParentLink',
                 'SiteTitle'
+            ]
+        }
+        let finQ = SearchQueryBuilder.create('ContentType:"Element Handlingsplan"', searchSettings).rowLimit(100).rowsPerPage(50).startRow(0);
 
-            ],
-            RowLimit: 100
-        };
-        sp.search(searchSettings).then((r: SearchResults) => {
+        pnp.sp.search(searchSettings).then((r: SearchResults) => {
+            console.log('currentResults', currentResults);
             let searchResults = r.PrimarySearchResults;
-            let items = searchResults.map((item: any) => ({
+            currentResults = r;
+            page = 0;
+            console.log('currentResults', currentResults);
+            let items = currentResults.PrimarySearchResults.map((item: any) => ({
                 hentetFra: {
                     title: item.SiteTitle,
                     url: item.ParentLink
                 },
-                opprettet: item.Created,
+                opprettet: formatDate(item.Created),
                 opprettetAv: item.Author,
                 område: item.OmrådeOWSCHCM,
                 kontrakt: item.KontrakterOWSCHCM,
@@ -60,18 +73,35 @@ class Handlingsplaner extends React.Component<any, any> {
                 korrigerende: item.KorrigerendeellerfOWSMTXT,
                 behovForHjelp: item.BehovforhjelpOWSCHCS,
                 målForTiltaket: item.MålfortiltakOWSMTXT,
-                tidsfrist: item['Tid/fristOWSDATE'],
+                tidsfrist: formatDate(item['Tid/fristOWSDATE']),
                 ansvarlig: item.AnsvarligOWSUSER,
                 målOppnådd: item.MåloppnåddOWSCHCS,
                 forsinkelse: item.GrunntilforsinkelsOWSCHCS,
                 oppfølgingstiltak: item.OppfølgingstiltakOWSMTXT,
-                nyFrist: item.KontrollertdatoOWSDATE,
+                nyFrist: formatDate(item.KontrollertdatoOWSDATE),
                 gjennomført: item.StatushandlingsplanOWSCHCS
-
             }));
-            this.setState({ items: items, isLoading: false });
+            this.setState({ allItems: items, isLoading: false });
         })
     }
+
+    nextPage() {
+        console.log('currentResults', currentResults);
+        currentResults.getPage(++page).then((r: SearchResults) => {
+            currentResults = r;
+            console.log('currentResults', currentResults);
+        });
+    }
+
+    prevPage() {
+        console.log('currentResults', currentResults);
+        currentResults.getPage(--page).then((r: SearchResults) => {
+            currentResults = r;
+            console.log('currentResults', currentResults);
+        });
+    }
+
+
 
     _onRenderItemColumn(item, index, column) {
         let colValue = item[column.fieldName];
@@ -81,10 +111,10 @@ class Handlingsplaner extends React.Component<any, any> {
             case 'columnMålForTiltaket':
             case 'columnOppfølgingstiltak':
             case 'columnKorrigerende': {
-                return <span dangerouslySetInnerHTML={{ __html: colValue }}></span>
+                return <span dangerouslySetInnerHTML={{ __html: colValue }}></span >
             }
             case 'columnHentetFra': {
-                return <Link href={colValue.url}>{colValue.title}</Link>
+                return <Link href={colValue.url} > {colValue.title}</Link>
             }
             default: {
                 return <span>{colValue}</span>;
@@ -99,18 +129,45 @@ class Handlingsplaner extends React.Component<any, any> {
 
     render() {
         if (this.state.isLoading) {
-            return <Spinner size={SpinnerSize.large} label='Henter listedata...' />;
+            return <Spinner size={SpinnerSize.large} label='Henter listedata' />;
         } else {
             return (
                 <div>
                     <Excel
-                        items={this.state.items}
+                        items={this.state.allItems}
                         columns={_columns}
                     />
+                    <DefaultButton
+                        data-automation-id='Top-Prev-Page-Button'
+                        description='Neste Side'
+                        iconProps={{ iconName: 'Back' }}
+                        onClick={this.prevPage}
+
+                    />
+                    <DefaultButton
+                        data-automation-id='Top-Next-Page-Button'
+                        description='Neste Side'
+                        iconProps={{ iconName: 'Forward' }}
+                        onClick={this.nextPage}
+
+                    />
                     <DetailsList
-                        items={this.state.items}
+                        items={this.state.allItems}
                         columns={_columns}
                         onRenderItemColumn={this._onRenderItemColumn}
+                    />
+                    <DefaultButton
+                        data-automation-id='Bottom-Prev-Page-Button'
+                        description='Neste Side'
+                        iconProps={{ iconName: 'Back' }}
+                        onClick={this.prevPage}
+
+                    />
+                    <DefaultButton
+                        data-automation-id='Bottom-Next-Page-Button'
+                        description='Neste side'
+                        iconProps={{ iconName: 'Forward' }}
+                        onClick={this.nextPage}
                     />
                 </div>
             )

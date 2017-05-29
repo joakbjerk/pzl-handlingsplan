@@ -1,45 +1,9 @@
 import * as React from 'react';
 import * as moment from 'moment';
-
+import { formatData } from './utils'
 import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
 import Workbook from 'react-excel-workbook';
 
-function formatData(items) {
-  let formattedItems = [];
-  items.forEach(item => {
-    formattedItems.push({
-      hentetFra: item.hentetFra,
-      opprettet: item.opprettet,
-      opprettetAv: item.opprettetAv,
-      område: item.område,
-      kontrakt: item.kontrakt,
-      prossesavvik: removeHtmlTags(item.prossesavvik),
-      årsak: removeHtmlTags(item.årsak),
-      korrigerende: removeHtmlTags(item.korrigerende),
-      behovForHjelp: item.behovForHjelp,
-      målForTiltaket: removeHtmlTags(item.målForTiltaket),
-      tidsfrist: item.tidsfrist,
-      ansvarlig: item.ansvarlig,
-      målOppnådd: item.målOppnådd,
-      forsinkelse: item.forsinkelse,
-      oppfølgingstiltak: removeHtmlTags(item.oppfølgingstiltak),
-      nyFrist: item.nyFrist,
-      gjennomført: item.gjennomført,
-      location: item.location,
-    });
-  });
-  console.log('formattedItems', formattedItems);
-  return formattedItems;
-}
-
-function removeHtmlTags(item: any) {
-  const htmlTag = /(<([^>]+)>)/ig;
-  if (item) {
-    return item.replace(htmlTag, '');
-  } else {
-    return null;
-  }
-}
 
 const ExportButton = () => {
   return (
