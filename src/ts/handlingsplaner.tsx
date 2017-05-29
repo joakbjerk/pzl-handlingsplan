@@ -1,24 +1,13 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import * as moment from 'moment';
+import { formatDate } from './utils'
 import { _columns } from './columns';
 import { Excel } from './excel';
 import { SearchQuery, SearchResults, sp } from 'sp-pnp-js';
-import { DetailsList, DetailsListLayoutMode } from 'office-ui-fabric-react/lib/DetailsList';
+import { DetailsList } from 'office-ui-fabric-react/lib/DetailsList';
 import { Link } from 'office-ui-fabric-react/lib/Link';
 import { Spinner, SpinnerSize } from 'office-ui-fabric-react/lib/Spinner';
 require('es6-promise/auto');
-moment.locale('nb')
-
-function reformatDate(item) {
-    console.log(item);
-    let regExPattern = /\d{4}-\d{2}-\d{2}/;
-    if (item) {
-        return moment(regExPattern.exec(item).toString()).format('L');
-    } else {
-        return null;
-    }
-}
 
 class Handlingsplaner extends React.Component<any, any> {
     constructor(props) {
@@ -53,7 +42,7 @@ class Handlingsplaner extends React.Component<any, any> {
                 'SiteTitle'
 
             ],
-            RowLimit: 1
+            RowsPerPage: 50
         };
         sp.search(searchSettings).then((r: SearchResults) => {
             let searchResults = r.PrimarySearchResults;
@@ -62,7 +51,7 @@ class Handlingsplaner extends React.Component<any, any> {
                     title: item.SiteTitle,
                     url: item.ParentLink
                 },
-                opprettet: reformatDate(item.Created),
+                opprettet: formatDate(item.Created),
                 opprettetAv: item.Author,
                 område: item.OmrådeOWSCHCM,
                 kontrakt: item.KontrakterOWSCHCM,
@@ -71,12 +60,12 @@ class Handlingsplaner extends React.Component<any, any> {
                 korrigerende: item.KorrigerendeellerfOWSMTXT,
                 behovForHjelp: item.BehovforhjelpOWSCHCS,
                 målForTiltaket: item.MålfortiltakOWSMTXT,
-                tidsfrist: reformatDate(item['Tid/fristOWSDATE']),
+                tidsfrist: formatDate(item['Tid/fristOWSDATE']),
                 ansvarlig: item.AnsvarligOWSUSER,
                 målOppnådd: item.MåloppnåddOWSCHCS,
                 forsinkelse: item.GrunntilforsinkelsOWSCHCS,
                 oppfølgingstiltak: item.OppfølgingstiltakOWSMTXT,
-                nyFrist: reformatDate(item.KontrollertdatoOWSDATE),
+                nyFrist: formatDate(item.KontrollertdatoOWSDATE),
                 gjennomført: item.StatushandlingsplanOWSCHCS
 
             }));
@@ -121,7 +110,6 @@ class Handlingsplaner extends React.Component<any, any> {
                 <DetailsList
                     items={this.state.items}
                     columns={_columns}
-                    layoutMode={DetailsListLayoutMode.fixedColumns}
                     onRenderItemColumn={this._onRenderItemColumn}
                 />
             </div>

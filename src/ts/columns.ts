@@ -1,139 +1,163 @@
+const colOpt = {
+  minWidth: 100,
+  maxWidth: 150,
+  resizeAble: true,
+  multiline: true
+};
+
 export const _columns = [
   {
     key: 'columnHentetFra',
     name: 'Hentet fra',
     fieldName: 'hentetFra',
-    minWidth: 100,
-    maxWidth: 150,
-    multiline: true
+    minWidth: colOpt.minWidth,
+    maxWidth: colOpt.maxWidth,
+    multiline: colOpt.multiline,
+    isResizable: colOpt.resizeAble
   },
   {
     key: 'columnOpprettet',
     name: 'Opprettet',
     fieldName: 'opprettet',
-    minWidth: 100,
-    maxWidth: 150,
-    multiline: true
+    minWidth: colOpt.minWidth,
+    maxWidth: colOpt.maxWidth,
+    multiline: colOpt.multiline,
+    isResizable: colOpt.resizeAble
   },
   {
     key: 'columnOpprettetAv',
     name: 'Opprettet Av',
     fieldName: 'opprettetAv',
-    minWidth: 100,
-    maxWidth: 150,
-    multiline: true
+    minWidth: colOpt.minWidth,
+    maxWidth: colOpt.maxWidth,
+    multiline: colOpt.multiline,
+    isResizable: colOpt.resizeAble
   },
   {
     key: 'columnOmråde',
     name: 'Område',
     fieldName: 'område',
-    minWidth: 100,
-    maxWidth: 150,
-    multiline: true
+    minWidth: colOpt.minWidth,
+    maxWidth: colOpt.maxWidth,
+    multiline: colOpt.multiline,
+    isResizable: colOpt.resizeAble
   },
   {
     key: 'columnKontrakt',
     name: 'Kontrakt',
     fieldName: 'kontrakt',
-    minWidth: 100,
-    maxWidth: 150,
-    multiline: true
+    minWidth: colOpt.minWidth,
+    maxWidth: colOpt.maxWidth,
+    multiline: colOpt.multiline,
+    isResizable: colOpt.resizeAble
   },
   {
     key: 'columnProsessavvik',
     name: 'Sak/prosessavvik',
     fieldName: 'prossesavvik',
-    minWidth: 100,
-    maxWidth: 150,
-    multiline: true
+    minWidth: colOpt.minWidth,
+    maxWidth: colOpt.maxWidth,
+    multiline: colOpt.multiline,
+    isResizable: colOpt.resizeAble
   },
   {
     key: 'columnÅrsak',
     name: 'Årsak',
     fieldName: 'årsak',
-    minWidth: 100,
-    maxWidth: 150,
-    multiline: true
+    minWidth: colOpt.minWidth,
+    maxWidth: colOpt.maxWidth,
+    multiline: colOpt.multiline,
+    isResizable: colOpt.resizeAble
   },
   {
     key: 'columnKorrigerende',
     name: 'Korrigerende Eller Forebyggende Tiltak',
     fieldName: 'korrigerende',
-    minWidth: 100,
-    maxWidth: 150,
-    multiline: true
+    minWidth: colOpt.minWidth,
+    maxWidth: colOpt.maxWidth,
+    multiline: colOpt.multiline,
+    isResizable: colOpt.resizeAble
   },
   {
     key: 'columnBehovForHjelp',
     name: 'Behov for hjelp?',
     fieldName: 'behovForHjelp',
-    minWidth: 100,
-    maxWidth: 150,
-    multiline: true
+    minWidth: colOpt.minWidth,
+    maxWidth: colOpt.maxWidth,
+    multiline: colOpt.multiline,
+    isResizable: colOpt.resizeAble
   },
   {
     key: 'columnMålForTiltaket',
     name: 'Mål for tiltaket',
     fieldName: 'målForTiltaket',
-    minWidth: 100,
-    maxWidth: 150,
-    multiline: true
+    minWidth: colOpt.minWidth,
+    maxWidth: colOpt.maxWidth,
+    multiline: colOpt.multiline,
+    isResizable: colOpt.resizeAble
   },
   {
     key: 'columnTidsfrist',
     name: 'Tidsfrist',
     fieldName: 'tidsfrist',
-    minWidth: 100,
-    maxWidth: 150,
-    multiline: true
+    minWidth: colOpt.minWidth,
+    maxWidth: colOpt.maxWidth,
+    multiline: colOpt.multiline,
+    isResizable: colOpt.resizeAble
   },
   {
     key: 'columnAnsvarlig',
     name: 'Ansvarlig',
     fieldName: 'ansvarlig',
-    minWidth: 100,
-    maxWidth: 150,
-    multiline: true
+    minWidth: colOpt.minWidth,
+    maxWidth: colOpt.maxWidth,
+    multiline: colOpt.multiline,
+    isResizable: colOpt.resizeAble
   },
   {
     key: 'columnMålOppnådd',
     name: 'Mål oppnådd?',
     fieldName: 'målOppnådd',
-    minWidth: 100,
-    maxWidth: 150,
-    multiline: true
+    minWidth: colOpt.minWidth,
+    maxWidth: colOpt.maxWidth,
+    multiline: colOpt.multiline,
+    isResizable: colOpt.resizeAble
   },
   {
     key: 'columnForsinkelse',
     name: 'Grunn til forsinkelse',
     fieldName: 'forsinkelse',
-    minWidth: 100,
-    maxWidth: 150,
-    multiline: true
+    minWidth: colOpt.minWidth,
+    maxWidth: colOpt.maxWidth,
+    multiline: colOpt.multiline,
+    isResizable: colOpt.resizeAble
   },
   {
     key: 'columnOppfølgingstiltak',
     name: 'Oppfølgingstiltak',
     fieldName: 'oppfølgingstiltak',
-    minWidth: 100,
-    maxWidth: 150,
-    multiline: true
+    minWidth: colOpt.minWidth,
+    maxWidth: colOpt.maxWidth,
+    multiline: colOpt.multiline,
+    isResizable: colOpt.resizeAble
   },
   {
     key: 'columnNyFrist',
     name: 'Ny frist',
     fieldName: 'nyFrist',
-    minWidth: 100,
-    maxWidth: 150,
-    multiline: true
+    minWidth: colOpt.minWidth,
+    maxWidth: colOpt.maxWidth,
+    multiline: colOpt.multiline,
+    isResizable: colOpt.resizeAble
   },
   {
     key: 'columnGjennomført',
     name: 'Gjennomført',
     fieldName: 'gjennomført',
-    minWidth: 100,
-    maxWidth: 150,
-    multiline: true
+    minWidth: colOpt.minWidth,
+    maxWidth: colOpt.maxWidth,
+    multiline: colOpt.multiline,
+    isResizable: colOpt.resizeAble
   }
 ];
 
