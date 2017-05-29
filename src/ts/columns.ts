@@ -5,9 +5,9 @@ const colOpt = {
 
 export const _columns = [
   {
-    key: 'columnSideHentetFra',
-    name: 'Side hentet fra',
-    fieldName: 'sideHentetFra',
+    key: 'columnHentetFra',
+    name: 'Hentet fra',
+    fieldName: 'hentetFra',
     minWidth: colOpt.minWidth,
     maxWidth: colOpt.maxWidth,
     multiline: true

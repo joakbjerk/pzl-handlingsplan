@@ -5,10 +5,18 @@ import { _columns } from './columns';
 import { Excel } from './excel';
 import { SearchQuery, SearchResults, sp } from 'sp-pnp-js';
 import { DetailsList } from 'office-ui-fabric-react/lib/DetailsList';
-import { Spinner, SpinnerType } from 'office-ui-fabric-react/lib/Spinner';
+import { Link } from 'office-ui-fabric-react/lib/Link';
+import { Spinner, SpinnerSize } from 'office-ui-fabric-react/lib/Spinner';
 require('es6-promise/auto');
 
-let _items = [];
+function getDate(item) {
+    let regExPattern = /(\d{4})-(\d{2})-(\d{2})/g;
+    if (item) {
+        return regExPattern.exec(item).toString();
+    } else {
+        return null;
+    }
+}
 
 class Handlingsplaner extends React.Component<any, any> {
     constructor(props) {
@@ -20,7 +28,6 @@ class Handlingsplaner extends React.Component<any, any> {
     }
 
     getSubsiteListItems() {
-        console.log('getSubSiteListItems');
         const searchSettings: SearchQuery = {
             Querytext: 'ContentType:"Element Handlingsplan"',
             SelectProperties: [
@@ -40,18 +47,20 @@ class Handlingsplaner extends React.Component<any, any> {
                 'StatushandlingsplanOWSCHCS',
                 'Created',
                 'Author',
-                'Path',
+                'ParentLink',
                 'SiteTitle'
 
             ],
-            RowLimit: 100
+            RowLimit: 1
         };
         sp.search(searchSettings).then((r: SearchResults) => {
             let searchResults = r.PrimarySearchResults;
-            console.log('searchResults', searchResults);
             let items = searchResults.map((item: any) => ({
-                sideHentetFra: item.SiteTitle,
-                opprettet: moment(item.Created).format('DD/MM/YYYY'),
+                hentetFra: {
+                    title: item.SiteTitle,
+                    url: item.ParentLink
+                },
+                opprettet: moment(item.Created).format('L'),
                 opprettetAv: item.Author,
                 område: item.OmrådeOWSCHCM,
                 kontrakt: item.KontrakterOWSCHCM,
@@ -60,30 +69,34 @@ class Handlingsplaner extends React.Component<any, any> {
                 korrigerende: item.KorrigerendeellerfOWSMTXT,
                 behovForHjelp: item.BehovforhjelpOWSCHCS,
                 målForTiltaket: item.MålfortiltakOWSMTXT,
-                tidsfrist: item['Tid/fristOWSDATE'],
+                tidsfrist: moment(getDate(item['Tid/fristOWSDATE'])).format('L'),
                 ansvarlig: item.AnsvarligOWSUSER,
                 målOppnådd: item.MåloppnåddOWSCHCS,
                 forsinkelse: item.GrunntilforsinkelsOWSCHCS,
                 oppfølgingstiltak: item.OppfølgingstiltakOWSMTXT,
-                nyFrist: item.KontrollertdatoOWSDATE,
-                gjennomført: item.StatushandlingsplanOWSCHCS,
-                location: item.path,
+                nyFrist: moment(getDate(item.KontrollertdatoOWSDATE)).format('L'),
+                gjennomført: item.StatushandlingsplanOWSCHCS
+
             }));
             this.setState({ items: items, isLoading: false });
         })
     }
 
+
+
     _onRenderItemColumn(item, index, column) {
         let colValue = item[column.fieldName];
-        /*console.log('item', item);
-        console.log('index', index);
-        console.log('column', column);*/
+        console.log('colValue', colValue);
         switch (column.key) {
             case 'columnProsessavvik':
             case 'columnÅrsak':
             case 'columnMålForTiltaket':
-            case 'columnOppfølgingstiltak': {
+            case 'columnOppfølgingstiltak':
+            case 'columnKorrigerende': {
                 return <span dangerouslySetInnerHTML={{ __html: colValue }}></span>
+            }
+            case 'columnHentetFra': {
+                return <Link href={colValue.url}>{colValue.title}</Link>
             }
             default: {
                 return <span>{colValue}</span>;
@@ -98,23 +111,23 @@ class Handlingsplaner extends React.Component<any, any> {
 
     render() {
         if (this.state.isLoading) {
-            return <Spinner type={SpinnerType.large} />;
-        } else {
-            return (
-                <div>
-                    <Excel
-                        items={this.state.items}
-                        columns={_columns} />
-                    <DetailsList
-                        items={this.state.items}
-                        columns={_columns}
-                        onRenderItemColumn={this._onRenderItemColumn}
-                    />
-                </div>
-            )
+            <Spinner size={SpinnerSize.large} label='Henter listedata...' />;
         }
+        return (
+            <div>
+                <Excel
+                    items={this.state.items}
+                    columns={_columns} />
+                <DetailsList
+                    items={this.state.items}
+                    columns={_columns}
+                    onRenderItemColumn={this._onRenderItemColumn}
+                />
+            </div>
+        )
     }
 }
+
 
 ReactDOM.render(
     <Handlingsplaner />,
