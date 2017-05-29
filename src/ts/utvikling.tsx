@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { mapAllItems, mapCurrentItems, formatDate } from './utils'
 import { _columns } from './columns';
 import { Excel } from './excel';
-import pnp, { SearchQuery, SearchResults, SearchQueryBuilder } from 'sp-pnp-js';
+import { SearchQuery, SearchResults, SearchQueryBuilder, sp } from 'sp-pnp-js';
 import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
 import { DetailsList } from 'office-ui-fabric-react/lib/DetailsList';
 import { Link } from 'office-ui-fabric-react/lib/Link';
@@ -12,48 +12,51 @@ require('es6-promise/auto');
 
 let currentResults: SearchResults = null;
 let page: 0;
+const selectProperties: string[] = [
+    'OmrådeOWSCHCM',
+    'KontrakterOWSCHCM',
+    'Sak/prosessavvikOWSMTXT',
+    'Årsak-OWSMTXT',
+    'KorrigerendeellerfOWSMTXT',
+    'BehovforhjelpOWSCHCS',
+    'MålfortiltakOWSMTXT',
+    'Tid/fristOWSDATE',
+    'AnsvarligOWSUSER',
+    'MåloppnåddOWSCHCS',
+    'GrunntilforsinkelsOWSCHCS',
+    'OppfølgingstiltakOWSMTXT',
+    'KontrollertdatoOWSDATE',
+    'StatushandlingsplanOWSCHCS',
+    'Created',
+    'Author',
+    'ParentLink',
+    'SiteTitle'
+]
 
 class Handlingsplaner extends React.Component<any, any> {
     constructor(props) {
         super(props);
         this.state = {
             isLoading: true,
-            allItems: []
+            allItems: [],
+            selectProperties: selectProperties
 
         }
     }
 
     getSubsiteListItems() {
         const searchSettings: SearchQuery = {
-            /* Querytext: 'ContentType:"Element Handlingsplan"',
-             RowLimit: 100,
-             RowsPerPage: 50,
-             StartRow: 0,
-             EnableQueryRules: true,*/
-            SelectProperties: [
-                'OmrådeOWSCHCM',
-                'KontrakterOWSCHCM',
-                'Sak/prosessavvikOWSMTXT',
-                'Årsak-OWSMTXT',
-                'KorrigerendeellerfOWSMTXT',
-                'BehovforhjelpOWSCHCS',
-                'MålfortiltakOWSMTXT',
-                'Tid/fristOWSDATE',
-                'AnsvarligOWSUSER',
-                'MåloppnåddOWSCHCS',
-                'GrunntilforsinkelsOWSCHCS',
-                'OppfølgingstiltakOWSMTXT',
-                'KontrollertdatoOWSDATE',
-                'StatushandlingsplanOWSCHCS',
-                'Created',
-                'Author',
-                'ParentLink',
-                'SiteTitle'
-            ]
-        }
-        let finQ = SearchQueryBuilder.create('ContentType:"Element Handlingsplan"', searchSettings).rowLimit(100).rowsPerPage(50).startRow(0);
+            Querytext: 'ContentType:"Element Handlingsplan"',
+            RowLimit: 100,
+            RowsPerPage: 50,
+            StartRow: 0,
+            EnableQueryRules: true,
+            SelectProperties: this.state.selectProperties
 
-        pnp.sp.search(searchSettings).then((r: SearchResults) => {
+        }
+        let finQ = SearchQueryBuilder.create().text('ContentType:"Element Handlingsplan"').rowLimit(100).rowsPerPage(50).startRow(0).selectProperties();
+
+        sp.search(searchSettings).then((r: SearchResults) => {
             console.log('currentResults', currentResults);
             let searchResults = r.PrimarySearchResults;
             currentResults = r;

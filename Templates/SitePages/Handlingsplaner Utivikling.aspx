@@ -32,5 +32,5 @@
 </asp:Content>
 <asp:Content ContentPlaceHolderID="PlaceHolderMain" runat="server">
 <div id="Render-Target"></div>
-   <script src="../SiteAssets/Handlingsplaner%20Scripts/js/handlingsplaner.js"></script>
+   <script src="../SiteAssets/Handlingsplaner%20Scripts/lib/utvikling.js"></script>
 </asp:Content>
