@@ -1,12 +1,12 @@
  
 <pnp:Files 
   xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
-  <!--<pnp:File Src="SitePages\Handlingsplaner alle forhandlere.aspx" Folder="SitePages" Overwrite="true"><pnp:Properties><pnp:Property Key="Title" Value="Handlingsplaner alle forhandlere" /></pnp:Properties>-->
-  <pnp:File Src="SitePages\Handlingsplaner Utivikling.aspx" Folder="SitePages" Overwrite="true">
+  <pnp:File Src="SitePages\Handlingsplaner alle forhandlere.aspx" Folder="SitePages" Overwrite="true">
     <pnp:Properties>
-      <pnp:Property Key="Title" Value="Handlingsplaner under utvikling" />
+      <pnp:Property Key="Title" Value="Handlingsplaner alle forhandlere" />
     </pnp:Properties>
   </pnp:File>
-  <!--<pnp:File Src="..\node_modules\react\dist\react.js" Folder="SiteAssets/Handlingsplaner Scripts/lib" Overwrite="false" /><pnp:File Src="..\node_modules\react-dom\dist\react-dom.js" Folder="SiteAssets/Handlingsplaner Scripts/lib" Overwrite="false" /><pnp:File Src="..\node_modules\moment\min\moment-with-locales.min.js" Folder="SiteAssets/Handlingsplaner Scripts/lib" Overwrite="false" /><pnp:Directory Src="..\dist\" Folder="SiteAssets/Handlingsplaner Scripts" Overwrite="true" Recursive="true" IncludedExtensions="*.js,*.css,"/>-->
-  <pnp:File Src="..\dist\js\utvikling.js" Folder="SiteAssets/Handlingsplaner Scripts/lib" Overwrite="true" />
+  <!--<pnp:File Src="SitePages\Handlingsplaner Utivikling.aspx" Folder="SitePages" Overwrite="true"><pnp:Properties><pnp:Property Key="Title" Value="Handlingsplaner under utvikling" /></pnp:Properties></pnp:File><pnp:File Src="..\node_modules\react\dist\react.js" Folder="SiteAssets/Handlingsplaner Scripts/lib" Overwrite="false" /><pnp:File Src="..\node_modules\react-dom\dist\react-dom.js" Folder="SiteAssets/Handlingsplaner Scripts/lib" Overwrite="false" /><pnp:File Src="..\node_modules\moment\min\moment-with-locales.min.js" Folder="SiteAssets/Handlingsplaner Scripts/lib" Overwrite="false" />-->
+  <pnp:Directory Src="..\dist\" Folder="SiteAssets/Handlingsplaner Scripts" Overwrite="true" Recursive="true" IncludedExtensions="*.js,*.css,"/>
+  <!--<pnp:File Src="..\dist\js\utvikling.js" Folder="SiteAssets/Handlingsplaner Scripts/lib" Overwrite="true" />-->
 </pnp:Files>

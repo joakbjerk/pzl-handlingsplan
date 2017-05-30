@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { mapAllItems, mapCurrentItems, formatDate } from './utils'
 import { _columns } from './columns';
 import { Excel } from './excel';
-import { SearchQuery, SearchResults, SearchQueryBuilder, sp } from 'sp-pnp-js';
+import pnp, { SearchQuery, SearchResults, SearchQueryBuilder } from 'sp-pnp-js';
 import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
 import { DetailsList } from 'office-ui-fabric-react/lib/DetailsList';
 import { Link } from 'office-ui-fabric-react/lib/Link';
@@ -18,17 +18,18 @@ class Handlingsplaner extends React.Component<any, any> {
         super(props);
         this.state = {
             isLoading: true,
-            allItems: [],
+            allItems: []
+
         }
     }
 
     getSubsiteListItems() {
         const searchSettings: SearchQuery = {
-            Querytext: 'ContentType:"Element Handlingsplan"',
-            RowLimit: 100,
-            RowsPerPage: 50,
-            StartRow: 0,
-            EnableQueryRules: true,
+            /* Querytext: 'ContentType:"Element Handlingsplan"',
+             RowLimit: 100,
+             RowsPerPage: 50,
+             StartRow: 0,
+             EnableQueryRules: true,*/
             SelectProperties: [
                 'OmrådeOWSCHCM',
                 'KontrakterOWSCHCM',
@@ -50,11 +51,14 @@ class Handlingsplaner extends React.Component<any, any> {
                 'SiteTitle'
             ]
         }
+        let finQ = SearchQueryBuilder.create('ContentType:"Element Handlingsplan"', searchSettings).rowLimit(100).rowsPerPage(50).startRow(0);
 
-        sp.search(searchSettings).then((r: SearchResults) => {
+        pnp.sp.search(searchSettings).then((r: SearchResults) => {
+            console.log('currentResults', currentResults);
             let searchResults = r.PrimarySearchResults;
             currentResults = r;
             page = 0;
+            console.log('currentResults', currentResults);
             let items = currentResults.PrimarySearchResults.map((item: any) => ({
                 hentetFra: {
                     title: item.SiteTitle,
@@ -81,72 +85,22 @@ class Handlingsplaner extends React.Component<any, any> {
         })
     }
 
-    nextPage = () => {
-        console.log('page', page);
-        this.setState({ isLoading: true });
+    nextPage() {
+        console.log('currentResults', currentResults);
         currentResults.getPage(++page).then((r: SearchResults) => {
             currentResults = r;
-            let items = currentResults.PrimarySearchResults.map((item: any) => ({
-                hentetFra: {
-                    title: item.SiteTitle,
-                    url: item.ParentLink
-                },
-                opprettet: formatDate(item.Created),
-                opprettetAv: item.Author,
-                område: item.OmrådeOWSCHCM,
-                kontrakt: item.KontrakterOWSCHCM,
-                prossesavvik: item['Sak/prosessavvikOWSMTXT'],
-                årsak: item['Årsak-OWSMTXT'],
-                korrigerende: item.KorrigerendeellerfOWSMTXT,
-                behovForHjelp: item.BehovforhjelpOWSCHCS,
-                målForTiltaket: item.MålfortiltakOWSMTXT,
-                tidsfrist: formatDate(item['Tid/fristOWSDATE']),
-                ansvarlig: item.AnsvarligOWSUSER,
-                målOppnådd: item.MåloppnåddOWSCHCS,
-                forsinkelse: item.GrunntilforsinkelsOWSCHCS,
-                oppfølgingstiltak: item.OppfølgingstiltakOWSMTXT,
-                nyFrist: formatDate(item.KontrollertdatoOWSDATE),
-                gjennomført: item.StatushandlingsplanOWSCHCS
-            }));
-            this.setState({ allItems: items, isLoading: false });
+            console.log('currentResults', currentResults);
         });
     }
 
-
-    prevPage = () => {
-        console.log('page', page);
-        this.setState({ isLoading: true });
-        if (page <= 0) {
-            this.setState({ isLoading: false });
-        } else {
-            currentResults.getPage(page--).then((r: SearchResults) => {
-                currentResults = r;
-                let items = currentResults.PrimarySearchResults.map((item: any) => ({
-                    hentetFra: {
-                        title: item.SiteTitle,
-                        url: item.ParentLink
-                    },
-                    opprettet: formatDate(item.Created),
-                    opprettetAv: item.Author,
-                    område: item.OmrådeOWSCHCM,
-                    kontrakt: item.KontrakterOWSCHCM,
-                    prossesavvik: item['Sak/prosessavvikOWSMTXT'],
-                    årsak: item['Årsak-OWSMTXT'],
-                    korrigerende: item.KorrigerendeellerfOWSMTXT,
-                    behovForHjelp: item.BehovforhjelpOWSCHCS,
-                    målForTiltaket: item.MålfortiltakOWSMTXT,
-                    tidsfrist: formatDate(item['Tid/fristOWSDATE']),
-                    ansvarlig: item.AnsvarligOWSUSER,
-                    målOppnådd: item.MåloppnåddOWSCHCS,
-                    forsinkelse: item.GrunntilforsinkelsOWSCHCS,
-                    oppfølgingstiltak: item.OppfølgingstiltakOWSMTXT,
-                    nyFrist: formatDate(item.KontrollertdatoOWSDATE),
-                    gjennomført: item.StatushandlingsplanOWSCHCS
-                }));
-                this.setState({ allItems: items, isLoading: false });
-            });
-        }
+    prevPage() {
+        console.log('currentResults', currentResults);
+        currentResults.getPage(--page).then((r: SearchResults) => {
+            currentResults = r;
+            console.log('currentResults', currentResults);
+        });
     }
+
 
 
     _onRenderItemColumn(item, index, column) {
@@ -179,7 +133,6 @@ class Handlingsplaner extends React.Component<any, any> {
         } else {
             return (
                 <div>
-                    <h2>Under utvikling</h2>
                     <Excel
                         items={this.state.allItems}
                         columns={_columns}
