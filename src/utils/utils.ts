@@ -13,7 +13,6 @@ function formatDate(date) {
 }
 
 export function mapAllItems(searchResults) {
-  console.log('searchResults', searchResults);
   return (
     searchResults.map((item: any) => ({
       hentetFra: item.SiteTitle,
@@ -39,7 +38,6 @@ export function mapAllItems(searchResults) {
 }
 
 export function mapCurrentItems(currentResults) {
-  console.log('currentResults', currentResults);
   return (
     currentResults.PrimarySearchResults.map((item: any) => ({
       hentetFra: item.SiteTitle,

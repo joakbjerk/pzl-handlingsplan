@@ -20,7 +20,7 @@
     <SharePoint:ScriptLink ID="React" Name="~sitecollection/SiteAssets/Handlingsplaner%20Scripts/lib/react.js" Language="javascript" runat="server" />
     <SharePoint:ScriptLink ID="ReactDom" Name="~sitecollection/SiteAssets/Handlingsplaner%20Scripts/lib/react-dom.js" Language="javascript" runat="server" />
     <SharePoint:ScriptLink ID="Moment" Name="~sitecollection/SiteAssets/Handlingsplaner%20Scripts/lib/moment-with-locales.min.js" Language="javascript" runat="server" />
-    <script src="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-js/1.2.0/js/fabric.min.js"></script>
+    <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/4.1.0/css/fabric.min.css">
 </asp:Content>    
 <asp:Content ContentPlaceHolderID="PlaceHolderSearchArea" runat="server">
 	<SharePoint:DelegateControl runat="server" ControlId="SmallSearchInputBox" />

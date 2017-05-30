@@ -5,7 +5,7 @@ import { _columns } from '../components/columns';
 import { Excel } from '../components/excel';
 import { NextButton, PrevButton } from '../components/buttons';
 import { SearchQuery, SearchResults, SearchQueryBuilder, sp } from 'sp-pnp-js';
-import { ContextualMenu } from 'office-ui-fabric-react/lib/ContextualMenu';
+import { ContextualMenu, DirectionalHint } from 'office-ui-fabric-react/lib/ContextualMenu';
 import { DetailsList } from 'office-ui-fabric-react/lib/DetailsList';
 import { Link } from 'office-ui-fabric-react/lib/Link';
 import { Spinner, SpinnerSize } from 'office-ui-fabric-react/lib/Spinner';
@@ -34,6 +34,7 @@ class Handlingsplaner extends React.Component<any, any> {
         this._getContextualMenuProps = this._getContextualMenuProps.bind(this);
         this._onContextualMenuDismissed = this._onContextualMenuDismissed.bind(this);
         this._onSortColumn = this._onSortColumn.bind(this);
+        this._generateSubMenuProps = this._generateSubMenuProps.bind(this);
     }
 
     getSubsiteListItems() {
@@ -76,7 +77,6 @@ class Handlingsplaner extends React.Component<any, any> {
     }
 
     nextPage() {
-        console.log('page', page);
         this.setState({ isLoading: true });
         currentResults.getPage(++page).then((r: SearchResults) => {
             currentResults = r;
@@ -87,7 +87,6 @@ class Handlingsplaner extends React.Component<any, any> {
 
 
     prevPage() {
-        console.log('page', page);
         this.setState({ isLoading: true });
         if (page <= 0) {
             this.setState({ isLoading: false });
@@ -103,7 +102,6 @@ class Handlingsplaner extends React.Component<any, any> {
     _onRenderItemColumn(item, index, column) {
         let colValue = item[column.fieldName];
         let siteLink = item.parentLink;
-        console.log(siteLink);
         switch (column.key) {
             case 'columnProsessavvik':
             case 'columnÅrsak':
@@ -122,7 +120,6 @@ class Handlingsplaner extends React.Component<any, any> {
     }
 
     _onColumnClick(event: React.MouseEvent<HTMLElement>, column) {
-        console.log('Clicked ', column);
         this.setState({
             contextualMenuProps: this._getContextualMenuProps(event, column)
         });
@@ -136,8 +133,6 @@ class Handlingsplaner extends React.Component<any, any> {
 
     //(isSortedDescending ? a[fieldName] < b[fieldName] : a[fieldName] > b[fieldName]) ? 1 : -1)
     _onSortColumn(fieldName: string, isSortedDescending: boolean) {
-        console.log('fieldName', fieldName);
-        console.log('isSortedDescending', isSortedDescending)
         let currentItems = this.state.currentItems;
         let sortedItems = currentItems.slice(0).sort((a, b) => {
             let comparison;
@@ -152,7 +147,6 @@ class Handlingsplaner extends React.Component<any, any> {
                 return -1;
             }
         });
-        console.log('sortedItems', sortedItems);
         this.setState({
             currentItems: sortedItems,
             groups: null,
@@ -161,33 +155,56 @@ class Handlingsplaner extends React.Component<any, any> {
         });
     }
 
+
     _getContextualMenuProps(event: React.MouseEvent<HTMLElement>, column) {
-        let items = [
+        let menuItems = [
             {
                 key: 'aTilÅ',
                 name: 'A-Å',
                 icon: 'SortUp',
-                canCheck: true,
-                checked: column.isSorted && !column.isSortedDescending,
                 onClick: () => this._onSortColumn(column.fieldName, false)
             },
             {
                 key: 'åTilA',
                 name: 'Å-A',
                 icon: 'SortDown',
-                canCheck: true,
-                checked: column.isSorted && column.isSortedDescending,
                 onClick: () => this._onSortColumn(column.fieldName, true)
+            },
+            {
+                key: 'filtrer',
+                name: 'Filtrer etter',
+                icon: 'filter',
+                subMenuProps: {
+                    items: this._generateSubMenuProps(column)
+                }
             }
         ];
         return {
-            items: items,
-            targetElement: event.currentTarget as HTMLElement,
-            gapSpace: 10,
-            isBeakVisible: true,
+            items: menuItems,
+            target: event.currentTarget as HTMLElement,
+            directionalHint: DirectionalHint.bottomLeftEdge,
             onDismiss: this._onContextualMenuDismissed
         };
     }
+
+    _generateSubMenuProps(column) {
+        switch (column.key) {
+            case 'columnHentetFra': {
+                console.log(column.key)
+                return ([{
+                    key: `${column.fieldName}filtrer`,
+                    name: `Filtrer ${column.name} filtrer`
+                }])
+            }
+            default: {
+                return ([{
+                    key: 'ingenFiltrer',
+                    name: 'Ingen Filter'
+                }])
+            }
+        }
+    }
+
 
     componentDidMount() {
         this.getSubsiteListItems();
@@ -215,7 +232,7 @@ class Handlingsplaner extends React.Component<any, any> {
                         onColumnHeaderClick={this._onColumnClick}
 
                     />
-                    {<ContextualMenu { ...contextualMenuProps } />}
+                    {contextualMenuProps && (<ContextualMenu { ...contextualMenuProps } />)}
                     < PrevButton clickHandler={this.prevPage} />
                     <NextButton clickHandler={this.nextPage} />
                 </div>

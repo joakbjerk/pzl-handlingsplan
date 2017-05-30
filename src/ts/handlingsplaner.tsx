@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { mapAllItems, mapCurrentItems, nestedDataDummy } from '../utils/utils'
+import { mapAllItems, mapCurrentItems } from '../utils/utils'
 import { _columns } from '../components/columns';
 import { Excel } from '../components/excel';
 import { NextButton, PrevButton } from '../components/buttons';
@@ -26,7 +26,7 @@ class Handlingsplaner extends React.Component<any, any> {
             isSortedDescending: false,
             contextualMenuProps: null,
             sortedColumnKey: 'name',
-            nestedData: nestedDataDummy
+
         }
         this.nextPage = this.nextPage.bind(this);
         this.prevPage = this.prevPage.bind(this);
