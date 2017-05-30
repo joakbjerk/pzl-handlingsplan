@@ -1,9 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { mapAllItems, mapCurrentItems } from '../utils/utils'
+import { mapAllItems, mapCurrentItems, dummyData } from '../utils/utils'
 import { _columns } from '../components/columns';
 import { Excel } from '../components/excel';
-import { HeaderContextualMenu } from '../components/contextualmenu'
 import { NextButton, PrevButton } from '../components/buttons';
 import { SearchQuery, SearchResults, SearchQueryBuilder, sp } from 'sp-pnp-js';
 import { ContextualMenu } from 'office-ui-fabric-react/lib/ContextualMenu';
@@ -23,11 +22,16 @@ class Handlingsplaner extends React.Component<any, any> {
             allItems: [],
             currentItems: [],
             isContextMenuVisible: false,
+            isSorted: false,
+            isSortedDescending: false
         }
         this.nextPage = this.nextPage.bind(this);
         this.prevPage = this.prevPage.bind(this);
         this._onColumnClick = this._onColumnClick.bind(this);
         this._onColumnDismiss = this._onColumnDismiss.bind(this);
+        this._sortColumnAscending = this._sortColumnAscending.bind(this);
+        this._sortColumnDescending = this._sortColumnDescending.bind(this);
+
     }
 
     getSubsiteListItems() {
@@ -116,13 +120,45 @@ class Handlingsplaner extends React.Component<any, any> {
     _onColumnClick(event: React.MouseEvent<HTMLElement>, column) {
         this.setState({ target: event.target, isContextMenuVisible: true });
     }
-    _onColumnDismiss(event: any, column) {
-        this.setState({ target: event.target, isContextMenuVisible: false });
+    _onColumnDismiss() {
+        this.setState({ isContextMenuVisible: false });
+    }
+
+    _customSortAsc = (a, b) => {
+        return a.opprettet - b.opprettet;
+    }
+
+    _customSortDesc = (a, b) => {
+        return b.opprettet - a.opprettet;
+    }
+
+    _sortColumnAscending() {
+        console.log('Asc');
+        let items = this.state.currentItems;
+        let sortedItems = dummyData.sort(function (obj1: any, obj2: any) {
+            return obj1.opprettet - obj2.opprettet;
+        });
+        console.log('sortedItems', sortedItems);
+
+    }
+
+    _sortColumnDescending() {
+        console.log('Desc');
+        let items = this.state.currentItems;
+        let sortedItems = dummyData.sort(function (obj1: any, obj2: any) {
+            return obj2.opprettet - obj1.opprettet;
+        });
+        console.log('sortedItems', sortedItems);
+
     }
 
     componentDidMount() {
         this.getSubsiteListItems();
         console.log('Component Did Mount');
+    }
+
+    _onItemContextMenuClick() {
+        console.log('Clicked!');
     }
 
     render() {
@@ -131,7 +167,7 @@ class Handlingsplaner extends React.Component<any, any> {
         } else {
             return (
                 <div>
-                    <h2>Under utvikling</h2>
+                    <h2>Sortering/Filtrering under arbeid</h2>
                     <Excel
                         items={this.state.allItems}
                         columns={_columns}
@@ -146,8 +182,26 @@ class Handlingsplaner extends React.Component<any, any> {
 
                     />
                     {this.state.isContextMenuVisible ?
-                        (<HeaderContextualMenu target={this.state.target} dismissHandler={this._onColumnDismiss} />)
-                        : (null)}
+                        (<ContextualMenu
+                            target={this.state.target}
+                            onDismiss={this._onColumnDismiss}
+                            items={[
+                                {
+                                    key: 'sortAscending',
+                                    icon: 'SortUp',
+                                    name: 'Sorter A-Z',
+                                    onClick: this._sortColumnAscending
+
+
+                                },
+                                {
+                                    key: 'sortDescending',
+                                    icon: 'SortDown',
+                                    name: 'Sorter Z-A',
+                                    onClick: this._sortColumnDescending
+                                }
+                            ]}
+                        />) : (null)}
                     <PrevButton clickHandler={this.prevPage} />
                     <NextButton clickHandler={this.nextPage} />
                 </div>

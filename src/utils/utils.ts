@@ -107,3 +107,117 @@ export function removeHtmlTags(item) {
   }
 }
 
+export const dummyData = [
+  {
+    hentetFra: {
+      title: 'Title 1',
+      url: 'https://www.google.no'
+    },
+    opprettet: '01/01/1010'',
+    opprettetAv: 'Celine',
+    område: 'Ute',
+    kontrakt: 'Salgskontrakt',
+    prossesavvik: 'Ingen',
+    årsak: 'Fornøyd kunde',
+    korrigerende: 'Rette opp i feil',
+    behovForHjelp: 'Nei',
+    målForTiltaket: 'Oppretholde gode relasjoner med kunde',
+    tidsfrist: '02/03/2017',
+    ansvarlig: 'Celine',
+    målOppnådd: 'Ja',
+    forsinkelse: 'Ingen',
+    oppfølgingstiltak: 'Ingen Behov',
+    nyFrist: 'Ingen',
+    gjennomført: 'Ja'
+  },
+  {
+    hentetFra: {
+      title: 'Title 2',
+      url: 'https://www.google.no'
+    },
+    opprettet: '02/02/2020',
+    opprettetAv: 'Anders',
+    område: 'Inne',
+    kontrakt: 'reparasjon',
+    prossesavvik: 'Mange',
+    årsak: 'Steinssprut',
+    korrigerende: 'Fikse knust vindu',
+    behovForHjelp: 'Nei',
+    målForTiltaket: 'Fikse skadene så raskt det lar seg gjøre',
+    tidsfrist: '11/11/2017',
+    ansvarlig: 'Anders',
+    målOppnådd: 'Nei',
+    forsinkelse: 'Sen levering av ny rute',
+    oppfølgingstiltak: 'Dobbeltsjekke skadene',
+    nyFrist: '12/03/2018',
+    gjennomført: 'Nei'
+  },
+  {
+    hentetFra: {
+      title: 'Title 3',
+      url: 'https://www.google.no'
+    },
+    opprettet: '03/03/3030',
+    opprettetAv: 'Hans',
+    område: 'Inne',
+    kontrakt: 'reparasjon',
+    prossesavvik: 'Mange',
+    årsak: 'Steinssprut',
+    korrigerende: 'Fikse knust vindu',
+    behovForHjelp: 'Nei',
+    målForTiltaket: 'Fikse skadene så raskt det lar seg gjøre',
+    tidsfrist: '08/25/2017',
+    ansvarlig: 'Hans',
+    målOppnådd: 'Nei',
+    forsinkelse: 'Sen levering av ny rute',
+    oppfølgingstiltak: 'Dobbeltsjekke skadene',
+    nyFrist: '10/08/2018',
+    gjennomført: 'Nei'
+  }
+
+]
+
+export function generateDummyData(amount) {
+  let dataArray = [];
+  let jaNei = ['Ja', 'Nei', 'Kanskje'];
+  let område = ['Inne', 'Ute', 'Hos Kunde', 'Utlandet', 'Internt'];
+  let årsak = ['Skade', 'Salg', 'Bytte', 'Refusjon', 'Saksmål'];
+  let korrigerende = ['Reperasjon', 'Kompansasjon', 'Stille i retten',]
+  let kontrakt = ['BMW', 'Audi', 'Volkswagen', 'Ford', 'Renault']
+  let ansvarlig = ['Joakim', 'Mehlum', 'Bjerknes'];
+
+  for (let i = 0; i < amount; i++) {
+    dataArray.push({
+      hentetFra: {
+        title: 'Title ' + (i + 1),
+        url: 'https://www.google.no'
+      },
+      opprettet: randomDate('2017', '2018'),
+      opprettetAv: 'Joaikm Mehlum Bjerknes',
+      område: 'Inne',
+      kontrakt: 'reparasjon',
+      prossesavvik: 'Mange',
+      årsak: 'Steinssprut',
+      korrigerende: 'Fikse knust vindu',
+      behovForHjelp: 'Nei',
+      målForTiltaket: 'Fikse skadene så raskt det lar seg gjøre',
+      tidsfrist: randomDate('2017', '2018'),
+      ansvarlig: 'Joakim Mehlum Bjerknes',
+      målOppnådd: 'Nei',
+      forsinkelse: 'Sen levering av ny rute',
+      oppfølgingstiltak: 'Dobbeltsjekke skadene',
+      nyFrist: randomDate('2017', '2018'),
+      gjennomført: 'Nei'
+    })
+  }
+}
+
+
+function randomValue(value) {
+  console.log('Temp');
+}
+
+function randomDate(start, end) {
+  var date = new Date(start + Math.random() * (end - start));
+  return date;
+}

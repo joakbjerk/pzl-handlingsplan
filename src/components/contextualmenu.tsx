@@ -1,18 +1,31 @@
 import * as React from 'react';
 import { ContextualMenu } from 'office-ui-fabric-react/lib/ContextualMenu';
 
-let items = [
+let contextMenuitems = [
   {
-    key: 'testKey',
-    name: 'test'
+    key: 'sortAscending',
+    icon: 'SortUp',
+    name: 'Sorter A-Z',
+    onClick: () => {
+      alert('Clicked ' + parent.name + '!');
+    }
+  },
+  {
+    key: 'sortDescending',
+    icon: 'SortDown',
+    name: 'Sorter Z-A',
+    onClick: () => {
+      alert('Clicked ' + parent.name + '!');
+    }
   }
 ]
 
-export const HeaderContextualMenu = ({ target, dismissHandler }) => {
+
+
+export const HeaderContextualMenu = ({ target }) => {
   return (
     <ContextualMenu
       target={target}
-      onDismiss={dismissHandler}
-      items={items} />
+      items={contextMenuitems} />
   )
 }
