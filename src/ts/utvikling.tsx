@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { mapAllItems, mapCurrentItems, dummyData, numberDummyData } from '../utils/utils'
+import { mapAllItems, mapCurrentItems, dummyData, numberDummyData, nestedDataDummy } from '../utils/utils'
 import { _columns } from '../components/columns';
 import { Excel } from '../components/excel';
 import { NextButton, PrevButton } from '../components/buttons';
@@ -23,15 +23,18 @@ class Handlingsplaner extends React.Component<any, any> {
             currentItems: [],
             isContextMenuVisible: false,
             isSorted: false,
-            isSortedDescending: false
+            isSortedDescending: false,
+            contextualMenuProps: null,
+            sortedColumnKey: 'name',
+            dummyData: numberDummyData,
+            nestedData: nestedDataDummy
         }
         this.nextPage = this.nextPage.bind(this);
         this.prevPage = this.prevPage.bind(this);
         this._onColumnClick = this._onColumnClick.bind(this);
-        this._onColumnDismiss = this._onColumnDismiss.bind(this);
-        this._sortColumnAscending = this._sortColumnAscending.bind(this);
-        this._sortColumnDescending = this._sortColumnDescending.bind(this);
-
+        this._getContextualMenuProps = this._getContextualMenuProps.bind(this);
+        this._onContextualMenuDismissed = this._onContextualMenuDismissed.bind(this);
+        this._onSortColumn = this._onSortColumn.bind(this);
     }
 
     getSubsiteListItems() {
@@ -109,6 +112,7 @@ class Handlingsplaner extends React.Component<any, any> {
                 return <span dangerouslySetInnerHTML={{ __html: colValue }}></span >
             }
             case 'columnHentetFra': {
+                console.log(colValue);
                 return <Link href={colValue.url}>{colValue.title}</Link>
             }
             default: {
@@ -118,52 +122,85 @@ class Handlingsplaner extends React.Component<any, any> {
     }
 
     _onColumnClick(event: React.MouseEvent<HTMLElement>, column) {
-        this.setState({ target: event.target, isContextMenuVisible: true });
-    }
-    _onColumnDismiss() {
-        this.setState({ isContextMenuVisible: false });
-    }
-
-    _customSortAsc = (a, b) => {
-        return a.hentetFra.title - b.hentetFra.title;
-    }
-
-    _customSortDesc = (a, b) => {
-        return b.hentetFra.title - a.hentetFra.title;
-    }
-
-    _sortColumnAscending() {
-        console.log('Asc');
-        let items = this.state.currentItems;
-        let sortedItemsAsc = numberDummyData.sort(function (obj1: any, obj2: any) {
-            return obj1.hentetFra.title - obj2.hentetFra.title;
+        console.log('Clicked ', column);
+        this.setState({
+            contextualMenuProps: this._getContextualMenuProps(event, column)
         });
-        console.log('sortedItems', sortedItemsAsc);
-        this.setState({ currentItems: sortedItemsAsc });
-
     }
 
-    _sortColumnDescending() {
-        console.log('Desc');
-        let items = this.state.currentItems;
-        let sortedItemsDesc = numberDummyData.sort(function (obj1: any, obj2: any) {
-            return obj2.hentetFra.title - obj1.hentetFra.title;
+    _onContextualMenuDismissed() {
+        this.setState({
+            contextualMenuProps: null
         });
-        console.log('sortedItems', sortedItemsDesc);
-        this.setState({ currentItems: sortedItemsDesc });
-
     }
+
+    //(isSortedDescending ? a[fieldName] < b[fieldName] : a[fieldName] > b[fieldName]) ? 1 : -1)
+    _onSortColumn(fieldName: string, isSortedDescending: boolean) {
+        console.log('fieldName', fieldName);
+        console.log('isSortedDescending', isSortedDescending)
+        let currentItems = this.state.dummyData
+        let sortedItems = currentItems.slice(0).sort((a, b) => {
+            let comparison;
+            let keysA = Object.keys(a);
+            let keysB = Object.keys(b);
+            if (isSortedDescending) {
+                comparison = a[fieldName] < b[fieldName];
+            } else {
+                comparison = a[fieldName] > b[fieldName];
+            }
+            if (comparison) {
+                return 1;
+            } else {
+                return -1;
+            }
+        });
+        console.log('sortedItems', sortedItems);
+        this.setState({
+            dummyData: sortedItems,
+            groups: null,
+            isSortedDescending: isSortedDescending,
+            sortedColumnKey: fieldName
+        });
+    }
+
+    _getContextualMenuProps(event: React.MouseEvent<HTMLElement>, column) {
+        let items = [
+            {
+                key: 'aToZ',
+                name: 'A-Z',
+                icon: 'SortUp',
+                canCheck: true,
+                checked: column.isSorted && !column.isSortedDescending,
+                onClick: () => this._onSortColumn(column.fieldName, false)
+            },
+            {
+                key: 'zToA',
+                name: 'Z-A',
+                icon: 'SortDown',
+                canCheck: true,
+                checked: column.isSorted && column.isSortedDescending,
+                onClick: () => this._onSortColumn(column.fieldName, true)
+            }
+        ];
+        return {
+            items: items,
+            targetElement: event.currentTarget as HTMLElement,
+            gapSpace: 10,
+            isBeakVisible: true,
+            onDismiss: this._onContextualMenuDismissed
+        };
+    }
+
+
+
 
     componentDidMount() {
         this.getSubsiteListItems();
         console.log('Component Did Mount');
     }
 
-    _onItemContextMenuClick() {
-        console.log('Clicked!');
-    }
-
     render() {
+        let { contextualMenuProps, currentItems, allItems, dummyData, nestedData } = this.state;
         if (this.state.isLoading) {
             return <Spinner size={SpinnerSize.large} label='Henter listedata' />;
         } else {
@@ -171,40 +208,20 @@ class Handlingsplaner extends React.Component<any, any> {
                 <div>
                     <h2>Sortering/Filtrering under arbeid</h2>
                     <Excel
-                        items={this.state.allItems}
+                        items={allItems}
                         columns={_columns}
                     />
                     <PrevButton clickHandler={this.prevPage} />
                     <NextButton clickHandler={this.nextPage} />
                     <DetailsList
-                        items={this.state.currentItems}
+                        items={dummyData}
                         columns={_columns}
                         onRenderItemColumn={this._onRenderItemColumn}
                         onColumnHeaderClick={this._onColumnClick}
 
                     />
-                    {this.state.isContextMenuVisible ?
-                        (<ContextualMenu
-                            target={this.state.target}
-                            onDismiss={this._onColumnDismiss}
-                            items={[
-                                {
-                                    key: 'sortAscending',
-                                    icon: 'SortUp',
-                                    name: 'Sorter A-Z',
-                                    onClick: this._sortColumnAscending
-
-
-                                },
-                                {
-                                    key: 'sortDescending',
-                                    icon: 'SortDown',
-                                    name: 'Sorter Z-A',
-                                    onClick: this._sortColumnDescending
-                                }
-                            ]}
-                        />) : (null)}
-                    <PrevButton clickHandler={this.prevPage} />
+                    {<ContextualMenu { ...contextualMenuProps } />}
+                    < PrevButton clickHandler={this.prevPage} />
                     <NextButton clickHandler={this.nextPage} />
                 </div>
             )
