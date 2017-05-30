@@ -19,7 +19,8 @@ var gulp = require("gulp"),
     config = require("./gulpfile.config.json"),
     vpkg = require("./package.json"),
     webpack = require('webpack'),
-    webpackConfig = require('./webpack.config.js'),
+    webpackProdConfig = require('./webpack.config.js'),
+    webpackDevConfig = require('./webpack.dev.config.js'),
     webpackStream = require('webpack-stream');
 
 
@@ -66,10 +67,20 @@ gulp.task('clean-typescript', function () {
 
 gulp.task('webpack', function () {
     return gulp.src('src/ts/handlingsplaner')
-        .pipe(webpackStream(webpackConfig, webpack))
+        .pipe(webpackStream(webpackProdConfig, webpack))
         .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task("default", function () {
+gulp.task('webpackDev', function () {
+    return gulp.src('src/ts/utvikling')
+        .pipe(webpackStream(webpackDevConfig, webpack))
+        .pipe(gulp.dest('dist/js'));
+});
+
+gulp.task("prod", function () {
     runSequence("clean", "copy", "ts-lint", "clean-typescript", "webpack");
+});
+
+gulp.task("dev", function () {
+    runSequence("clean", "copy", "ts-lint", "clean-typescript", "webpackDev");
 });

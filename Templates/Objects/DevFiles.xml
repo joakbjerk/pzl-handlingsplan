@@ -1,0 +1,10 @@
+  
+<pnp:Files 
+    xmlns:pnp="http://schemas.dev.office.com/PnP/2016/05/ProvisioningSchema">
+    <pnp:File Src="SitePages\Handlingsplaner Utivikling.aspx" Folder="SitePages" Overwrite="true">
+        <pnp:Properties>
+            <pnp:Property Key="Title" Value="Handlingsplaner under utvikling" />
+        </pnp:Properties>
+    </pnp:File>
+    <pnp:File Src="..\dist\js\utvikling.js" Folder="SiteAssets/Handlingsplaner Scripts/lib" Overwrite="true" />
+</pnp:Files>

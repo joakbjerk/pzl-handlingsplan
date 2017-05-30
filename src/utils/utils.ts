@@ -16,10 +16,7 @@ export function mapAllItems(searchResults) {
   console.log('searchResults', searchResults);
   return (
     searchResults.map((item: any) => ({
-      hentetFra: {
-        title: item.SiteTitle,
-        url: item.ParentLink
-      },
+      hentetFra: item.SiteTitle,
       opprettet: formatDate(item.Created),
       opprettetAv: item.Author,
       område: item.OmrådeOWSCHCM,
@@ -45,10 +42,8 @@ export function mapCurrentItems(currentResults) {
   console.log('currentResults', currentResults);
   return (
     currentResults.PrimarySearchResults.map((item: any) => ({
-      hentetFra: {
-        title: item.SiteTitle,
-        url: item.ParentLink
-      },
+      hentetFra: item.SiteTitle,
+      parentLink: item.ParentLink,
       opprettet: formatDate(item.Created),
       opprettetAv: item.Author,
       område: item.OmrådeOWSCHCM,
@@ -75,7 +70,7 @@ export function formatData(items) {
   let formattedItems = [];
   items.forEach(item => {
     formattedItems.push({
-      hentetFra: item.hentetFra.title,
+      hentetFra: item.hentetFra,
       opprettet: item.opprettet,
       opprettetAv: item.opprettetAv,
       område: item.område,
@@ -98,7 +93,7 @@ export function formatData(items) {
   return formattedItems;
 }
 
-export function removeHtmlTags(item) {
+function removeHtmlTags(item) {
   const htmlTag = /(<([^>]+)>)/ig;
   if (item) {
     return item.replace(htmlTag, '').toString();
@@ -106,76 +101,6 @@ export function removeHtmlTags(item) {
     return null;
   }
 }
-
-export const dummyData = [
-  {
-    hentetFra: {
-      title: 'Title 1',
-      url: 'https://www.google.no'
-    },
-    opprettet: '01/01/1010',
-    opprettetAv: 'Celine',
-    område: 'Ute',
-    kontrakt: 'Salgskontrakt',
-    prossesavvik: 'Ingen',
-    årsak: 'Fornøyd kunde',
-    korrigerende: 'Rette opp i feil',
-    behovForHjelp: 'Nei',
-    målForTiltaket: 'Oppretholde gode relasjoner med kunde',
-    tidsfrist: '02/03/2017',
-    ansvarlig: 'Celine',
-    målOppnådd: 'Ja',
-    forsinkelse: 'Ingen',
-    oppfølgingstiltak: 'Ingen Behov',
-    nyFrist: 'Ingen',
-    gjennomført: 'Ja'
-  },
-  {
-    hentetFra: {
-      title: 'Title 2',
-      url: 'https://www.google.no'
-    },
-    opprettet: '02/02/2020',
-    opprettetAv: 'Anders',
-    område: 'Inne',
-    kontrakt: 'reparasjon',
-    prossesavvik: 'Mange',
-    årsak: 'Steinssprut',
-    korrigerende: 'Fikse knust vindu',
-    behovForHjelp: 'Nei',
-    målForTiltaket: 'Fikse skadene så raskt det lar seg gjøre',
-    tidsfrist: '11/11/2017',
-    ansvarlig: 'Anders',
-    målOppnådd: 'Nei',
-    forsinkelse: 'Sen levering av ny rute',
-    oppfølgingstiltak: 'Dobbeltsjekke skadene',
-    nyFrist: '12/03/2018',
-    gjennomført: 'Nei'
-  },
-  {
-    hentetFra: {
-      title: 'Title 3',
-      url: 'https://www.google.no'
-    },
-    opprettet: '03/03/3030',
-    opprettetAv: 'Hans',
-    område: 'Inne',
-    kontrakt: 'reparasjon',
-    prossesavvik: 'Mange',
-    årsak: 'Steinssprut',
-    korrigerende: 'Fikse knust vindu',
-    behovForHjelp: 'Nei',
-    målForTiltaket: 'Fikse skadene så raskt det lar seg gjøre',
-    tidsfrist: '08/25/2017',
-    ansvarlig: 'Hans',
-    målOppnådd: 'Nei',
-    forsinkelse: 'Sen levering av ny rute',
-    oppfølgingstiltak: 'Dobbeltsjekke skadene',
-    nyFrist: '10/08/2018',
-    gjennomført: 'Nei'
-  }
-
-]
 
 export function generateDummyData(amount) {
   let dataArray = [];
@@ -212,25 +137,6 @@ export function generateDummyData(amount) {
   }
 }
 
-export const nestedDataDummy = [
-  { hentetFra: { title: 'Title 1', url: 'https://www.google.no' }, opprettet: '1', opprettetAv: 'Celine' },
-  { hentetFra: { title: 'Title 2', url: 'https://www.google.no' }, opprettet: '2', opprettetAv: 'Anders' },
-  { hentetFra: { title: 'Title 3', url: 'https://www.google.no' }, opprettet: '3', opprettetAv: 'Øystein' },
-  { hentetFra: { title: 'Title 4', url: 'https://www.google.no' }, opprettet: '4', opprettetAv: 'Frank' },
-  { hentetFra: { title: 'Title 5', url: 'https://www.google.no' }, opprettet: '5', opprettetAv: 'Hanne' },
-  { hentetFra: { title: 'Title 6', url: 'https://www.google.no' }, opprettet: '6', opprettetAv: 'Melvin' },
-]
-
-export const numberDummyData = [
-  { opprettet: '1', opprettetAv: 'Celine' },
-  { opprettet: '2', opprettetAv: 'Anders' },
-  { opprettet: '3', opprettetAv: 'Øystein' },
-  { opprettet: '4', opprettetAv: 'Frank' },
-  { opprettet: '5', opprettetAv: 'Hanne' },
-  { opprettet: '6', opprettetAv: 'Melvin' },
-]
-
-
 function randomValue(value) {
   console.log('Temp');
 }
@@ -239,3 +145,13 @@ function randomDate(start, end) {
   var date = new Date(start + Math.random() * (end - start));
   return date;
 }
+
+export const nestedDataDummy = [
+  { hentetFra: 'Title 1', parentLink: 'https://www.google.no', opprettet: '1', opprettetAv: 'Celine' },
+  { hentetFra: 'Title 2', parentLink: 'https://www.google.no', opprettet: '2', opprettetAv: 'Anders' },
+  { hentetFra: 'Title 3', parentLink: 'https://www.google.no', opprettet: '3', opprettetAv: 'Øystein' },
+  { hentetFra: 'Title 4', parentLink: 'https://www.google.no', opprettet: '4', opprettetAv: 'Frank' },
+  { hentetFra: 'Title 5', parentLink: 'https://www.google.no', opprettet: '5', opprettetAv: 'Hanne' },
+  { hentetFra: 'Title 6', parentLink: 'https://www.google.no', opprettet: '6', opprettetAv: 'Melvin' },
+]
+

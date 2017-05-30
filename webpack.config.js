@@ -2,9 +2,9 @@ module.exports = {
   entry: [
     "./node_modules/es6-promise/dist/es6-promise.auto.min",
     "./node_modules/whatwg-fetch/fetch",
-    "./src/ts/utvikling"],
+    "./src/ts/handlingsplaner"],
   output: {
-    filename: "utvikling.js",
+    filename: "handlingsplaner.js",
     path: __dirname + "/dist/js"
   },
   devtool: "source-map",

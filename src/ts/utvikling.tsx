@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { mapAllItems, mapCurrentItems, dummyData, numberDummyData, nestedDataDummy } from '../utils/utils'
+import { mapAllItems, mapCurrentItems, nestedDataDummy } from '../utils/utils'
 import { _columns } from '../components/columns';
 import { Excel } from '../components/excel';
 import { NextButton, PrevButton } from '../components/buttons';
@@ -26,7 +26,6 @@ class Handlingsplaner extends React.Component<any, any> {
             isSortedDescending: false,
             contextualMenuProps: null,
             sortedColumnKey: 'name',
-            dummyData: numberDummyData,
             nestedData: nestedDataDummy
         }
         this.nextPage = this.nextPage.bind(this);
@@ -103,6 +102,8 @@ class Handlingsplaner extends React.Component<any, any> {
 
     _onRenderItemColumn(item, index, column) {
         let colValue = item[column.fieldName];
+        let siteLink = item.parentLink;
+        console.log(siteLink);
         switch (column.key) {
             case 'columnProsessavvik':
             case 'columnÅrsak':
@@ -112,8 +113,7 @@ class Handlingsplaner extends React.Component<any, any> {
                 return <span dangerouslySetInnerHTML={{ __html: colValue }}></span >
             }
             case 'columnHentetFra': {
-                console.log(colValue);
-                return <Link href={colValue.url}>{colValue.title}</Link>
+                return <Link href={siteLink}>{colValue}</Link>
             }
             default: {
                 return <span>{colValue}</span>;
@@ -138,11 +138,9 @@ class Handlingsplaner extends React.Component<any, any> {
     _onSortColumn(fieldName: string, isSortedDescending: boolean) {
         console.log('fieldName', fieldName);
         console.log('isSortedDescending', isSortedDescending)
-        let currentItems = this.state.dummyData
+        let currentItems = this.state.currentItems;
         let sortedItems = currentItems.slice(0).sort((a, b) => {
             let comparison;
-            let keysA = Object.keys(a);
-            let keysB = Object.keys(b);
             if (isSortedDescending) {
                 comparison = a[fieldName] < b[fieldName];
             } else {
@@ -156,7 +154,7 @@ class Handlingsplaner extends React.Component<any, any> {
         });
         console.log('sortedItems', sortedItems);
         this.setState({
-            dummyData: sortedItems,
+            currentItems: sortedItems,
             groups: null,
             isSortedDescending: isSortedDescending,
             sortedColumnKey: fieldName
@@ -166,16 +164,16 @@ class Handlingsplaner extends React.Component<any, any> {
     _getContextualMenuProps(event: React.MouseEvent<HTMLElement>, column) {
         let items = [
             {
-                key: 'aToZ',
-                name: 'A-Z',
+                key: 'aTilÅ',
+                name: 'A-Å',
                 icon: 'SortUp',
                 canCheck: true,
                 checked: column.isSorted && !column.isSortedDescending,
                 onClick: () => this._onSortColumn(column.fieldName, false)
             },
             {
-                key: 'zToA',
-                name: 'Z-A',
+                key: 'åTilA',
+                name: 'Å-A',
                 icon: 'SortDown',
                 canCheck: true,
                 checked: column.isSorted && column.isSortedDescending,
@@ -191,16 +189,13 @@ class Handlingsplaner extends React.Component<any, any> {
         };
     }
 
-
-
-
     componentDidMount() {
         this.getSubsiteListItems();
         console.log('Component Did Mount');
     }
 
     render() {
-        let { contextualMenuProps, currentItems, allItems, dummyData, nestedData } = this.state;
+        let { contextualMenuProps, currentItems, allItems } = this.state;
         if (this.state.isLoading) {
             return <Spinner size={SpinnerSize.large} label='Henter listedata' />;
         } else {
@@ -214,7 +209,7 @@ class Handlingsplaner extends React.Component<any, any> {
                     <PrevButton clickHandler={this.prevPage} />
                     <NextButton clickHandler={this.nextPage} />
                     <DetailsList
-                        items={dummyData}
+                        items={currentItems}
                         columns={_columns}
                         onRenderItemColumn={this._onRenderItemColumn}
                         onColumnHeaderClick={this._onColumnClick}

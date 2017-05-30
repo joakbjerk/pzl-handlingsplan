@@ -1,10 +1,11 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { mapAllItems, mapCurrentItems, formatDate } from '../utils/utils'
+import { mapAllItems, mapCurrentItems, nestedDataDummy } from '../utils/utils'
 import { _columns } from '../components/columns';
 import { Excel } from '../components/excel';
+import { NextButton, PrevButton } from '../components/buttons';
 import { SearchQuery, SearchResults, SearchQueryBuilder, sp } from 'sp-pnp-js';
-import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
+import { ContextualMenu } from 'office-ui-fabric-react/lib/ContextualMenu';
 import { DetailsList } from 'office-ui-fabric-react/lib/DetailsList';
 import { Link } from 'office-ui-fabric-react/lib/Link';
 import { Spinner, SpinnerSize } from 'office-ui-fabric-react/lib/Spinner';
@@ -19,7 +20,20 @@ class Handlingsplaner extends React.Component<any, any> {
         this.state = {
             isLoading: true,
             allItems: [],
+            currentItems: [],
+            isContextMenuVisible: false,
+            isSorted: false,
+            isSortedDescending: false,
+            contextualMenuProps: null,
+            sortedColumnKey: 'name',
+            nestedData: nestedDataDummy
         }
+        this.nextPage = this.nextPage.bind(this);
+        this.prevPage = this.prevPage.bind(this);
+        this._onColumnClick = this._onColumnClick.bind(this);
+        this._getContextualMenuProps = this._getContextualMenuProps.bind(this);
+        this._onContextualMenuDismissed = this._onContextualMenuDismissed.bind(this);
+        this._onSortColumn = this._onSortColumn.bind(this);
     }
 
     getSubsiteListItems() {
@@ -55,102 +69,38 @@ class Handlingsplaner extends React.Component<any, any> {
             let searchResults = r.PrimarySearchResults;
             currentResults = r;
             page = 0;
-            let items = currentResults.PrimarySearchResults.map((item: any) => ({
-                hentetFra: {
-                    title: item.SiteTitle,
-                    url: item.ParentLink
-                },
-                opprettet: formatDate(item.Created),
-                opprettetAv: item.Author,
-                område: item.OmrådeOWSCHCM,
-                kontrakt: item.KontrakterOWSCHCM,
-                prossesavvik: item['Sak/prosessavvikOWSMTXT'],
-                årsak: item['Årsak-OWSMTXT'],
-                korrigerende: item.KorrigerendeellerfOWSMTXT,
-                behovForHjelp: item.BehovforhjelpOWSCHCS,
-                målForTiltaket: item.MålfortiltakOWSMTXT,
-                tidsfrist: formatDate(item['Tid/fristOWSDATE']),
-                ansvarlig: item.AnsvarligOWSUSER,
-                målOppnådd: item.MåloppnåddOWSCHCS,
-                forsinkelse: item.GrunntilforsinkelsOWSCHCS,
-                oppfølgingstiltak: item.OppfølgingstiltakOWSMTXT,
-                nyFrist: formatDate(item.KontrollertdatoOWSDATE),
-                gjennomført: item.StatushandlingsplanOWSCHCS
-            }));
-            this.setState({ allItems: items, isLoading: false });
+            let _allItems = mapAllItems(searchResults);
+            let _currentItems = mapCurrentItems(currentResults);
+            this.setState({ allItems: _allItems, currentItems: _currentItems, isLoading: false });
         })
     }
 
-    nextPage = () => {
-        console.log('page', page);
+    nextPage() {
         this.setState({ isLoading: true });
         currentResults.getPage(++page).then((r: SearchResults) => {
             currentResults = r;
-            let items = currentResults.PrimarySearchResults.map((item: any) => ({
-                hentetFra: {
-                    title: item.SiteTitle,
-                    url: item.ParentLink
-                },
-                opprettet: formatDate(item.Created),
-                opprettetAv: item.Author,
-                område: item.OmrådeOWSCHCM,
-                kontrakt: item.KontrakterOWSCHCM,
-                prossesavvik: item['Sak/prosessavvikOWSMTXT'],
-                årsak: item['Årsak-OWSMTXT'],
-                korrigerende: item.KorrigerendeellerfOWSMTXT,
-                behovForHjelp: item.BehovforhjelpOWSCHCS,
-                målForTiltaket: item.MålfortiltakOWSMTXT,
-                tidsfrist: formatDate(item['Tid/fristOWSDATE']),
-                ansvarlig: item.AnsvarligOWSUSER,
-                målOppnådd: item.MåloppnåddOWSCHCS,
-                forsinkelse: item.GrunntilforsinkelsOWSCHCS,
-                oppfølgingstiltak: item.OppfølgingstiltakOWSMTXT,
-                nyFrist: formatDate(item.KontrollertdatoOWSDATE),
-                gjennomført: item.StatushandlingsplanOWSCHCS
-            }));
-            this.setState({ allItems: items, isLoading: false });
+            let _currentItems = mapCurrentItems(currentResults);
+            this.setState({ currentItems: _currentItems, isLoading: false });
         });
     }
 
 
-    prevPage = () => {
-        console.log('page', page);
+    prevPage() {
         this.setState({ isLoading: true });
         if (page <= 0) {
             this.setState({ isLoading: false });
         } else {
             currentResults.getPage(page--).then((r: SearchResults) => {
                 currentResults = r;
-                let items = currentResults.PrimarySearchResults.map((item: any) => ({
-                    hentetFra: {
-                        title: item.SiteTitle,
-                        url: item.ParentLink
-                    },
-                    opprettet: formatDate(item.Created),
-                    opprettetAv: item.Author,
-                    område: item.OmrådeOWSCHCM,
-                    kontrakt: item.KontrakterOWSCHCM,
-                    prossesavvik: item['Sak/prosessavvikOWSMTXT'],
-                    årsak: item['Årsak-OWSMTXT'],
-                    korrigerende: item.KorrigerendeellerfOWSMTXT,
-                    behovForHjelp: item.BehovforhjelpOWSCHCS,
-                    målForTiltaket: item.MålfortiltakOWSMTXT,
-                    tidsfrist: formatDate(item['Tid/fristOWSDATE']),
-                    ansvarlig: item.AnsvarligOWSUSER,
-                    målOppnådd: item.MåloppnåddOWSCHCS,
-                    forsinkelse: item.GrunntilforsinkelsOWSCHCS,
-                    oppfølgingstiltak: item.OppfølgingstiltakOWSMTXT,
-                    nyFrist: formatDate(item.KontrollertdatoOWSDATE),
-                    gjennomført: item.StatushandlingsplanOWSCHCS
-                }));
-                this.setState({ allItems: items, isLoading: false });
+                let _currentItems = mapCurrentItems(currentResults);
+                this.setState({ currentItems: _currentItems, isLoading: false });
             });
         }
     }
 
-
     _onRenderItemColumn(item, index, column) {
         let colValue = item[column.fieldName];
+        let siteLink = item.parentLink;
         switch (column.key) {
             case 'columnProsessavvik':
             case 'columnÅrsak':
@@ -160,12 +110,76 @@ class Handlingsplaner extends React.Component<any, any> {
                 return <span dangerouslySetInnerHTML={{ __html: colValue }}></span >
             }
             case 'columnHentetFra': {
-                return <Link href={colValue.url} > {colValue.title}</Link>
+                return <Link href={siteLink}>{colValue}</Link>
             }
             default: {
                 return <span>{colValue}</span>;
             }
         }
+    }
+
+    _onColumnClick(event: React.MouseEvent<HTMLElement>, column) {
+        this.setState({
+            contextualMenuProps: this._getContextualMenuProps(event, column)
+        });
+    }
+
+    _onContextualMenuDismissed() {
+        this.setState({
+            contextualMenuProps: null
+        });
+    }
+
+    //(isSortedDescending ? a[fieldName] < b[fieldName] : a[fieldName] > b[fieldName]) ? 1 : -1)
+    _onSortColumn(fieldName: string, isSortedDescending: boolean) {
+        let currentItems = this.state.currentItems;
+        let sortedItems = currentItems.slice(0).sort((a, b) => {
+            let comparison;
+            if (isSortedDescending) {
+                comparison = a[fieldName] < b[fieldName];
+            } else {
+                comparison = a[fieldName] > b[fieldName];
+            }
+            if (comparison) {
+                return 1;
+            } else {
+                return -1;
+            }
+        });
+        this.setState({
+            currentItems: sortedItems,
+            groups: null,
+            isSortedDescending: isSortedDescending,
+            sortedColumnKey: fieldName
+        });
+    }
+
+    _getContextualMenuProps(event: React.MouseEvent<HTMLElement>, column) {
+        let items = [
+            {
+                key: 'aTilÅ',
+                name: 'A-Å',
+                icon: 'SortUp',
+                canCheck: true,
+                checked: column.isSorted && !column.isSortedDescending,
+                onClick: () => this._onSortColumn(column.fieldName, false)
+            },
+            {
+                key: 'åTilA',
+                name: 'Å-A',
+                icon: 'SortDown',
+                canCheck: true,
+                checked: column.isSorted && column.isSortedDescending,
+                onClick: () => this._onSortColumn(column.fieldName, true)
+            }
+        ];
+        return {
+            items: items,
+            targetElement: event.currentTarget as HTMLElement,
+            gapSpace: 10,
+            isBeakVisible: true,
+            onDismiss: this._onContextualMenuDismissed
+        };
     }
 
     componentDidMount() {
@@ -174,47 +188,28 @@ class Handlingsplaner extends React.Component<any, any> {
     }
 
     render() {
+        let { contextualMenuProps, currentItems, allItems } = this.state;
         if (this.state.isLoading) {
             return <Spinner size={SpinnerSize.large} label='Henter listedata' />;
         } else {
             return (
                 <div>
                     <Excel
-                        items={this.state.allItems}
+                        items={allItems}
                         columns={_columns}
                     />
-                    <DefaultButton
-                        data-automation-id='Top-Prev-Page-Button'
-                        description='Neste Side'
-                        iconProps={{ iconName: 'Back' }}
-                        onClick={this.prevPage}
-
-                    />
-                    <DefaultButton
-                        data-automation-id='Top-Next-Page-Button'
-                        description='Neste Side'
-                        iconProps={{ iconName: 'Forward' }}
-                        onClick={this.nextPage}
-
-                    />
+                    <PrevButton clickHandler={this.prevPage} />
+                    <NextButton clickHandler={this.nextPage} />
                     <DetailsList
-                        items={this.state.allItems}
+                        items={currentItems}
                         columns={_columns}
                         onRenderItemColumn={this._onRenderItemColumn}
-                    />
-                    <DefaultButton
-                        data-automation-id='Bottom-Prev-Page-Button'
-                        description='Neste Side'
-                        iconProps={{ iconName: 'Back' }}
-                        onClick={this.prevPage}
+                        onColumnHeaderClick={this._onColumnClick}
 
                     />
-                    <DefaultButton
-                        data-automation-id='Bottom-Next-Page-Button'
-                        description='Neste side'
-                        iconProps={{ iconName: 'Forward' }}
-                        onClick={this.nextPage}
-                    />
+                    {<ContextualMenu { ...contextualMenuProps } />}
+                    < PrevButton clickHandler={this.prevPage} />
+                    <NextButton clickHandler={this.nextPage} />
                 </div>
             )
         }
