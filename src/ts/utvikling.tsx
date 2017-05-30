@@ -1,10 +1,12 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { mapAllItems, mapCurrentItems, formatDate } from './utils'
-import { _columns } from './columns';
-import { Excel } from './excel';
+import { mapAllItems, mapCurrentItems } from '../utils/utils'
+import { _columns } from '../components/columns';
+import { Excel } from '../components/excel';
+import { HeaderContextualMenu } from '../components/contextualmenu'
+import { NextButton, PrevButton } from '../components/buttons';
 import { SearchQuery, SearchResults, SearchQueryBuilder, sp } from 'sp-pnp-js';
-import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
+import { ContextualMenu } from 'office-ui-fabric-react/lib/ContextualMenu';
 import { DetailsList } from 'office-ui-fabric-react/lib/DetailsList';
 import { Link } from 'office-ui-fabric-react/lib/Link';
 import { Spinner, SpinnerSize } from 'office-ui-fabric-react/lib/Spinner';
@@ -19,8 +21,13 @@ class Handlingsplaner extends React.Component<any, any> {
         this.state = {
             isLoading: true,
             allItems: [],
-            currentItems: []
+            currentItems: [],
+            isContextMenuVisible: false,
         }
+        this.nextPage = this.nextPage.bind(this);
+        this.prevPage = this.prevPage.bind(this);
+        this._onColumnClick = this._onColumnClick.bind(this);
+        this._onColumnDismiss = this._onColumnDismiss.bind(this);
     }
 
     getSubsiteListItems() {
@@ -56,24 +63,24 @@ class Handlingsplaner extends React.Component<any, any> {
             let searchResults = r.PrimarySearchResults;
             currentResults = r;
             page = 0;
-            let allItems = mapAllItems(searchResults);
-            let currentItems = mapCurrentItems(currentResults);
-            this.setState({ alltItems: allItems, currentItems: currentItems, isLoading: false });
+            let _allItems = mapAllItems(searchResults);
+            let _currentItems = mapCurrentItems(currentResults);
+            this.setState({ allItems: _allItems, currentItems: _currentItems, isLoading: false });
         })
     }
 
-    nextPage = () => {
+    nextPage() {
         console.log('page', page);
         this.setState({ isLoading: true });
         currentResults.getPage(++page).then((r: SearchResults) => {
             currentResults = r;
-            let currentItems = mapCurrentItems(currentResults);
-            this.setState({ currentItems: currentItems, isLoading: false });
+            let _currentItems = mapCurrentItems(currentResults);
+            this.setState({ currentItems: _currentItems, isLoading: false });
         });
     }
 
 
-    prevPage = () => {
+    prevPage() {
         console.log('page', page);
         this.setState({ isLoading: true });
         if (page <= 0) {
@@ -81,8 +88,8 @@ class Handlingsplaner extends React.Component<any, any> {
         } else {
             currentResults.getPage(page--).then((r: SearchResults) => {
                 currentResults = r;
-                let currentItems = mapCurrentItems(currentResults);
-                this.setState({ currentItems: currentItems, isLoading: false });
+                let _currentItems = mapCurrentItems(currentResults);
+                this.setState({ currentItems: _currentItems, isLoading: false });
             });
         }
     }
@@ -98,12 +105,19 @@ class Handlingsplaner extends React.Component<any, any> {
                 return <span dangerouslySetInnerHTML={{ __html: colValue }}></span >
             }
             case 'columnHentetFra': {
-                return <Link href={colValue.url} > {colValue.title}</Link>
+                return <Link href={colValue.url}>{colValue.title}</Link>
             }
             default: {
                 return <span>{colValue}</span>;
             }
         }
+    }
+
+    _onColumnClick(event: React.MouseEvent<HTMLElement>, column) {
+        this.setState({ target: event.target, isContextMenuVisible: true });
+    }
+    _onColumnDismiss(event: any, column) {
+        this.setState({ target: event.target, isContextMenuVisible: false });
     }
 
     componentDidMount() {
@@ -122,38 +136,20 @@ class Handlingsplaner extends React.Component<any, any> {
                         items={this.state.allItems}
                         columns={_columns}
                     />
-                    <DefaultButton
-                        data-automation-id='Top-Prev-Page-Button'
-                        description='Neste Side'
-                        iconProps={{ iconName: 'Back' }}
-                        onClick={this.prevPage}
-
-                    />
-                    <DefaultButton
-                        data-automation-id='Top-Next-Page-Button'
-                        description='Neste Side'
-                        iconProps={{ iconName: 'Forward' }}
-                        onClick={this.nextPage}
-
-                    />
+                    <PrevButton clickHandler={this.prevPage} />
+                    <NextButton clickHandler={this.nextPage} />
                     <DetailsList
                         items={this.state.currentItems}
                         columns={_columns}
                         onRenderItemColumn={this._onRenderItemColumn}
-                    />
-                    <DefaultButton
-                        data-automation-id='Bottom-Prev-Page-Button'
-                        description='Neste Side'
-                        iconProps={{ iconName: 'Back' }}
-                        onClick={this.prevPage}
+                        onColumnHeaderClick={this._onColumnClick}
 
                     />
-                    <DefaultButton
-                        data-automation-id='Bottom-Next-Page-Button'
-                        description='Neste side'
-                        iconProps={{ iconName: 'Forward' }}
-                        onClick={this.nextPage}
-                    />
+                    {this.state.isContextMenuVisible ?
+                        (<HeaderContextualMenu target={this.state.target} dismissHandler={this._onColumnDismiss} />)
+                        : (null)}
+                    <PrevButton clickHandler={this.prevPage} />
+                    <NextButton clickHandler={this.nextPage} />
                 </div>
             )
         }

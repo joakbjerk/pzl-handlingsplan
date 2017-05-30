@@ -1,20 +1,7 @@
 import * as React from 'react';
-import * as moment from 'moment';
-import { formatData } from './utils'
-import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
+import { formatData } from '../utils/utils'
+import { ExportButton } from './buttons';
 import Workbook from 'react-excel-workbook';
-
-
-const ExportButton = () => {
-  return (
-    <DefaultButton
-      data-automation-id='Excel-Export-Button'
-      description='Eskoprter listedata til excel'
-      iconProps={{ iconName: 'ExcelLogo' }}
-      text='Eksporter til Excel'
-    />
-  );
-}
 
 export const Excel = ({ items, columns }) => {
   return (

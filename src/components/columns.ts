@@ -1,6 +1,6 @@
 const colOpt = {
-  minWidth: 120,
-  maxWidth: 180,
+  minWidth: 100,
+  maxWidth: 160,
   isResizable: true,
   multiline: true
 };
@@ -87,8 +87,8 @@ export const _columns = [
     fieldName: 'behovForHjelp',
     minWidth: colOpt.minWidth,
     maxWidth: colOpt.maxWidth,
-    multiline: true,
-    isResizable: true
+    multiline: colOpt.multiline,
+    isResizable: colOpt.isResizable
   },
   {
     key: 'columnMålForTiltaket',

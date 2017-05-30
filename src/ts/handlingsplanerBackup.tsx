@@ -1,8 +1,8 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { mapAllItems, mapCurrentItems, formatDate } from './utils'
-import { _columns } from './columns';
-import { Excel } from './excel';
+import { mapAllItems, mapCurrentItems, formatDate } from '../utils/utils'
+import { _columns } from '../components/columns';
+import { Excel } from '../components/excel';
 import pnp, { SearchQuery, SearchResults, SearchQueryBuilder } from 'sp-pnp-js';
 import { DefaultButton } from 'office-ui-fabric-react/lib/Button';
 import { DetailsList } from 'office-ui-fabric-react/lib/DetailsList';
