@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { mapAllItems, mapCurrentItems, dummyData } from '../utils/utils'
+import { mapAllItems, mapCurrentItems, dummyData, numberDummyData } from '../utils/utils'
 import { _columns } from '../components/columns';
 import { Excel } from '../components/excel';
 import { NextButton, PrevButton } from '../components/buttons';
@@ -135,20 +135,22 @@ class Handlingsplaner extends React.Component<any, any> {
     _sortColumnAscending() {
         console.log('Asc');
         let items = this.state.currentItems;
-        let sortedItems = dummyData.sort(function (obj1: any, obj2: any) {
+        let sortedItemsAsc = numberDummyData.sort(function (obj1: any, obj2: any) {
             return obj1.opprettet - obj2.opprettet;
         });
-        console.log('sortedItems', sortedItems);
+        console.log('sortedItems', sortedItemsAsc);
+        this.setState({ currentItems: sortedItemsAsc });
 
     }
 
     _sortColumnDescending() {
         console.log('Desc');
         let items = this.state.currentItems;
-        let sortedItems = dummyData.sort(function (obj1: any, obj2: any) {
+        let sortedItemsDesc = numberDummyData.sort(function (obj1: any, obj2: any) {
             return obj2.opprettet - obj1.opprettet;
         });
-        console.log('sortedItems', sortedItems);
+        console.log('sortedItems', sortedItemsDesc);
+        this.setState({ currentItems: sortedItemsDesc });
 
     }
 

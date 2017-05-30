@@ -212,6 +212,15 @@ export function generateDummyData(amount) {
   }
 }
 
+export const numberDummyData = [
+  { hentetFra: { title: 'Title 1', url: 'https://www.google.no' }, opprettet: '1', opprettetAv: 'Celine' },
+  { hentetFra: { title: 'Title 2', url: 'https://www.google.no' }, opprettet: '2', opprettetAv: 'Anders' },
+  { hentetFra: { title: 'Title 3', url: 'https://www.google.no' }, opprettet: '3', opprettetAv: 'Øystein' },
+  { hentetFra: { title: 'Title 4', url: 'https://www.google.no' }, opprettet: '4', opprettetAv: 'Frank' },
+  { hentetFra: { title: 'Title 5', url: 'https://www.google.no' }, opprettet: '5', opprettetAv: 'Hanne' },
+  { hentetFra: { title: 'Title 6', url: 'https://www.google.no' }, opprettet: '6', opprettetAv: 'Melvin' },
+]
+
 
 function randomValue(value) {
   console.log('Temp');
