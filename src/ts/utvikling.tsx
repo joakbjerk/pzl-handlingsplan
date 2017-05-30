@@ -125,11 +125,11 @@ class Handlingsplaner extends React.Component<any, any> {
     }
 
     _customSortAsc = (a, b) => {
-        return a.opprettet - b.opprettet;
+        return a.hentetFra.title - b.hentetFra.title;
     }
 
     _customSortDesc = (a, b) => {
-        return b.opprettet - a.opprettet;
+        return b.hentetFra.title - a.hentetFra.title;
     }
 
     _sortColumnAscending() {
