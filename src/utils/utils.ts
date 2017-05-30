@@ -3,7 +3,7 @@ import * as moment from 'moment';
 moment.locale('nb');
 
 //handlingsplaner.tsx utils
-export function formatDate(date) {
+function formatDate(date) {
   let datePattern = /\d{4}-\d{2}-\d{2}/;
   if (date) {
     return moment(datePattern.exec(date).toString()).format('L');
@@ -102,56 +102,4 @@ function removeHtmlTags(item) {
   }
 }
 
-export function generateDummyData(amount) {
-  let dataArray = [];
-  let jaNei = ['Ja', 'Nei', 'Kanskje'];
-  let område = ['Inne', 'Ute', 'Hos Kunde', 'Utlandet', 'Internt'];
-  let årsak = ['Skade', 'Salg', 'Bytte', 'Refusjon', 'Saksmål'];
-  let korrigerende = ['Reperasjon', 'Kompansasjon', 'Stille i retten',]
-  let kontrakt = ['BMW', 'Audi', 'Volkswagen', 'Ford', 'Renault']
-  let ansvarlig = ['Joakim', 'Mehlum', 'Bjerknes'];
-
-  for (let i = 0; i < amount; i++) {
-    dataArray.push({
-      hentetFra: {
-        title: 'Title ' + (i + 1),
-        url: 'https://www.google.no'
-      },
-      opprettet: randomDate('2017', '2018'),
-      opprettetAv: 'Joaikm Mehlum Bjerknes',
-      område: 'Inne',
-      kontrakt: 'reparasjon',
-      prossesavvik: 'Mange',
-      årsak: 'Steinssprut',
-      korrigerende: 'Fikse knust vindu',
-      behovForHjelp: 'Nei',
-      målForTiltaket: 'Fikse skadene så raskt det lar seg gjøre',
-      tidsfrist: randomDate('2017', '2018'),
-      ansvarlig: 'Joakim Mehlum Bjerknes',
-      målOppnådd: 'Nei',
-      forsinkelse: 'Sen levering av ny rute',
-      oppfølgingstiltak: 'Dobbeltsjekke skadene',
-      nyFrist: randomDate('2017', '2018'),
-      gjennomført: 'Nei'
-    })
-  }
-}
-
-function randomValue(value) {
-  console.log('Temp');
-}
-
-function randomDate(start, end) {
-  var date = new Date(start + Math.random() * (end - start));
-  return date;
-}
-
-export const nestedDataDummy = [
-  { hentetFra: 'Title 1', parentLink: 'https://www.google.no', opprettet: '1', opprettetAv: 'Celine' },
-  { hentetFra: 'Title 2', parentLink: 'https://www.google.no', opprettet: '2', opprettetAv: 'Anders' },
-  { hentetFra: 'Title 3', parentLink: 'https://www.google.no', opprettet: '3', opprettetAv: 'Øystein' },
-  { hentetFra: 'Title 4', parentLink: 'https://www.google.no', opprettet: '4', opprettetAv: 'Frank' },
-  { hentetFra: 'Title 5', parentLink: 'https://www.google.no', opprettet: '5', opprettetAv: 'Hanne' },
-  { hentetFra: 'Title 6', parentLink: 'https://www.google.no', opprettet: '6', opprettetAv: 'Melvin' },
-]
 
