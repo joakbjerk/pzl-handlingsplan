@@ -19,6 +19,7 @@ class Handlingsplaner extends React.Component<any, any> {
         this.state = {
             isLoading: true,
             allItems: [],
+            currentItems: []
         }
     }
 
@@ -55,29 +56,9 @@ class Handlingsplaner extends React.Component<any, any> {
             let searchResults = r.PrimarySearchResults;
             currentResults = r;
             page = 0;
-            let items = currentResults.PrimarySearchResults.map((item: any) => ({
-                hentetFra: {
-                    title: item.SiteTitle,
-                    url: item.ParentLink
-                },
-                opprettet: formatDate(item.Created),
-                opprettetAv: item.Author,
-                område: item.OmrådeOWSCHCM,
-                kontrakt: item.KontrakterOWSCHCM,
-                prossesavvik: item['Sak/prosessavvikOWSMTXT'],
-                årsak: item['Årsak-OWSMTXT'],
-                korrigerende: item.KorrigerendeellerfOWSMTXT,
-                behovForHjelp: item.BehovforhjelpOWSCHCS,
-                målForTiltaket: item.MålfortiltakOWSMTXT,
-                tidsfrist: formatDate(item['Tid/fristOWSDATE']),
-                ansvarlig: item.AnsvarligOWSUSER,
-                målOppnådd: item.MåloppnåddOWSCHCS,
-                forsinkelse: item.GrunntilforsinkelsOWSCHCS,
-                oppfølgingstiltak: item.OppfølgingstiltakOWSMTXT,
-                nyFrist: formatDate(item.KontrollertdatoOWSDATE),
-                gjennomført: item.StatushandlingsplanOWSCHCS
-            }));
-            this.setState({ allItems: items, isLoading: false });
+            let allItems = mapAllItems(searchResults);
+            let currentItems = mapCurrentItems(currentResults);
+            this.setState({ alltItems: allItems, currentItems: currentItems, isLoading: false });
         })
     }
 
@@ -86,29 +67,8 @@ class Handlingsplaner extends React.Component<any, any> {
         this.setState({ isLoading: true });
         currentResults.getPage(++page).then((r: SearchResults) => {
             currentResults = r;
-            let items = currentResults.PrimarySearchResults.map((item: any) => ({
-                hentetFra: {
-                    title: item.SiteTitle,
-                    url: item.ParentLink
-                },
-                opprettet: formatDate(item.Created),
-                opprettetAv: item.Author,
-                område: item.OmrådeOWSCHCM,
-                kontrakt: item.KontrakterOWSCHCM,
-                prossesavvik: item['Sak/prosessavvikOWSMTXT'],
-                årsak: item['Årsak-OWSMTXT'],
-                korrigerende: item.KorrigerendeellerfOWSMTXT,
-                behovForHjelp: item.BehovforhjelpOWSCHCS,
-                målForTiltaket: item.MålfortiltakOWSMTXT,
-                tidsfrist: formatDate(item['Tid/fristOWSDATE']),
-                ansvarlig: item.AnsvarligOWSUSER,
-                målOppnådd: item.MåloppnåddOWSCHCS,
-                forsinkelse: item.GrunntilforsinkelsOWSCHCS,
-                oppfølgingstiltak: item.OppfølgingstiltakOWSMTXT,
-                nyFrist: formatDate(item.KontrollertdatoOWSDATE),
-                gjennomført: item.StatushandlingsplanOWSCHCS
-            }));
-            this.setState({ allItems: items, isLoading: false });
+            let currentItems = mapCurrentItems(currentResults);
+            this.setState({ currentItems: currentItems, isLoading: false });
         });
     }
 
@@ -121,33 +81,11 @@ class Handlingsplaner extends React.Component<any, any> {
         } else {
             currentResults.getPage(page--).then((r: SearchResults) => {
                 currentResults = r;
-                let items = currentResults.PrimarySearchResults.map((item: any) => ({
-                    hentetFra: {
-                        title: item.SiteTitle,
-                        url: item.ParentLink
-                    },
-                    opprettet: formatDate(item.Created),
-                    opprettetAv: item.Author,
-                    område: item.OmrådeOWSCHCM,
-                    kontrakt: item.KontrakterOWSCHCM,
-                    prossesavvik: item['Sak/prosessavvikOWSMTXT'],
-                    årsak: item['Årsak-OWSMTXT'],
-                    korrigerende: item.KorrigerendeellerfOWSMTXT,
-                    behovForHjelp: item.BehovforhjelpOWSCHCS,
-                    målForTiltaket: item.MålfortiltakOWSMTXT,
-                    tidsfrist: formatDate(item['Tid/fristOWSDATE']),
-                    ansvarlig: item.AnsvarligOWSUSER,
-                    målOppnådd: item.MåloppnåddOWSCHCS,
-                    forsinkelse: item.GrunntilforsinkelsOWSCHCS,
-                    oppfølgingstiltak: item.OppfølgingstiltakOWSMTXT,
-                    nyFrist: formatDate(item.KontrollertdatoOWSDATE),
-                    gjennomført: item.StatushandlingsplanOWSCHCS
-                }));
-                this.setState({ allItems: items, isLoading: false });
+                let currentItems = mapCurrentItems(currentResults);
+                this.setState({ currentItems: currentItems, isLoading: false });
             });
         }
     }
-
 
     _onRenderItemColumn(item, index, column) {
         let colValue = item[column.fieldName];
@@ -199,7 +137,7 @@ class Handlingsplaner extends React.Component<any, any> {
 
                     />
                     <DetailsList
-                        items={this.state.allItems}
+                        items={this.state.currentItems}
                         columns={_columns}
                         onRenderItemColumn={this._onRenderItemColumn}
                     />

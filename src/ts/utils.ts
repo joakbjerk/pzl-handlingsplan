@@ -13,53 +13,61 @@ export function formatDate(date) {
 }
 
 export function mapAllItems(searchResults) {
-  searchResults.map((item: any) => ({
-    hentetFra: {
-      title: item.SiteTitle,
-      url: item.ParentLink
-    },
-    opprettet: formatDate(item.Created),
-    opprettetAv: item.Author,
-    område: item.OmrådeOWSCHCM,
-    kontrakt: item.KontrakterOWSCHCM,
-    prossesavvik: item['Sak/prosessavvikOWSMTXT'],
-    årsak: item['Årsak-OWSMTXT'],
-    korrigerende: item.KorrigerendeellerfOWSMTXT,
-    behovForHjelp: item.BehovforhjelpOWSCHCS,
-    målForTiltaket: item.MålfortiltakOWSMTXT,
-    tidsfrist: formatDate(item['Tid/fristOWSDATE']),
-    ansvarlig: item.AnsvarligOWSUSER,
-    målOppnådd: item.MåloppnåddOWSCHCS,
-    forsinkelse: item.GrunntilforsinkelsOWSCHCS,
-    oppfølgingstiltak: item.OppfølgingstiltakOWSMTXT,
-    nyFrist: formatDate(item.KontrollertdatoOWSDATE),
-    gjennomført: item.StatushandlingsplanOWSCHCS
-  }));
+  console.log('searchResults', searchResults);
+  return (
+    searchResults.map((item: any) => ({
+      hentetFra: {
+        title: item.SiteTitle,
+        url: item.ParentLink
+      },
+      opprettet: formatDate(item.Created),
+      opprettetAv: item.Author,
+      område: item.OmrådeOWSCHCM,
+      kontrakt: item.KontrakterOWSCHCM,
+      prossesavvik: item['Sak/prosessavvikOWSMTXT'],
+      årsak: item['Årsak-OWSMTXT'],
+      korrigerende: item.KorrigerendeellerfOWSMTXT,
+      behovForHjelp: item.BehovforhjelpOWSCHCS,
+      målForTiltaket: item.MålfortiltakOWSMTXT,
+      tidsfrist: formatDate(item['Tid/fristOWSDATE']),
+      ansvarlig: item.AnsvarligOWSUSER,
+      målOppnådd: item.MåloppnåddOWSCHCS,
+      forsinkelse: item.GrunntilforsinkelsOWSCHCS,
+      oppfølgingstiltak: item.OppfølgingstiltakOWSMTXT,
+      nyFrist: formatDate(item.KontrollertdatoOWSDATE),
+      gjennomført: item.StatushandlingsplanOWSCHCS
+    })
+    )
+  );
 }
 
-export function mapCurrentItems(searchResults) {
-  searchResults.map((item: any) => ({
-    hentetFra: {
-      title: item.SiteTitle,
-      url: item.ParentLink
-    },
-    opprettet: formatDate(item.Created),
-    opprettetAv: item.Author,
-    område: item.OmrådeOWSCHCM,
-    kontrakt: item.KontrakterOWSCHCM,
-    prossesavvik: item['Sak/prosessavvikOWSMTXT'],
-    årsak: item['Årsak-OWSMTXT'],
-    korrigerende: item.KorrigerendeellerfOWSMTXT,
-    behovForHjelp: item.BehovforhjelpOWSCHCS,
-    målForTiltaket: item.MålfortiltakOWSMTXT,
-    tidsfrist: formatDate(item['Tid/fristOWSDATE']),
-    ansvarlig: item.AnsvarligOWSUSER,
-    målOppnådd: item.MåloppnåddOWSCHCS,
-    forsinkelse: item.GrunntilforsinkelsOWSCHCS,
-    oppfølgingstiltak: item.OppfølgingstiltakOWSMTXT,
-    nyFrist: formatDate(item.KontrollertdatoOWSDATE),
-    gjennomført: item.StatushandlingsplanOWSCHCS
-  }));
+export function mapCurrentItems(currentResults) {
+  console.log('currentResults', currentResults);
+  return (
+    currentResults.PrimarySearchResults.map((item: any) => ({
+      hentetFra: {
+        title: item.SiteTitle,
+        url: item.ParentLink
+      },
+      opprettet: formatDate(item.Created),
+      opprettetAv: item.Author,
+      område: item.OmrådeOWSCHCM,
+      kontrakt: item.KontrakterOWSCHCM,
+      prossesavvik: item['Sak/prosessavvikOWSMTXT'],
+      årsak: item['Årsak-OWSMTXT'],
+      korrigerende: item.KorrigerendeellerfOWSMTXT,
+      behovForHjelp: item.BehovforhjelpOWSCHCS,
+      målForTiltaket: item.MålfortiltakOWSMTXT,
+      tidsfrist: formatDate(item['Tid/fristOWSDATE']),
+      ansvarlig: item.AnsvarligOWSUSER,
+      målOppnådd: item.MåloppnåddOWSCHCS,
+      forsinkelse: item.GrunntilforsinkelsOWSCHCS,
+      oppfølgingstiltak: item.OppfølgingstiltakOWSMTXT,
+      nyFrist: formatDate(item.KontrollertdatoOWSDATE),
+      gjennomført: item.StatushandlingsplanOWSCHCS
+    })
+    )
+  );
 }
 
 //Excel.tsx utils.
