@@ -113,7 +113,7 @@ export const dummyData = [
       title: 'Title 1',
       url: 'https://www.google.no'
     },
-    opprettet: '01/01/1010'',
+    opprettet: '01/01/1010',
     opprettetAv: 'Celine',
     område: 'Ute',
     kontrakt: 'Salgskontrakt',
