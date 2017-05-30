@@ -136,7 +136,7 @@ class Handlingsplaner extends React.Component<any, any> {
         console.log('Asc');
         let items = this.state.currentItems;
         let sortedItemsAsc = numberDummyData.sort(function (obj1: any, obj2: any) {
-            return obj1.opprettet - obj2.opprettet;
+            return obj1.hentetFra.title - obj2.hentetFra.title;
         });
         console.log('sortedItems', sortedItemsAsc);
         this.setState({ currentItems: sortedItemsAsc });
@@ -147,7 +147,7 @@ class Handlingsplaner extends React.Component<any, any> {
         console.log('Desc');
         let items = this.state.currentItems;
         let sortedItemsDesc = numberDummyData.sort(function (obj1: any, obj2: any) {
-            return obj2.opprettet - obj1.opprettet;
+            return obj2.hentetFra.title - obj1.hentetFra.title;
         });
         console.log('sortedItems', sortedItemsDesc);
         this.setState({ currentItems: sortedItemsDesc });
