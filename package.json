@@ -1,18 +1,18 @@
 {
-  "name": "wr-trackrecords",
+  "name": "moller handlingsplan",
   "version": "1.0.0",
-  "description": "Track records functionality for WRINTRA-108",
-  "main": "index.js",
+  "description": "Collection of all handlingsplan list items for subsequent subsites",
+  "main": "handlingsplan.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://tarjeieo@bitbucket.org/puzzlepart/wr-track-records.git"
+    "url": "git+https://github.com/joakbjerk/pzl-handlingsplan/"
   },
-  "author": "Tarjei Ormestøyl",
+  "author": "Joakim Bjerknes",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/puzzlepart/wr-track-records",
+  "homepage": "https://github.com/joakbjerk/pzl-handlingsplan/",
   "dependencies": {
     "@types/jquery": "2.0.39",
     "@types/microsoft-ajax": "0.0.31",

@@ -25,7 +25,7 @@ class Handlingsplaner extends React.Component<any, any> {
             isSorted: false,
             isSortedDescending: false,
             contextualMenuProps: null,
-            sortedColumnKey: 'name'
+            sortedColumnKey: 'name',
         }
 
         this.nextPage = this.nextPage.bind(this);
@@ -34,13 +34,13 @@ class Handlingsplaner extends React.Component<any, any> {
         this._getContextualMenuProps = this._getContextualMenuProps.bind(this);
         this._onContextualMenuDismissed = this._onContextualMenuDismissed.bind(this);
         this._onSortColumn = this._onSortColumn.bind(this);
-        this._generateSubMenuProps = this._generateSubMenuProps.bind(this);
+        this._generateContextualMenu = this._generateContextualMenu.bind(this);
     }
 
     getSubsiteListItems() {
         const searchSettings: SearchQuery = {
             Querytext: 'ContentType:"Element Handlingsplan"',
-            RowLimit: 100,
+            RowLimit: 10,
             RowsPerPage: 50,
             StartRow: 0,
             EnableQueryRules: true,
@@ -107,7 +107,9 @@ class Handlingsplaner extends React.Component<any, any> {
             case 'columnÅrsak':
             case 'columnMålForTiltaket':
             case 'columnOppfølgingstiltak':
-            case 'columnKorrigerende': {
+            case 'columnKorrigerende':
+            case 'columnOmråde':
+            case 'columnKontrakt': {
                 return <span dangerouslySetInnerHTML={{ __html: colValue }}></span >
             }
             case 'columnHentetFra': {
@@ -122,12 +124,6 @@ class Handlingsplaner extends React.Component<any, any> {
     _onColumnClick(event: React.MouseEvent<HTMLElement>, column) {
         this.setState({
             contextualMenuProps: this._getContextualMenuProps(event, column)
-        });
-    }
-
-    _onContextualMenuDismissed() {
-        this.setState({
-            contextualMenuProps: null
         });
     }
 
@@ -157,28 +153,8 @@ class Handlingsplaner extends React.Component<any, any> {
 
 
     _getContextualMenuProps(event: React.MouseEvent<HTMLElement>, column) {
-        let menuItems = [
-            {
-                key: 'aTilÅ',
-                name: 'A-Å',
-                icon: 'SortUp',
-                onClick: () => this._onSortColumn(column.fieldName, false)
-            },
-            {
-                key: 'åTilA',
-                name: 'Å-A',
-                icon: 'SortDown',
-                onClick: () => this._onSortColumn(column.fieldName, true)
-            },
-            {
-                key: 'filtrer',
-                name: 'Filtrer etter',
-                icon: 'filter',
-                subMenuProps: {
-                    items: this._generateSubMenuProps(column)
-                }
-            }
-        ];
+        let menuItems = this._generateContextualMenu(column)
+
         return {
             items: menuItems,
             target: event.currentTarget as HTMLElement,
@@ -187,24 +163,89 @@ class Handlingsplaner extends React.Component<any, any> {
         };
     }
 
-    _generateSubMenuProps(column) {
+    _generateContextualMenu(column) {
         switch (column.key) {
-            case 'columnHentetFra': {
-                console.log(column.key)
-                return ([{
-                    key: `${column.fieldName}filtrer`,
-                    name: `Filtrer ${column.name} filtrer`
-                }])
+            case 'columnHentetFra':
+            case 'columnOpprettet':
+            case 'columnOpprettetAv':
+            case 'columnOmråde':
+            case 'columnKontrakt':
+            case 'columnBehovForHjelp':
+            case 'columnTidsfrist':
+            case 'columnAnsvarlig':
+            case 'columnMålOppnådd':
+            case 'columnForsinkelse':
+            case 'columnNyFrist':
+            case 'columnGjennomført': {
+                return ([
+                    {
+                        key: 'stigende',
+                        name: 'Stigende',
+                        icon: 'SortUp',
+                        onClick: () => this._onSortColumn(column.fieldName, false)
+                    },
+                    {
+                        key: 'synkende',
+                        name: 'Synkende',
+                        icon: 'SortDown',
+                        onClick: () => this._onSortColumn(column.fieldName, true)
+                    },
+                    {
+                        key: 'filtrer',
+                        name: 'Filtrer etter',
+                        icon: 'filter',
+                        subMenuProps: {
+                            items: this._generateFilterOptions(column.fieldName)
+                        }
+                    }
+                ])
             }
             default: {
                 return ([{
-                    key: 'ingenFiltrer',
-                    name: 'Ingen Filter'
+                    key: 'stigende',
+                    name: 'Stigende',
+                    icon: 'SortUp',
+                    onClick: () => this._onSortColumn(column.fieldName, false)
+                },
+                {
+                    key: 'synkende',
+                    name: 'Synkende',
+                    icon: 'SortDown',
+                    onClick: () => this._onSortColumn(column.fieldName, true)
                 }])
             }
         }
     }
 
+    _generateFilterOptions(fieldName) {
+        let currentItems = this.state.currentItems;
+        let fieldValues = [];
+        currentItems.forEach(item => {
+            if (item[fieldName]) {
+                fieldValues.push(item[fieldName]);
+            }
+        });
+
+        let options = this._getUniqueFilterOptions(fieldValues);
+        return options;
+    }
+
+    _getUniqueFilterOptions(fieldValues) {
+        let options = [];
+        fieldValues.map(value => { options.push({ key: value + 'filter', name: value }) });
+        console.log(options);
+        return options.filter((item, idx, array) => {
+            console.log(item[idx]);
+            console.log(item[idx].key);
+            return array.indexOf(item, idx) !== item[idx];
+        })
+    }
+
+    _onContextualMenuDismissed() {
+        this.setState({
+            contextualMenuProps: null
+        });
+    }
 
     componentDidMount() {
         this.getSubsiteListItems();
@@ -217,8 +258,8 @@ class Handlingsplaner extends React.Component<any, any> {
             return <Spinner size={SpinnerSize.large} label='Henter listedata' />;
         } else {
             return (
-                <div>
-                    <h2>Sortering/Filtrering under arbeid</h2>
+                <div >
+                    <h2>Filtrering under arbeid</h2>
                     <Excel
                         items={allItems}
                         columns={_columns}
@@ -235,7 +276,7 @@ class Handlingsplaner extends React.Component<any, any> {
                     {contextualMenuProps && (<ContextualMenu { ...contextualMenuProps } />)}
                     < PrevButton clickHandler={this.prevPage} />
                     <NextButton clickHandler={this.nextPage} />
-                </div>
+                </div >
             )
         }
     }
