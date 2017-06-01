@@ -100,4 +100,9 @@ function removeHtmlTags(item) {
   }
 }
 
+export function formatChoiceFields(fieldValues) {
+  fieldValues = fieldValues.map(value => {
+    return value.substring(0, Math.floor(((value.length + 1) / 2)) - 1).trim();
+  });
 
+}

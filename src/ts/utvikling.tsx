@@ -231,14 +231,24 @@ class Handlingsplaner extends React.Component<any, any> {
     }
 
     _getUniqueFilterOptions(fieldValues) {
+        function onlyUnique(value, index, self) {
+            return self.indexOf(value) === index;
+        }
+
+        var distinctFieldValues = fieldValues.filter(onlyUnique);
+
+        // Awkward duplicate fieldvalue with linebreak in the middle
+        distinctFieldValues = distinctFieldValues.map(value => {
+            return value.substring(0, Math.floor(((value.length + 1) / 2)) - 1).trim();
+        });
         let options = [];
-        fieldValues.map(value => { options.push({ key: value + 'filter', name: value }) });
-        console.log(options);
-        return options.filter((item, idx, array) => {
-            console.log(item[idx]);
-            console.log(item[idx].key);
-            return array.indexOf(item, idx) !== item[idx];
+        distinctFieldValues.map(value => { options.push({ key: value + 'filter', name: value }) });
+
+        options = options.sort((a, b) => {
+            return a.key - b.key;
         })
+
+        return options;
     }
 
     _onContextualMenuDismissed() {
@@ -274,7 +284,7 @@ class Handlingsplaner extends React.Component<any, any> {
 
                     />
                     {contextualMenuProps && (<ContextualMenu { ...contextualMenuProps } />)}
-                    < PrevButton clickHandler={this.prevPage} />
+                    <PrevButton clickHandler={this.prevPage} />
                     <NextButton clickHandler={this.nextPage} />
                 </div >
             )
